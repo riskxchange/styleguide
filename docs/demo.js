@@ -1,6 +1,5 @@
 /* globals fetch, html_beautify */
 
-
 document.onreadystatechange = init
 init()
 
