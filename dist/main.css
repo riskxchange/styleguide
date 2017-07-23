@@ -473,6 +473,7 @@ template {
   cursor: pointer;
   outline: none;
   display: inline-block;
+  color: #1C2237;
   -webkit-transition: border-color 0.3s, background-color 0.3s;
   -o-transition: border-color 0.3s, background-color 0.3s;
   transition: border-color 0.3s, background-color 0.3s;
@@ -487,7 +488,8 @@ template {
 }
 
 .rx-btn--primary {
-  border-color: #07a667;
+  border: none;
+  /*border-color: var(--darkGreen);*/
   background-color: #0BBD77;
   color: white;
 }
@@ -501,7 +503,8 @@ template {
 }
 
 .rx-btn--info {
-  border-color: #0072CA;
+  border: none;
+  /*border-color: var(--darkBlue);*/
   background-color: #0090FF;
   color: white;
 }
@@ -515,7 +518,8 @@ template {
 }
 
 .rx-btn--danger {
-  border-color: #d73f3e;
+  border: none;
+  /*border-color: var(--darkRed);*/
   background-color: #FF6261;
   color: white;
 }
@@ -620,14 +624,19 @@ template {
   clear: both;
 }
 
-.rx-row--pad {
+.rx-row {
   margin: 15px -7.5px;
 }
 
-.rx-row--pad > * {
+.rx-row > * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 7.5px;
+  margin-bottom: 15px;
+}
+
+.rx-row > *:last-child {
+  margin-bottom: 0;
 }
 
 .rx-col--xs-1, .rx-col--sm-1, .rx-col--md-1, .rx-col--lg-1, .rx-col--xs-2, .rx-col--sm-2, .rx-col--md-2, .rx-col--lg-2, .rx-col--xs-3, .rx-col--sm-3, .rx-col--md-3, .rx-col--lg-3, .rx-col--xs-4, .rx-col--sm-4, .rx-col--md-4, .rx-col--lg-4, .rx-col--xs-5, .rx-col--sm-5, .rx-col--md-5, .rx-col--lg-5, .rx-col--xs-6, .rx-col--sm-6, .rx-col--md-6, .rx-col--lg-6, .rx-col--xs-7, .rx-col--sm-7, .rx-col--md-7, .rx-col--lg-7, .rx-col--xs-8, .rx-col--sm-8, .rx-col--md-8, .rx-col--lg-8, .rx-col--xs-9, .rx-col--sm-9, .rx-col--md-9, .rx-col--lg-9, .rx-col--xs-10, .rx-col--sm-10, .rx-col--md-10, .rx-col--lg-10, .rx-col--xs-11, .rx-col--sm-11, .rx-col--md-11, .rx-col--lg-11, .rx-col--xs-12, .rx-col--sm-12, .rx-col--md-12, .rx-col--lg-12 {
@@ -637,6 +646,7 @@ template {
 
 .rx-col--xs-1, .rx-col--xs-2, .rx-col--xs-3, .rx-col--xs-4, .rx-col--xs-5, .rx-col--xs-6, .rx-col--xs-7, .rx-col--xs-8, .rx-col--xs-9, .rx-col--xs-10, .rx-col--xs-11, .rx-col--xs-12 {
   float: left;
+  margin-bottom: 0;
 }
 
 .rx-col--xs-12 {
@@ -742,6 +752,7 @@ template {
 @media (min-width: 768px) {
   .rx-col--sm-1, .rx-col--sm-2, .rx-col--sm-3, .rx-col--sm-4, .rx-col--sm-5, .rx-col--sm-6, .rx-col--sm-7, .rx-col--sm-8, .rx-col--sm-9, .rx-col--sm-10, .rx-col--sm-11, .rx-col--sm-12 {
     float: left;
+    margin-bottom: 0;
   }
   .rx-col--sm-12 {
     width: 100%;
@@ -823,6 +834,7 @@ template {
 @media (min-width: 992px) {
   .rx-col--md-1, .rx-col--md-2, .rx-col--md-3, .rx-col--md-4, .rx-col--md-5, .rx-col--md-6, .rx-col--md-7, .rx-col--md-8, .rx-col--md-9, .rx-col--md-10, .rx-col--md-11, .rx-col--md-12 {
     float: left;
+    margin-bottom: 0;
   }
   .rx-col--md-12 {
     width: 100%;
@@ -904,6 +916,7 @@ template {
 @media (min-width: 1200px) {
   .rx-col--lg-1, .rx-col--lg-2, .rx-col--lg-3, .rx-col--lg-4, .rx-col--lg-5, .rx-col--lg-6, .rx-col--lg-7, .rx-col--lg-8, .rx-col--lg-9, .rx-col--lg-10, .rx-col--lg-11, .rx-col--lg-12 {
     float: left;
+    margin-bottom: 0;
   }
   .rx-col--lg-12 {
     width: 100%;
@@ -1150,6 +1163,42 @@ template {
   color: #B9B9B9;
 }
 
+.rx-loader {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  font-size: 64px;
+}
+
+.rx-loader .rx-icon--logo-inner,
+.rx-loader .rx-icon--logo-letter {
+  color: #1C2237;
+}
+
+.rx-loader .rx-icon--logo-outer {
+  color: #0090FF;
+}
+
+.rx-loader--inverse .rx-icon--logo-inner,
+.rx-loader--inverse .rx-icon--logo-letter {
+  color: white;
+}
+
+/* secondary (light-bg/dark-bg) */
+
+.rx-loader--light-bg .rx-icon {
+  color: #1C2237;
+  opacity: 0.15;
+}
+
+.rx-loader--dark-bg .rx-icon {
+  color: #F1F5F8;
+  opacity: 0.2;
+}
+
+/* animation */
+
 @-webkit-keyframes spin-cw {
   from {
     -webkit-transform: rotate(0deg);
@@ -1190,57 +1239,58 @@ template {
   }
 }
 
-.rx-loader {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  font-size: 96px;
-  opacity: 0.2;
-}
-
 .rx-loader > .rx-icon {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.rx-loader > .rx-icon--logo-outer {
+.rx-loader .rx-icon--logo-outer,
+.rx-loader .rx-icon--logo-inner {
   -webkit-animation-name: spin-cw;
           animation-name: spin-cw;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: 1700ms;
-          animation-duration: 1700ms;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
-.rx-loader > .rx-icon--logo-inner {
-  -webkit-animation-name: spin-ccw;
-          animation-name: spin-ccw;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: 1300ms;
-          animation-duration: 1300ms;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
-.rx-loader--swing > .rx-icon {
   -webkit-animation-duration: 1200ms;
           animation-duration: 1200ms;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.rx-loader .rx-icon--logo-inner {
+  -webkit-animation-name: spin-ccw;
+          animation-name: spin-ccw;
+}
+
+.rx-loader--light-bg .rx-icon--logo-outer,
+.rx-loader--dark-bg .rx-icon--logo-outer {
+  -webkit-animation-duration: 1800ms;
+          animation-duration: 1800ms;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.rx-loader--light-bg .rx-icon--logo-inner,
+.rx-loader--dark-bg .rx-icon--logo-inner {
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .rx-logo {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url(logo-5ea6044856cde31de216231c29302b9c.svg);
+  background-image: url(logo-e079aacd77de20a8aeea8f026ea01fb7.svg);
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  min-height: 24px;
+}
+
+.rx-logo--inverse {
+  background-image: url(logo-inverse-5ea6044856cde31de216231c29302b9c.svg);
 }
 
 .rx-modal {
@@ -1355,7 +1405,7 @@ template {
 }
 
 .rx-navbar__logo {
-  padding-left: 5px;
+  padding-left: 10px;
   width: 180px;
   height: 56px;
 }
@@ -1740,7 +1790,7 @@ template {
 
 .rx-bg--light-blue {
   background-color: #F1F5F8;
-  color: white;
+  color: #1C2237;
 }
 
 .rx-bg--white {
