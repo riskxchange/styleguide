@@ -569,13 +569,13 @@ template {
   background: #FCFBFB;
   margin: -30px;
   margin-top: 30px;
-  padding: 30px;
+  padding: 10px 30px;
   color: #7a7a7a;
   border-radius: 0 0 4px 4px;
 }
 
-.rx-card__footer--small {
-  padding: 10px 30px;
+.rx-card__footer--large {
+  padding: 30px;
 }
 
 .rx-field {
@@ -1047,17 +1047,30 @@ template {
   margin: 0.5em 0;
 }
 
-a {
-  color: #0090FF
+.rx-link {
+  color: #0090FF;
 }
 
-a:hover,
-a:focus {
-  color: #32A6FF
+.rx-link:hover,
+.rx-link:focus {
+  color: #32A6FF;
 }
 
-a:active {
-  color: #0072CA
+.rx-link:active {
+  color: #0072CA;
+}
+
+.rx-link--white {
+  color: white;
+}
+
+.rx-link--white:hover,
+.rx-link--white:focus {
+  color: #DDD;
+}
+
+.rx-link--white:active {
+  color: #B9B9B9;
 }
 
 @-webkit-keyframes spin-cw {
@@ -1561,6 +1574,30 @@ a:active {
   }
 }
 
+.rx-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.rx-table th {
+  text-align: left;
+}
+
+.rx-table td,
+.rx-table th {
+  padding: 10px;
+  border-bottom: 1px solid #DDD;
+}
+
+.rx-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rx-table tr:nth-child(odd) td {
+  background-color: #FCFBFB;
+}
+
 .rx-utils--no-pad {
   padding: 0;
 }
@@ -1584,14 +1621,6 @@ a:active {
   float: right;
 }
 
-.rx-utils--border-top {
-  border-top: 1px solid #FCFBFB;
-}
-
-.rx-utils--border-bottom {
-  border-bottom: 1px solid #FCFBFB;
-}
-
 .rx-utils--no-scroll {
   overflow: hidden;
 }
@@ -1602,67 +1631,44 @@ a:active {
   }
 }
 
-.rx-blue {
-  color: #0090FF;
-}
-
-.rx-blue-bg {
+.rx-bg--blue {
   background-color: #0090FF;
   color: white;
 }
 
-.rx-green {
-  color: #0BBD77;
-}
-
-.rx-green-bg {
+.rx-bg--green {
   background-color: #0BBD77;
   color: white;
 }
 
-.rx-yellow {
-  color: #FFD224;
-}
-
-.rx-yellow-bg {
+.rx-bg--yellow {
   background-color: #FFD224;
   color: white;
 }
 
-.rx-orange {
-  color: #FF863C;
-}
-
-.rx-orange-bg {
+.rx-bg--orange {
   background-color: #FF863C;
   color: white;
 }
 
-.rx-red {
-  color: #FF6261;
-}
-
-.rx-red-bg {
+.rx-bg--red {
   background-color: #FF6261;
   color: white;
 }
 
-.rx-dark-blue {
-  color: #1C2237;
-}
-
-.rx-dark-blue-bg {
+.rx-bg--dark-blue {
   background-color: #1C2237;
   color: white;
 }
 
-.rx-light-blue {
-  color: #F1F5F8;
-}
-
-.rx-light-blue-bg {
+.rx-bg--light-blue {
   background-color: #F1F5F8;
   color: white;
+}
+
+.rx-bg--white {
+  background-color: white;
+  color: #1C2237;
 }
 
 h1, h2, h3, h4, h5, h6 {
