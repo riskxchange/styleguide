@@ -4,27 +4,15 @@
     <meta charset="utf-8">
     <title>RiskXchange Styleguide</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>body { display: none; }</style>
     <!-- dist -->
-    <script src="main.js" rx-dist></script>
-    <link rel="stylesheet" href="main.css" rx-dist />
+    <script rx-src="main.js" rx-dist></script>
+    <link rel="stylesheet" rx-href="main.css" rx-dist />
     <!-- icons -->
     <link rel="stylesheet" href="https://rawgit.com/riskxchange/icons/master/dist/icons.css" />
     <!-- demo -->
     <script src="./demo.js"></script>
     <link rel="stylesheet" href="./demo.css" />
-    <script>
-      (function () {
-        if (window.location.host !== 'riskxchange.github.io') return
-        function fixAttr (el, attr) {
-          var rawGit = 'https://rawgit.com/riskxchange/styleguide/master/dist/'
-          el.setAttribute(attr, rawGit + el.getAttribute(attr))
-        }
-        document.querySelectorAll('[rx-dist]').forEach(function (el) {
-          if (el.tagName === 'SCRIPT') fixAttr(el, 'src')
-          if (el.tagName === 'LINK') fixAttr(el, 'href')
-        })
-      })()
-    </script>
   </head>
   <body class="rx-body--has-subnav">
     <header class="rx-navbar">

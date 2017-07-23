@@ -1,5 +1,20 @@
 /* globals fetch, html_beautify */
 
+(function () {
+  function fixAttr (el, attr) {
+    if (window.location.host === 'riskxchange.github.io') {
+      var rawGit = 'https://rawgit.com/riskxchange/styleguide/master/dist/'
+      el.setAttribute(attr, rawGit + el.getAttribute('rx-' + attr))
+    } else {
+      el.setAttribute(attr, el.getAttribute('rx-' + attr))
+    }
+  }
+  document.querySelectorAll('[rx-dist]').forEach(function (el) {
+    if (el.tagName === 'SCRIPT') fixAttr(el, 'src')
+    if (el.tagName === 'LINK') fixAttr(el, 'href')
+  })
+})()
+
 document.addEventListener('DOMContentLoaded', function () {
   var pages = document.querySelectorAll('[rx-page]')
   var pageToSections = {}
