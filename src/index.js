@@ -1,14 +1,24 @@
 require('./styles/index.css')
 
-document.onreadystatechange = function () {
+document.onreadystatechange = init
+init()
+
+function init () {
+  console.log('[styleguide] init:', document.readyState)
   if (document.readyState !== 'complete') return
-  // navbar
+  initMenu()
+  initModal()
+}
+
+function initMenu () {
   var menuToggle = document.querySelector('.rx-navbar__menu-toggle')
   var menu = document.querySelector('.rx-navbar__menu')
   menuToggle.onclick = function () {
     menu.classList.toggle('rx-navbar__menu--mobile-visible')
   }
-  // modals
+}
+
+function initModal () {
   document.querySelectorAll('.rx-modal').forEach(function (modal) {
     var modalName = modal.getAttribute('modal')
     var openButtons = document.querySelectorAll(`.rx-btn[modal="${modalName}"]`)
@@ -28,7 +38,6 @@ document.onreadystatechange = function () {
 }
 
 function openModal (modal) {
-  console.log(modal)
   modal.classList.add('rx-modal--active')
   document.body.classList.add('rx-utils--no-scroll')
 }

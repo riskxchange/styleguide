@@ -13,9 +13,13 @@
     if (el.tagName === 'SCRIPT') fixAttr(el, 'src')
     if (el.tagName === 'LINK') fixAttr(el, 'href')
   })
+  document.onreadystatechange = init
+  init()
 })()
 
-document.addEventListener('DOMContentLoaded', function () {
+function init () {
+  console.log('[demo] init:', document.readyState)
+  if (document.readyState !== 'complete') return
   var pages = document.querySelectorAll('[rx-page]')
   var pageToSections = {}
   var sectionToPages = {}
@@ -130,4 +134,4 @@ document.addEventListener('DOMContentLoaded', function () {
       el.appendChild(codeSample)
     })
   })
-})
+}
