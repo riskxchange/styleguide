@@ -40,3 +40,10 @@ code {
   box-sizing: border-box;
   padding: 29px;
 }
+
+[rx-footer] {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #DDD;
+  margin: 30px auto;
+}
