@@ -1,3 +1,39 @@
+.rx-loader {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  font-size: 64px;
+}
+
+.rx-loader .rx-icon--logo-inner,
+.rx-loader .rx-icon--logo-letter {
+  color: var(--veryDarkBlue);
+}
+
+.rx-loader .rx-icon--logo-outer {
+  color: var(--blue);
+}
+
+.rx-loader--inverse .rx-icon--logo-inner,
+.rx-loader--inverse .rx-icon--logo-letter {
+  color: white;
+}
+
+/* secondary (light-bg/dark-bg) */
+
+.rx-loader--light-bg .rx-icon {
+  color: var(--veryDarkBlue);
+  opacity: 0.15;
+}
+
+.rx-loader--dark-bg .rx-icon {
+  color: var(--veryLightBlue);
+  opacity: 0.2;
+}
+
+/* animation */
+
 @keyframes spin-cw {
   from {
     transform: rotate(0deg);
@@ -14,35 +50,32 @@
   }
 }
 
-.rx-loader {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  font-size: 96px;
-  opacity: 0.2;
-}
-
 .rx-loader > .rx-icon {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.rx-loader > .rx-icon--logo-outer {
+.rx-loader .rx-icon--logo-outer,
+.rx-loader .rx-icon--logo-inner {
   animation-name: spin-cw;
-  animation-iteration-count: infinite;
-  animation-duration: 1700ms;
-  animation-timing-function: linear;
-}
-
-.rx-loader > .rx-icon--logo-inner {
-  animation-name: spin-ccw;
-  animation-iteration-count: infinite;
-  animation-duration: 1300ms;
-  animation-timing-function: linear;
-}
-
-.rx-loader--swing > .rx-icon {
   animation-duration: 1200ms;
   animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.rx-loader .rx-icon--logo-inner {
+  animation-name: spin-ccw;
+}
+
+.rx-loader--light-bg .rx-icon--logo-outer,
+.rx-loader--dark-bg .rx-icon--logo-outer {
+  animation-duration: 1800ms;
+  animation-timing-function: linear;
+}
+
+.rx-loader--light-bg .rx-icon--logo-inner,
+.rx-loader--dark-bg .rx-icon--logo-inner {
+  animation-duration: 1500ms;
+  animation-timing-function: linear;
 }
