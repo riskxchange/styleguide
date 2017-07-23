@@ -73,8 +73,8 @@ document.onreadystatechange = init
 init()
 
 function init () {
-  console.log('--> init:', document.readyState)
-  if (document.readyState !== 'complete') return
+  console.log('[styleguide] init:', document.readyState)
+  if (document.readyState === 'loading') return
   initMenu()
   initModal()
 }
