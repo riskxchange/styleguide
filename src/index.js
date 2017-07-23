@@ -39,10 +39,10 @@ function initModal () {
 
 function openModal (modal) {
   modal.classList.add('rx-modal--active')
-  document.body.classList.add('rx-utils--no-scroll')
+  document.body.parentNode.classList.add('rx-utils--no-scroll')
 }
 
 function closeModal (modal) {
   modal.classList.remove('rx-modal--active')
-  document.body.classList.remove('rx-utils--no-scroll')
+  document.body.parentNode.classList.remove('rx-utils--no-scroll')
 }
