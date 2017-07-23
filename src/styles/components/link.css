@@ -1,0 +1,12 @@
+a {
+  color: var(--blue)
+}
+
+a:hover,
+a:focus {
+  color: var(--lightBlue)
+}
+
+a:active {
+  color: var(--darkBlue)
+}
