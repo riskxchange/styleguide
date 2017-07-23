@@ -68,7 +68,6 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1)
-__webpack_require__(2)
 
 document.addEventListener('DOMContentLoaded', function () {
   // navbar
@@ -110,12 +109,6 @@ function closeModal (modal) {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
