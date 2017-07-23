@@ -35,13 +35,18 @@
   clear: both;
 }
 
-.rx-row--pad {
+.rx-row {
   margin: 15px -7.5px;
 }
 
-.rx-row--pad > * {
+.rx-row > * {
   box-sizing: border-box;
   padding: 0 7.5px;
+  margin-bottom: 15px;
+}
+
+.rx-row > *:last-child {
+  margin-bottom: 0;
 }
 
 .rx-col--xs-1, .rx-col--sm-1, .rx-col--md-1, .rx-col--lg-1, .rx-col--xs-2, .rx-col--sm-2, .rx-col--md-2, .rx-col--lg-2, .rx-col--xs-3, .rx-col--sm-3, .rx-col--md-3, .rx-col--lg-3, .rx-col--xs-4, .rx-col--sm-4, .rx-col--md-4, .rx-col--lg-4, .rx-col--xs-5, .rx-col--sm-5, .rx-col--md-5, .rx-col--lg-5, .rx-col--xs-6, .rx-col--sm-6, .rx-col--md-6, .rx-col--lg-6, .rx-col--xs-7, .rx-col--sm-7, .rx-col--md-7, .rx-col--lg-7, .rx-col--xs-8, .rx-col--sm-8, .rx-col--md-8, .rx-col--lg-8, .rx-col--xs-9, .rx-col--sm-9, .rx-col--md-9, .rx-col--lg-9, .rx-col--xs-10, .rx-col--sm-10, .rx-col--md-10, .rx-col--lg-10, .rx-col--xs-11, .rx-col--sm-11, .rx-col--md-11, .rx-col--lg-11, .rx-col--xs-12, .rx-col--sm-12, .rx-col--md-12, .rx-col--lg-12 {
@@ -50,6 +55,7 @@
 }
 .rx-col--xs-1, .rx-col--xs-2, .rx-col--xs-3, .rx-col--xs-4, .rx-col--xs-5, .rx-col--xs-6, .rx-col--xs-7, .rx-col--xs-8, .rx-col--xs-9, .rx-col--xs-10, .rx-col--xs-11, .rx-col--xs-12 {
   float: left;
+  margin-bottom: 0;
 }
 .rx-col--xs-12 {
   width: 100%;
@@ -130,6 +136,7 @@
 @media (--tablet) {
   .rx-col--sm-1, .rx-col--sm-2, .rx-col--sm-3, .rx-col--sm-4, .rx-col--sm-5, .rx-col--sm-6, .rx-col--sm-7, .rx-col--sm-8, .rx-col--sm-9, .rx-col--sm-10, .rx-col--sm-11, .rx-col--sm-12 {
     float: left;
+    margin-bottom: 0;
   }
   .rx-col--sm-12 {
     width: 100%;
@@ -210,6 +217,7 @@
 @media (--desktop) {
   .rx-col--md-1, .rx-col--md-2, .rx-col--md-3, .rx-col--md-4, .rx-col--md-5, .rx-col--md-6, .rx-col--md-7, .rx-col--md-8, .rx-col--md-9, .rx-col--md-10, .rx-col--md-11, .rx-col--md-12 {
     float: left;
+    margin-bottom: 0;
   }
   .rx-col--md-12 {
     width: 100%;
@@ -290,6 +298,7 @@
 @media (--largeDesktop) {
   .rx-col--lg-1, .rx-col--lg-2, .rx-col--lg-3, .rx-col--lg-4, .rx-col--lg-5, .rx-col--lg-6, .rx-col--lg-7, .rx-col--lg-8, .rx-col--lg-9, .rx-col--lg-10, .rx-col--lg-11, .rx-col--lg-12 {
     float: left;
+    margin-bottom: 0;
   }
   .rx-col--lg-12 {
     width: 100%;

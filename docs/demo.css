@@ -11,9 +11,20 @@ pre {
   color: #f1f5f8;
 }
 code {
+  padding-left: 4px;
+  padding-right: 4px;
+  background: var(--veryLightGrey);
+}
+
+[rx-page="icons"] code {
   display: block;
   margin-top: 10px;
   margin-bottom: 30px;
+}
+[rx-section="loader"] code {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
 }
 [rx-section] .rx-subnav {
   top: 0;
@@ -21,5 +32,11 @@ code {
 }
 [rx-section] .rx-navbar {
   top: 0;
-  position: relative;  
+  position: relative;
+}
+
+[rx-section="colors"] .rx-bg--light-blue {
+  border: 1px solid #dceaf4;
+  box-sizing: border-box;
+  padding: 29px;
 }

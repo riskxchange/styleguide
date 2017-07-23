@@ -30,7 +30,7 @@
 
 .rx-bg--light-blue {
   background-color: var(--veryLightBlue);
-  color: white;
+  color: var(--veryDarkBlue);
 }
 
 .rx-bg--white {
