@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractIconCss = new ExtractTextPlugin('fonts.css')
+const extractIconCss = new ExtractTextPlugin('icons.css')
 const extractCss = new ExtractTextPlugin('main.css')
 
 module.exports = {

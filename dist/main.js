@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var menuToggle = document.querySelector('.rx-navbar__menu-toggle')
   var menu = document.querySelector('.rx-navbar__menu')
   menuToggle.onclick = function () {
-    console.log('click')
     menu.classList.toggle('rx-navbar__menu--mobile-visible')
   }
   // modals
