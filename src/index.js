@@ -1,4 +1,3 @@
-require('./fonts/icons.font')
 require('./styles/index.css')
 
 document.addEventListener('DOMContentLoaded', function () {

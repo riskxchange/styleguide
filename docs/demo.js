@@ -1,17 +1,5 @@
 /* globals fetch, html_beautify */
 
-(function () {
-  if (window.location.host !== 'riskxchange.github.io') return
-  function fixAttr (el, attr) {
-    var rawGit = 'https://rawgit.com/riskxchange/styleguide/master/dist/'
-    el.setAttribute(attr, rawGit + el.getAttribute(attr))
-  }
-  document.querySelectorAll('[rx-dist]').forEach(function (el) {
-    if (el.tagName === 'SCRIPT') fixAttr(el, 'src')
-    if (el.tagName === 'LINK') fixAttr(el, 'href')
-  })
-})()
-
 document.addEventListener('DOMContentLoaded', function () {
   var pages = document.querySelectorAll('[rx-page]')
   var pageToSections = {}
@@ -101,9 +89,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  fetch('/api/icons')
+  fetch('https://rawgit.com/riskxchange/icons/master/dist/icons.json')
   .then((res) => res.json())
-  .then((data) => {
+  .then((json) => {
+    var data = Object.keys(json)
     var div = document.createElement('div')
     div.className = 'rx-card rx-utils--clearfix'
     data.forEach((icon) => (
