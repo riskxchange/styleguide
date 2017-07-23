@@ -12,7 +12,6 @@ html, body {
   overflow-x: hidden;
   color: var(--veryDarkBlue);
   transition: background-color 2s;
-  /*background: #f4f5f8;*/
   background: var(--veryLightBlue);
   font-family: var(--fontStack);
   font-size: var(--fontSizeDefault);
