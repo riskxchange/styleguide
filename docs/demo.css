@@ -15,7 +15,6 @@ code {
   padding-right: 4px;
   background: var(--veryLightGrey);
 }
-
 [rx-page="icons"] code {
   display: block;
   margin-top: 10px;

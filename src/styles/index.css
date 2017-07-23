@@ -11,7 +11,6 @@ html, body {
   min-width: 320px;
   overflow-x: hidden;
   color: var(--veryDarkBlue);
-  transition: background-color 2s;
   background: var(--veryLightBlue);
   font-family: var(--fontStack);
   font-size: var(--fontSizeDefault);
