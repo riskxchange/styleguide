@@ -1,6 +1,13 @@
 /* globals fetch, html_beautify */
 
-(function () {
+
+document.onreadystatechange = init
+init()
+
+function init () {
+  console.log('[demo] init:', document.readyState)
+  if (document.readyState === 'loading') return
+
   function fixAttr (el, attr) {
     if (window.location.host === 'riskxchange.github.io') {
       var rawGit = 'https://rawgit.com/riskxchange/styleguide/master/dist/'
@@ -13,13 +20,7 @@
     if (el.tagName === 'SCRIPT') fixAttr(el, 'src')
     if (el.tagName === 'LINK') fixAttr(el, 'href')
   })
-  document.onreadystatechange = init
-  init()
-})()
 
-function init () {
-  console.log('[demo] init:', document.readyState)
-  if (document.readyState === 'loading') return
   var pages = document.querySelectorAll('[rx-page]')
   var pageToSections = {}
   var sectionToPages = {}
