@@ -48,19 +48,15 @@ function init () {
     document.querySelector('.rx-navbar__links').appendChild(el)
 
     var hash = window.location.hash.replace('#', '')
-    console.log(page)
-    page.style = 'display: none;'
+    page.setAttribute('style', 'display: none;')
 
-    if (hash ? id === hash : i === 0) {
+    if (!hash ? i === 0 : (
+      id === hash ||
+      (sectionToPages[hash] && sectionToPages[hash].getAttribute('rx-page') === id)
+    )) {
       el.classList.add('rx-navbar__link--active')
-      page.style = 'display: block;'
-      initSubnav(id)
-    } else if (sectionToPages[hash]) {
-      if (sectionToPages[hash].getAttribute('rx-page') === id) {
-        el.classList.add('rx-navbar__link--active')
-        page.style = 'display: block;'
-        initSubnav(id, hash)
-      }
+      page.setAttribute('style', 'display: block;')
+      initSubnav(id, hash)
     }
   })
 
@@ -68,7 +64,11 @@ function init () {
     link.onclick = function (e) {
       var id = e.target.href.split('#')[1]
       pages.forEach((page) => {
-        page.style = page.getAttribute('rx-page') === id ? 'display: block;' : 'display: none;'
+        if (page.getAttribute('rx-page') === id) {
+          page.setAttribute('style', 'display: block;')
+        } else {
+          page.setAttribute('style', 'display: none;')
+        }
       })
       document.querySelector('.rx-navbar__link--active').classList.remove('rx-navbar__link--active')
       document.querySelector(`[href="#${id}"]`).classList.add('rx-navbar__link--active')
@@ -80,10 +80,10 @@ function init () {
     try {
       var sections = pageToSections[pageId]
       if (!sections.length) {
-        subnav.style = 'display: none;'
+        subnav.setAttribute('style', 'display: none;')
         document.body.classList.remove('rx-body--has-subnav')
       } else {
-        subnav.style = 'display: block;'
+        subnav.setAttribute('style', 'display: block;')
         document.body.classList.add('rx-body--has-subnav')
       }
       subnavLinks.innerHTML = ''
