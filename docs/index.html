@@ -243,13 +243,41 @@
       </div>
       <!-- input group -->
       <div class="rx-utils--vertical-space" rx-section="input-groups">
-        <h2>⚠️ Input group</h2>
+        <h2>Input Group</h2>
         <p>Warning: This component is still in WIP</p>
-        <div class="rx-input-group">
-          <div class="rx-input-group__icon">
-            <span class="rx-icon rx-icon--search"></span>
+        <div class="rx-field">
+          <div class="rx-input-group">
+            <div class="rx-input-group__icon">
+              <span class="rx-icon rx-icon--search"></span>
+            </div>
+            <input class="rx-input" placeholder="Search..." />
           </div>
-          <input class="rx-input" placeholder="search..." />
+        </div>
+        <div class="rx-field">
+          <div class="rx-input-group rx-input-group--disabled">
+            <div class="rx-input-group__icon">
+              <span class="rx-icon rx-icon--search"></span>
+            </div>
+            <input class="rx-input" placeholder="Don't search..." />
+          </div>
+        </div>
+        <div class="rx-field">
+          <div class="rx-input-group rx-input-group--error">
+            <div class="rx-input-group__icon">£</div>
+            <input class="rx-input" placeholder="0.00" type="number" />
+          </div>
+        </div>
+        <div class="rx-field">
+          <div class="rx-input-group rx-input-group--success">
+            <input class="rx-input" placeholder="0.00" />
+            <div class="rx-input-group__icon">°C</div>
+          </div>
+        </div>
+        <div class="rx-field">
+          <div class="rx-input-group rx-input-group--blocked">
+            <div class="rx-input-group__icon">$</div>
+            <input class="rx-input" placeholder="0.00" />
+          </div>
         </div>
       </div>
       <!-- select -->
