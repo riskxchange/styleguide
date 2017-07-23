@@ -48,6 +48,7 @@ function init () {
     document.querySelector('.rx-navbar__links').appendChild(el)
 
     var hash = window.location.hash.replace('#', '')
+    console.log(page)
     page.style = 'display: none;'
 
     if (hash ? id === hash : i === 0) {
