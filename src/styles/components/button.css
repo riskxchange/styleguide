@@ -1,0 +1,76 @@
+.rx-btn {
+  border: 1px solid var(--grey);
+  background-color: #FAFAFA;
+  font-family: var(--fontStack);
+  font-size: var(--fontSizeDefault);
+  line-height: calc(var(--inputHeight) - 2px);
+  border-radius: 4px;
+  padding: 0 12px;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.rx-btn:hover {
+  background: #FFF;
+}
+
+.rx-btn:active {
+  background: #F6F6F6;;
+}
+
+.rx-btn--primary {
+  border-color: var(--darkGreen);
+  background-color: var(--green);
+  color: white;
+}
+
+.rx-btn--primary:hover {
+  background-color: var(--lightGreen);
+}
+
+.rx-btn--primary:active {
+  background-color: var(--darkGreen);
+}
+
+.rx-btn--info {
+  border-color: var(--darkBlue);
+  background-color: var(--blue);
+  color: white;
+}
+
+.rx-btn--info:hover {
+  background-color: var(--lightBlue);
+}
+
+.rx-btn--info:active {
+  background-color: var(--darkBlue);
+}
+
+.rx-btn--danger {
+  border-color: var(--darkRed);
+  background-color: var(--red);
+  color: white;
+}
+
+.rx-btn--danger:hover {
+  background-color: var(--lightRed);
+}
+
+.rx-btn--danger:active {
+  background-color: var(--darkRed);
+}
+
+.rx-btn[disabled],
+.rx-btn--disabled {
+  border: 1px solid var(--grey) !important;
+  color: var(--grey) !important;
+  background-color: #EEE !important;
+  cursor: not-allowed;
+}
+
+.rx-btn--blocked {
+  display: block;
+  width: 100%;
+}

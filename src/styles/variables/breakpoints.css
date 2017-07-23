@@ -1,0 +1,9 @@
+:root {
+  --tabletWidth: 768px;
+  --desktopWidth: 992px;
+  --largeDesktopWidth: 1200px;
+}
+
+@custom-media --tablet (min-width: 768px);
+@custom-media --desktop (min-width: 992px);
+@custom-media --largeDesktop (min-width: 1200px);

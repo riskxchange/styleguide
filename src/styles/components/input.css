@@ -1,0 +1,44 @@
+.rx-input {
+  height: var(--inputHeight);
+  border-radius: 4px;
+  appearance: none;
+  background-image: none;
+  background: #fff;
+  border-color: var(--grey);
+  border-width: 1px;
+  border-style: solid;
+  text-indent: 10px;
+  outline: none;
+  min-width: 240px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.rx-input--blocked {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.rx-input:disabled,
+.rx-input--disabled {
+  background-color: #EEE;
+  cursor: not-allowed;
+}
+
+.rx-input:disabled::placeholder,
+.rx-input--disabled::placeholder {
+  color: var(--grey);
+}
+
+.rx-input:focus {
+  border-color: var(--blue);
+}
+
+.rx-input--success {
+  border-color: var(--green);
+}
+
+.rx-input--error {
+  border-color: var(--red);
+}

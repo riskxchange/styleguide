@@ -1,0 +1,24 @@
+@import '../../node_modules/normalize.css/normalize.css';
+@import 'variables';
+@import 'components';
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+html, body {
+  min-width: 320px;
+  overflow-x: hidden;
+  color: var(--veryDarkBlue);
+  transition: background-color 2s;
+  /*background: #f4f5f8;*/
+  background: var(--veryLightBlue);
+  font-family: var(--fontStack);
+  font-size: var(--fontSizeDefault);
+}
+
+@media (--tablet) {
+  body {
+    margin-top: var(--navbarHeight);  
+  }
+}

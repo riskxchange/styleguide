@@ -1,0 +1,26 @@
+.rx-card {
+  padding: 30px;
+  background: white;
+  box-shadow: var(--shadowLevel1);
+  transition: box-shadow 0.3s;
+  border-radius: 4px;
+}
+
+.rx-card--clickable:hover {
+  box-shadow: var(--shadowLevel2);
+  cursor: pointer;
+}
+
+.rx-card--clickable:active {
+  background: var(--lightGrey);
+}
+
+.rx-card__footer {
+  border-top: 1px solid #DDD;
+  background: var(--lightGrey);
+  margin: -30px;
+  margin-top: 30px;
+  padding: 10px 30px;
+  color: #7a7a7a;
+  border-radius: 0 0 4px 4px;
+}

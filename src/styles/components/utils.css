@@ -1,0 +1,104 @@
+.rx-utils--no-pad {
+  padding: 0;
+}
+
+.rx-utils--vertical-space {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.rx-utils--clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.rx-utils--float-left {
+  float: left;
+}
+
+.rx-utils--float-right {
+  float: right;
+}
+
+.rx-utils--border-top {
+  border-top: 1px solid var(--lightGrey);
+}
+
+.rx-utils--border-bottom {
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+.rx-utils--no-scroll {
+  overflow: hidden;
+}
+
+@media (--tablet) {
+  .rx-body--has-subnav {
+    margin-top: calc(var(--navbarHeight) + var(--subnavHeight));
+  }
+}
+
+.rx-blue {
+  color: var(--blue);
+}
+
+.rx-blue-bg {
+  background-color: var(--blue);
+  color: white;
+}
+
+
+.rx-green {
+  color: var(--green);
+}
+
+.rx-green-bg {
+  background-color: var(--green);
+  color: white;
+}
+
+.rx-yellow {
+  color: var(--yellow);
+}
+
+.rx-yellow-bg {
+  background-color: var(--yellow);
+  color: white;
+}
+
+.rx-orange {
+  color: var(--orange);
+}
+
+.rx-orange-bg {
+  background-color: var(--orange);
+  color: white;
+}
+
+.rx-red {
+  color: var(--red);
+}
+
+.rx-red-bg {
+  background-color: var(--red);
+  color: white;
+}
+
+.rx-dark-blue {
+  color: var(--veryDarkBlue);
+}
+
+.rx-dark-blue-bg {
+  background-color: var(--veryDarkBlue);
+  color: white;
+}
+
+.rx-light-blue {
+  color: var(--veryLightBlue);
+}
+
+.rx-light-blue-bg {
+  background-color: var(--veryLightBlue);
+  color: white;
+}

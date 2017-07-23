@@ -1,0 +1,87 @@
+.rx-modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  transition: left 0.5s;
+  left: -100%;
+  z-index: 101;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.rx-modal--active {
+  left: 0;
+  opacity: 1;
+}
+
+.rx-modal__container {
+  padding: 20px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.rx-modal__body,
+.rx-modal__footer {
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.rx-modal__body {
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  padding: 20px;
+  text-align: left;
+  background: white;
+}
+
+.rx-modal__footer {
+  border-radius: 0 0 4px 4px;
+  background-color: var(--lightGrey);
+  border-top: 1px solid #DDD;
+  line-height: 48px;
+}
+
+.rx-modal__navigation {
+  position: relative;
+  height: 20px;
+}
+
+.rx-modal__close-btn {
+  background: none;
+  border: none;
+  position: absolute;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  right: 7px;
+  top: 7px;
+  width: 24px;
+  height: 24px;
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.rx-modal__close-btn:hover {
+  opacity: 0.8;
+}
+
+.rx-modal__title {
+  text-align: center;
+  font-size: 24px;
+}
+
+
+@media (--tablet) {
+
+}
