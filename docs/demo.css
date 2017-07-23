@@ -47,7 +47,7 @@ code {
   margin: 30px auto;
 }
 
-h1 code {
+[rx-page="icons"] code {
   margin: 0 !important;
   font-size: 12px;
   display: inline-block !important;
@@ -57,4 +57,17 @@ h1 code {
   background: white;
   border: 1px solid #CCC;
   border-radius: 4px;
+}
+
+[rx-page="icons"] .rx-icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 32px;
+  width: 100%;
+}
+
+[rx-icon-example] {
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

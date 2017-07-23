@@ -130,8 +130,10 @@ function initIcons () {
     data.forEach((icon) => (
       div.innerHTML += `
         <div class="rx-col--sm-3 rx-col--xs-6">
-          <i class="rx-icon rx-icon--${icon}" style="font-size: 32px"></i>
-          <code>${icon}</code>
+          <div rx-icon-example>
+            <i class="rx-icon rx-icon--${icon}"></i>
+            <code>${icon}</code>
+          </div>
         </div>
       `)
     )
