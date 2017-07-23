@@ -1,12 +1,14 @@
 /* globals fetch, html_beautify */
 
+var ICON_VERSION = '0.2.4'
+
 document.onreadystatechange = init
 init()
+initIcons()
 
 function init () {
   console.log('[demo] init:', document.readyState)
   if (document.readyState === 'loading') return
-
   function fixAttr (el, attr) {
     if (window.location.host === 'riskxchange.github.io') {
       var rawGit = 'https://rawgit.com/riskxchange/styleguide/master/dist/'
@@ -28,7 +30,10 @@ function init () {
   var subnavLinks = subnav.querySelector('.rx-subnav__links')
 
   pages.forEach(function (page, i) {
-    var title = page.querySelector('h1').innerText
+    var h1 = page.querySelector('h1').cloneNode()
+    h1.innerHTML = page.querySelector('h1').innerHTML
+    if (h1.querySelector('code')) h1.querySelector('code').innerText = ''
+    var title = h1.innerText
     var id = page.getAttribute('rx-page')
     var el = document.createElement('a')
     el.className = 'rx-navbar__link'
@@ -108,8 +113,15 @@ function init () {
       throw err
     }
   }
+}
 
-  fetch('https://rawgit.com/riskxchange/icons/master/dist/icons.json')
+function initIcons () {
+  var linkTag = document.createElement('link')
+  linkTag.setAttribute('rel', 'stylesheet')
+  linkTag.setAttribute('href', 'https://cdn.rawgit.com/riskxchange/icons/' + ICON_VERSION + '/dist/main.min.css')
+  document.body.parentNode.querySelector('head').appendChild(linkTag)
+  document.querySelector('[rx-icon-version]').innerText = 'v' + ICON_VERSION
+  fetch('https://cdn.rawgit.com/riskxchange/icons/' + ICON_VERSION + '/dist/icons.json')
   .then((res) => res.json())
   .then((json) => {
     var data = Object.keys(json)

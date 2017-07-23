@@ -1576,19 +1576,22 @@ template {
 }
 
 .rx-checkbox:checked:before {
-  position: relative;
-  content: '\2714';
+  position: absolute;
+  content: '';
+  display: block;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgOTggNzgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNDMuNjRsMzQuMzA1IDM0LjMwNSA2My42NC02My42NEw4My42NCAwIDMzLjk1NyA0OS44MmwtMjAtMjAiIGZpbGw9IiMwMDkwRkYiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 12px;
+  height: 12px;
   opacity: 1;
-  color: #0090FF;
-  font-size: 14px;
-  line-height: 18px;
-  top: -1px;
+  top: 3px;
   left: 2px;
 }
 
 .rx-checkbox:checked:active:before,
 .rx-checkbox:checked:focus:before {
-  top: -2px;
+  top: 2px;
   left: 1px;
 }
 
