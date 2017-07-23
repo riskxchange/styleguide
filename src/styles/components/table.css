@@ -1,0 +1,23 @@
+.rx-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.rx-table th {
+  text-align: left;
+}
+
+.rx-table td,
+.rx-table th {
+  padding: 10px;
+  border-bottom: 1px solid #DDD;
+}
+
+.rx-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rx-table tr:nth-child(odd) td {
+  background-color: var(--lightGrey);
+}

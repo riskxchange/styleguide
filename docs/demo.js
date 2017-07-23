@@ -81,10 +81,10 @@ function init () {
       var sections = pageToSections[pageId]
       if (!sections.length) {
         subnav.setAttribute('style', 'display: none;')
-        document.body.classList.remove('rx-body--has-subnav')
+        document.body.classList.remove('rx-utils--body-has-subnav')
       } else {
         subnav.setAttribute('style', 'display: block;')
-        document.body.classList.add('rx-body--has-subnav')
+        document.body.classList.add('rx-utils--body-has-subnav')
       }
       subnavLinks.innerHTML = ''
       sections.forEach((section, i) => {

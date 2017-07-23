@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://rawgit.com/riskxchange/icons/master/dist/icons.css" />
     <link rel="stylesheet" href="./demo.css" />
   </head>
-  <body class="rx-body--has-subnav">
+  <body class="rx-utils--body-has-subnav">
     <header class="rx-navbar">
       <div class="rx-container rx-utils--no-pad">
         <div class="rx-navbar__logo">
@@ -72,13 +72,23 @@
         </div>
       </div>
       <!-- links -->
-      <div class="rx-utils--vertical-space" rx-section="table">
+      <div class="rx-utils--vertical-space" rx-section="links">
         <h2>Links</h2>
-        <a href="#">I am a link</a>
+        <div class="rx-row rx-row--pad">
+          <div class="rx-col--sm-6">
+            <div class="rx-card rx-bg--white">
+              <a class="rx-link" href="#">I am a link</a>
+            </div>
+          </div>
+          <div class="rx-col--sm-6">
+            <div class="rx-card rx-bg--dark-blue">
+              <a class="rx-link--white" href="#">I am a white link</a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="rx-utils--vertical-space" rx-section="table">
-        <h2>⚠️ Table</h2>
-        <p>Warning: This component is still in WIP</p>
+        <h2>Table</h2>
         <div class="rx-card">
           <table class="rx-table">
             <thead>
@@ -114,24 +124,24 @@
         <p>Below are the primary colours used in the RiskXchange pallette:</p>
         <div class="rx-row rx-row--pad">
           <div class="rx-col--sm-3">
-            <div class="rx-blue-bg rx-card">rx-blue</div>
+            <div class="rx-bg--blue rx-card">rx-blue</div>
           </div>
           <div class="rx-col--sm-3">
-            <div class="rx-green-bg rx-card">rx-green</div>
+            <div class="rx-bg--green rx-card">rx-green</div>
           </div>
           <div class="rx-col--sm-3">
-            <div class="rx-yellow-bg rx-card">rx-yellow</div>
+            <div class="rx-bg--yellow rx-card">rx-yellow</div>
           </div>
           <div class="rx-col--sm-3">
-            <div class="rx-orange-bg rx-card">rx-orange</div>
+            <div class="rx-bg--orange rx-card">rx-orange</div>
           </div>
         </div>
         <div class="rx-row rx-row--pad">
           <div class="rx-col--sm-3">
-            <div class="rx-red-bg rx-card">rx-red</div>
+            <div class="rx-bg--red rx-card">rx-red</div>
           </div>
           <div class="rx-col--sm-3">
-            <div class="rx-dark-blue-bg rx-card">rx-dark-blue</div>
+            <div class="rx-bg--dark-blue rx-card">rx-dark-blue</div>
           </div>
         </div>
       </div>
@@ -340,6 +350,12 @@
           rx-card__footer
           <div class="rx-card__footer">
             (I am the footer)
+          </div>
+        </div>
+        <div class="rx-card rx-utils--vertical-space">
+          rx-card__footer--large
+          <div class="rx-card__footer rx-card__footer--large">
+            (I am the large footer)
           </div>
         </div>
         <div class="rx-card rx-card--clickable rx-utils--vertical-space">

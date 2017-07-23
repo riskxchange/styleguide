@@ -1,12 +1,25 @@
-a {
-  color: var(--blue)
+.rx-link {
+  color: var(--blue);
 }
 
-a:hover,
-a:focus {
-  color: var(--lightBlue)
+.rx-link:hover,
+.rx-link:focus {
+  color: var(--lightBlue);
 }
 
-a:active {
-  color: var(--darkBlue)
+.rx-link:active {
+  color: var(--darkBlue);
+}
+
+.rx-link--white {
+  color: white;
+}
+
+.rx-link--white:hover,
+.rx-link--white:focus {
+  color: #DDD;
+}
+
+.rx-link--white:active {
+  color: var(--grey);
 }

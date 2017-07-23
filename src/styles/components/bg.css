@@ -1,0 +1,39 @@
+.rx-bg--blue {
+  background-color: var(--blue);
+  color: white;
+}
+
+.rx-bg--green {
+  background-color: var(--green);
+  color: white;
+}
+
+.rx-bg--yellow {
+  background-color: var(--yellow);
+  color: white;
+}
+
+.rx-bg--orange {
+  background-color: var(--orange);
+  color: white;
+}
+
+.rx-bg--red {
+  background-color: var(--red);
+  color: white;
+}
+
+.rx-bg--dark-blue {
+  background-color: var(--veryDarkBlue);
+  color: white;
+}
+
+.rx-bg--light-blue {
+  background-color: var(--veryLightBlue);
+  color: white;
+}
+
+.rx-bg--white {
+  background-color: white;
+  color: var(--veryDarkBlue);
+}
