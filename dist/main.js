@@ -69,7 +69,8 @@
 
 __webpack_require__(1)
 
-document.addEventListener('DOMContentLoaded', function () {
+document.onreadystatechange = function () {
+  if (document.readyState !== 'complete') return
   // navbar
   var menuToggle = document.querySelector('.rx-navbar__menu-toggle')
   var menu = document.querySelector('.rx-navbar__menu')
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     modalBody.onclick = (e) => e.stopPropagation()
     modalFooter.onclick = (e) => e.stopPropagation()
   })
-})
+}
 
 function openModal (modal) {
   console.log(modal)

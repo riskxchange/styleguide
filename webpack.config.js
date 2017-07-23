@@ -14,7 +14,7 @@ module.exports = {
       test: /(.*).css$/,
       use: extractCss.extract({
         use: [
-          { loader: 'css-loader', options: { importLoaders: 1, minimize: 1 } },
+          { loader: 'css-loader', options: { importLoaders: 1 } },
           'postcss-loader'
         ]
       })
