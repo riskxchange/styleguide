@@ -6,4 +6,9 @@
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  min-height: 24px;
+}
+
+.rx-logo--inverse {
+  background-image: url('../images/logo-inverse.svg');
 }

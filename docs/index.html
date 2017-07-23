@@ -13,7 +13,7 @@
     <header class="rx-navbar">
       <div class="rx-container rx-utils--no-pad">
         <div class="rx-navbar__logo">
-          <a class="rx-logo" href="#"></a>
+          <a class="rx-logo rx-logo--inverse" href="#"></a>
         </div>
         <button class="rx-navbar__menu-toggle">
           <span class="rx-icon rx-icon--menu-toggle"></span>
@@ -30,7 +30,7 @@
     </nav>
     <!-- layouts -->
     <div class="rx-container" rx-page="layout">
-      <h1>Layout</h1>
+      <h1>Basics</h1>
       <!-- grid -->
       <div class="rx-utils--vertical-space" rx-section="grids">
         <h2>Grid</h2>
@@ -46,10 +46,10 @@
             </div>
           </div>
         </div>
-        <div class="rx-row rx-row--pad">
-          <div class="rx-col--sm-3">
+        <div class="rx-row">
+          <div class="rx-col--sm-4">
             <div class="rx-card">
-              sm-3
+              sm-4
             </div>
           </div>
           <div class="rx-col--sm-4">
@@ -57,9 +57,31 @@
               sm-4
             </div>
           </div>
-          <div class="rx-col--sm-5">
+          <div class="rx-col--sm-4">
             <div class="rx-card">
-              sm-5
+              sm-4
+            </div>
+          </div>
+        </div>
+        <div class="rx-row">
+          <div class="rx-col--xs-3">
+            <div class="rx-card">
+              xs-3
+            </div>
+          </div>
+          <div class="rx-col--xs-3">
+            <div class="rx-card">
+              xs-3
+            </div>
+          </div>
+          <div class="rx-col--xs-3">
+            <div class="rx-card">
+              xs-3
+            </div>
+          </div>
+          <div class="rx-col--xs-3">
+            <div class="rx-card">
+              xs-3
             </div>
           </div>
         </div>
@@ -71,77 +93,52 @@
           <p>Use containers to align content correctly in the middle of the page.</p>
         </div>
       </div>
-      <!-- links -->
-      <div class="rx-utils--vertical-space" rx-section="links">
-        <h2>Links</h2>
-        <div class="rx-row rx-row--pad">
+      <!-- colors -->
+      <div class="rx-utils--vertical-space" rx-section="colors">
+        <h2>Colors</h2>
+        <p>Below are the primary colours used in the RiskXchange pallette:</p>
+        <div class="rx-row">
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--blue rx-card">blue</div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--green rx-card">green</div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--yellow rx-card">yellow</div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--orange rx-card">orange</div>
+          </div>
+        </div>
+        <div class="rx-row">
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--red rx-card">red</div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--dark-blue rx-card">dark-blue</div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--white rx-card">white</div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-bg--light-blue rx-card">light-blue</div>
+          </div>
+        </div>
+      </div>
+      <!-- utils -->
+      <div class="rx-utils--vertical-space" rx-section="logos">
+        <h2>Logos</h2>
+        <div class="rx-row">
           <div class="rx-col--sm-6">
             <div class="rx-card rx-bg--white">
-              <a class="rx-link" href="#">I am a link</a>
+              <div class="rx-logo"></div>
             </div>
           </div>
           <div class="rx-col--sm-6">
             <div class="rx-card rx-bg--dark-blue">
-              <a class="rx-link--white" href="#">I am a white link</a>
+              <div class="rx-logo rx-logo--inverse"></div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="rx-utils--vertical-space" rx-section="table">
-        <h2>Table</h2>
-        <div class="rx-card">
-          <table class="rx-table">
-            <thead>
-              <tr>
-                <th>Fruit</th>
-                <th>Price</th>
-                <th>Color</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Apple</td>
-                <td>30p</td>
-                <td>green</td>
-              </tr>
-              <tr>
-                <td>Banana</td>
-                <td>25p</td>
-                <td>yellow</td>
-              </tr>
-              <tr>
-                <td>Carrot</td>
-                <td>18p</td>
-                <td>orange</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <!-- container -->
-      <div class="rx-utils--vertical-space" rx-section="colors">
-        <h2>Colors</h2>
-        <p>Below are the primary colours used in the RiskXchange pallette:</p>
-        <div class="rx-row rx-row--pad">
-          <div class="rx-col--sm-3">
-            <div class="rx-bg--blue rx-card">rx-blue</div>
-          </div>
-          <div class="rx-col--sm-3">
-            <div class="rx-bg--green rx-card">rx-green</div>
-          </div>
-          <div class="rx-col--sm-3">
-            <div class="rx-bg--yellow rx-card">rx-yellow</div>
-          </div>
-          <div class="rx-col--sm-3">
-            <div class="rx-bg--orange rx-card">rx-orange</div>
-          </div>
-        </div>
-        <div class="rx-row rx-row--pad">
-          <div class="rx-col--sm-3">
-            <div class="rx-bg--red rx-card">rx-red</div>
-          </div>
-          <div class="rx-col--sm-3">
-            <div class="rx-bg--dark-blue rx-card">rx-dark-blue</div>
           </div>
         </div>
       </div>
@@ -154,7 +151,7 @@
         <header class="rx-navbar">
           <div class="rx-container rx-utils--no-pad">
             <div class="rx-navbar__logo">
-              <a class="rx-logo" href="#"></a>
+              <a class="rx-logo rx-logo--inverse" href="#"></a>
             </div>
             <button class="rx-navbar__menu-toggle">
               <span class="rx-icon rx-icon--menu-toggle"></span>
@@ -229,7 +226,7 @@
             <label class="rx-label rx-label--blocked">Disabled</label>
             <input class="rx-input rx-input" disabled placeholder="disabled" />
           </div>
-          <div class="rx-row rx-row--pad">
+          <div class="rx-row">
             <div class="rx-field rx-col--xs-6">
               <label class="rx-label">First name</label>
               <input class="rx-input rx-input--blocked" placeholder="John" />
@@ -244,7 +241,6 @@
       <!-- input group -->
       <div class="rx-utils--vertical-space" rx-section="input-groups">
         <h2>Input Group</h2>
-        <p>Warning: This component is still in WIP</p>
         <div class="rx-field">
           <div class="rx-input-group">
             <div class="rx-input-group__icon">
@@ -306,7 +302,7 @@
       <!-- checkbox/radio -->
       <div class="rx-utils--vertical-space" rx-section="checkbox">
         <h2>Checkbox/Radios</h2>
-        <div class="rx-row rx-row--pad">
+        <div class="rx-row">
           <div class="rx-field rx-col--xs-6">
             <label class="rx-label">
               <input class="rx-checkbox" type="checkbox" />
@@ -328,7 +324,7 @@
             </label>
           </div>
         </div>
-        <div class="rx-row rx-row--pad">
+        <div class="rx-row">
           <div class="rx-field rx-col--xs-6">
             <label class="rx-label">
               <input class="rx-radio" name="radio" type="radio" />
@@ -391,14 +387,6 @@
           rx-card--clickable
         </div>
       </div>
-      <!-- search -->
-      <div class="rx-utils--vertical-space" rx-section="search">
-        <h2>⚠️ Search</h2>
-        <p>Warning: This component is still in WIP</p>
-        <div class="rx-search">
-          <input class="rx-search__input" />
-        </div>
-      </div>
       <!-- modal -->
       <div class="rx-utils--vertical-space" rx-section="modals">
         <h2>Modal</h2>
@@ -417,18 +405,98 @@
         </div>
         <button class="rx-btn" modal="test">Open modal</button>
       </div>
+      <!-- links -->
+      <div class="rx-utils--vertical-space" rx-section="links">
+        <h2>Links</h2>
+        <div class="rx-row">
+          <div class="rx-col--sm-6">
+            <div class="rx-card rx-bg--white">
+              <a class="rx-link" href="#">I am a link</a>
+            </div>
+          </div>
+          <div class="rx-col--sm-6">
+            <div class="rx-card rx-bg--dark-blue">
+              <a class="rx-link--white" href="#">I am a white link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- table -->
+      <div class="rx-utils--vertical-space" rx-section="table">
+        <h2>Table</h2>
+        <div class="rx-card">
+          <table class="rx-table">
+            <thead>
+              <tr>
+                <th>Fruit</th>
+                <th>Price</th>
+                <th>Color</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Apple</td>
+                <td>30p</td>
+                <td>green</td>
+              </tr>
+              <tr>
+                <td>Banana</td>
+                <td>25p</td>
+                <td>yellow</td>
+              </tr>
+              <tr>
+                <td>Carrot</td>
+                <td>18p</td>
+                <td>orange</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <!-- loader -->
       <div class="rx-utils--vertical-space" rx-section="loader">
         <h2>Loader</h2>
-        <div class="rx-loader">
-          <div class="rx-icon rx-icon--logo-outer"></div>
-          <div class="rx-icon rx-icon--logo-inner"></div>
-          <div class="rx-icon rx-icon--logo-letter"></div>
-        </div>
-        <div class="rx-loader rx-loader--swing">
-          <div class="rx-icon rx-icon--logo-outer"></div>
-          <div class="rx-icon rx-icon--logo-inner"></div>
-          <div class="rx-icon rx-icon--logo-letter"></div>
+        <div class="rx-row">
+          <div class="rx-col--sm-3">
+            <div class="rx-card">
+              <div class="rx-loader">
+                <div class="rx-icon rx-icon--logo-outer"></div>
+                <div class="rx-icon rx-icon--logo-inner"></div>
+                <div class="rx-icon rx-icon--logo-letter"></div>
+              </div>
+              <code>rx-loader</code>
+            </div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-card rx-bg--dark-blue">
+              <div class="rx-loader rx-loader--inverse">
+                <div class="rx-icon rx-icon--logo-outer"></div>
+                <div class="rx-icon rx-icon--logo-inner"></div>
+                <div class="rx-icon rx-icon--logo-letter"></div>
+              </div>
+              <code>rx-loader--inverse</code>
+            </div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-card">
+              <div class="rx-loader rx-loader--light-bg">
+                <div class="rx-icon rx-icon--logo-outer"></div>
+                <div class="rx-icon rx-icon--logo-inner"></div>
+                <div class="rx-icon rx-icon--logo-letter"></div>
+              </div>
+              <code>rx-loader--light-bg</code>
+            </div>
+          </div>
+          <div class="rx-col--sm-3">
+            <div class="rx-card rx-bg--dark-blue">
+              <div class="rx-loader rx-loader--dark-bg">
+                <div class="rx-icon rx-icon--logo-outer"></div>
+                <div class="rx-icon rx-icon--logo-inner"></div>
+                <div class="rx-icon rx-icon--logo-letter"></div>
+              </div>
+              <code>rx-loader--dark-bg</code>
+            </div>
+          </div>
         </div>
       </div>
     </div>
