@@ -11,6 +11,7 @@
   display: inline-block;
   color: var(--veryDarkBlue);
   transition: border-color 0.3s, background-color 0.3s;
+  text-decoration: none;
 }
 
 .rx-btn:hover {
