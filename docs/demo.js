@@ -19,7 +19,7 @@
 
 function init () {
   console.log('[demo] init:', document.readyState)
-  if (document.readyState !== 'complete') return
+  if (document.readyState === 'loading') return
   var pages = document.querySelectorAll('[rx-page]')
   var pageToSections = {}
   var sectionToPages = {}

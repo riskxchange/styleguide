@@ -5,7 +5,7 @@ init()
 
 function init () {
   console.log('[styleguide] init:', document.readyState)
-  if (document.readyState !== 'complete') return
+  if (document.readyState === 'loading') return
   initMenu()
   initModal()
 }
