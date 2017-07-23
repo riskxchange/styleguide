@@ -1043,6 +1043,19 @@ template {
   margin: 0.5em 0;
 }
 
+a {
+  color: #0090FF
+}
+
+a:hover,
+a:focus {
+  color: #32A6FF
+}
+
+a:active {
+  color: #0072CA
+}
+
 @-webkit-keyframes spin-cw {
   from {
     -webkit-transform: rotate(0deg);
