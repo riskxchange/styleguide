@@ -23,3 +23,7 @@
 .rx-link--white:active {
   color: var(--grey);
 }
+
+.rx-link--plain {
+  text-decoration: none;
+}

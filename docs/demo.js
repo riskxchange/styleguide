@@ -142,8 +142,8 @@ function initIcons () {
     document.querySelectorAll('[rx-section], [rx-page=icons]').forEach(function (el) {
       var clone = el.cloneNode()
       clone.innerHTML = el.innerHTML
-      var h2 = clone.querySelector('h1, h2')
-      h2.parentNode.removeChild(h2)
+      var h2 = clone.querySelectorAll('h1, h2, [rx-description]')
+      h2.forEach(function (el) { el.parentNode.removeChild(el) })
       var codeSample = document.createElement('pre')
       codeSample.innerText = html_beautify(clone.innerHTML)
       el.appendChild(codeSample)

@@ -2,6 +2,7 @@
 @import 'button';
 @import 'card';
 @import 'field';
+@import 'form';
 @import 'grid';
 @import 'input';
 @import 'label';
@@ -10,10 +11,14 @@
 @import 'logo';
 @import 'modal';
 @import 'navbar';
+@import 'notice';
 @import 'progress';
 @import 'radio-checkbox';
 @import 'select';
 @import 'subnav';
 @import 'table';
+@import 'tooltip';
 @import 'utils';
+/* these must go at the bottom */
 @import 'bg';
+@import 'color';

@@ -1,0 +1,77 @@
+.rx-tooltip__message {
+  margin-top: 10px;
+  display: block;
+  margin-bottom: 10px;
+  display: none;
+  transition: opacity 0.3s;
+  padding: 20px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #DDD;
+  box-shadow: var(--shadowLevel1);
+  border-radius: 4px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.rx-tooltip--active .rx-tooltip__message {
+  display: block;
+}
+
+.rx-tooltip__icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--blue);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0;
+  border: none;
+  vertical-align: bottom;
+  line-height: 22px;
+}
+
+.rx-tooltip__icon:hover,
+.rx-tooltip__icon:focus {
+  cursor: pointer;
+  background-color: var(--lightBlue);
+}
+
+.rx-tooltip__icon:active {
+  background-color: var(--darkBlue);
+}
+
+
+@media (--tablet) {
+  .rx-tooltip__message {
+    display: block;
+    max-width: 360px;
+    position: absolute;
+    right: -100%;
+    top: -17px;
+    opacity: 0;
+  }
+
+  .rx-tooltip__message:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    position: absolute;
+    background: white;
+    transform: rotate(45deg);
+    right: -7px;
+    top: 10px;
+  }
+
+  .rx-tooltip:hover .rx-tooltip__message {
+    opacity: 1;
+    right: 30px;
+  }
+}

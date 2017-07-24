@@ -47,7 +47,8 @@ code {
   margin: 30px auto;
 }
 
-[rx-page="icons"] code {
+[rx-page="icons"] code,
+[rx-page="forms"] code {
   margin: 0 !important;
   font-size: 12px;
   display: inline-block !important;
@@ -70,4 +71,27 @@ code {
   text-align: left;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+[rx-section] {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #DDD;
+}
+
+[rx-section]:last-child {
+  border-bottom: 0;
+}
+
+[rx-description] > p {
+  margin-bottom: 10px;
+  line-height: 21px;
+}
+
+[rx-description] code {
+}
+
+[rx-description] > p:last-child {
+  margin-bottom: 30px;
 }

@@ -1,0 +1,14 @@
+.rx-form {
+  margin: 10px 0;
+}
+
+.rx-form__title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.rx-form__actions {
+  margin-top: 10px;
+  margin-bottom: 0;
+}

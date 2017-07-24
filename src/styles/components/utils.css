@@ -27,6 +27,6 @@
 
 @media (--tablet) {
   .rx-utils--body-has-subnav {
-    margin-top: calc(var(--navbarHeight) + var(--subnavHeight));
+    padding-top: calc(var(--navbarHeight) + var(--subnavHeight));
   }
 }

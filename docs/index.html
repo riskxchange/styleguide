@@ -28,7 +28,7 @@
       </div>
     </nav>
     <!-- layouts -->
-    <div class="rx-container" rx-page="layout">
+    <div class="rx-container" rx-page="basics">
       <h1>Basics</h1>
       <!-- grid -->
       <div class="rx-utils--vertical-space" rx-section="grids">
@@ -95,7 +95,9 @@
       <!-- colors -->
       <div class="rx-utils--vertical-space" rx-section="colors">
         <h2>Colors</h2>
-        <p>Below are the primary colours used in the RiskXchange pallette:</p>
+        <div rx-description>
+          <p>Below are the primary colours used in the RiskXchange pallette:</p>
+        </div>
         <div class="rx-row">
           <div class="rx-col--sm-3">
             <div class="rx-bg--blue rx-card">blue</div>
@@ -204,6 +206,42 @@
     </div>
     <div class="rx-container" rx-page="forms">
       <h1>Forms</h1>
+      <!-- form -->
+      <div rx-section="form-basics">
+        <h2>Form Basics</h2>
+        <div rx-description>
+          <p>Forms can be created using <code>.rx-form</code>. They can have a title <code>.rx-form__title</code> and actions <code>.rx-form__actions</code> which can contains submit buttons, etc.</p>
+          <p>Forms contain fields <code>.rx-field</code>, which can contain inputs <code>.rx-input</code>, selects <code>.rx-select</code>, radios <code>.rx-radio</code>, checkboxes <code>.rx-checkboxes</code> and their corresponding labels <code>.rx-label</code>.
+          <p>Fields can also include info about the field, using <code>.rx-field__info</code>.</p>
+        </div>
+        <div class="rx-row">
+          <div class="rx-col--md-6">
+            <div class="rx-card">
+              <form class="rx-form">
+                <h2 class="rx-form__title">Example form</h2>
+                <div class="rx-field">
+                  <label class="rx-label" for="name">Full name</label>
+                  <input class="rx-input rx-input--blocked" name="name" />
+                </div>
+                <div class="rx-field">
+                  <p class="rx-label">Do you like apples?</p>
+                  <div class="rx-field__info">Apples are an amazing fruit, that can be used to make cider.</div>
+                  <label class="rx-label rx-label--radio">
+                    <input class="rx-radio" type="radio" name="yes-no" value="yes"> Yes
+                  </label>
+                  <label class="rx-label rx-label--radio">
+                    <input class="rx-radio" type="radio" name="yes-no" value="no"> No
+                  </label>
+                </div>
+                <h2 class="rx-form__actions">
+                  <button class="rx-btn rx-btn--primary">Save</button>
+                  <button class="rx-btn">Cancel</button>
+                </h2>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- inputs -->
       <div class="rx-utils--vertical-space" rx-section="inputs">
         <h2>Inputs</h2>
@@ -300,48 +338,87 @@
       <!-- checkbox/radio -->
       <div class="rx-utils--vertical-space" rx-section="checkbox">
         <h2>Checkbox/Radios</h2>
-        <div class="rx-row">
+        <div rx-description>
+          <p>Checkboxes <code>.rx-checkbox</code> and radios <code>.rx-radio</code> are very similar. They both have a modified label associated with them: <code>.rx-label--checkbox</code> for checkboxes, and <code>.rx-label--radio</code> for radios.</p>
+        </div>
+        <div class="rx-row rx-row--no-pad">
           <div class="rx-field rx-col--xs-6">
-            <label class="rx-label">
+            <label class="rx-label rx-label--checkbox">
               <input class="rx-checkbox" type="checkbox" />
               Apple
             </label>
-            <label class="rx-label">
+            <label class="rx-label rx-label--checkbox">
               <input class="rx-checkbox" type="checkbox" />
               Banana
             </label>
           </div>
           <div class="rx-field rx-col--xs-6">
-            <label class="rx-label">
+            <label class="rx-label rx-label--checkbox">
               <input class="rx-checkbox" type="checkbox" />
               Carrot
             </label>
-            <label class="rx-label">
+            <label class="rx-label rx-label--checkbox">
               <input class="rx-checkbox" type="checkbox" />
               Dragon Fruit
             </label>
           </div>
         </div>
-        <div class="rx-row">
+        <div class="rx-row rx-row--no-pad">
           <div class="rx-field rx-col--xs-6">
-            <label class="rx-label">
+            <label class="rx-label rx-label--radio">
               <input class="rx-radio" name="radio" type="radio" />
               Apple
             </label>
-            <label class="rx-label">
+            <label class="rx-label rx-label--radio">
               <input class="rx-radio" name="radio" type="radio" />
               Banana
             </label>
           </div>
           <div class="rx-field rx-col--xs-6">
-            <label class="rx-label">
+            <label class="rx-label rx-label--radio">
               <input class="rx-radio" name="radio" type="radio" />
               Carrot
             </label>
-            <label class="rx-label">
+            <label class="rx-label rx-label--radio">
               <input class="rx-radio" name="radio" type="radio" />
               Dragon Fruit
             </label>
+          </div>
+        </div>
+      </div>
+      <!-- notices -->
+      <div class="rx-utils--vertical-space" rx-section="notices">
+        <h2>Notices</h2>
+        <div rx-description>
+          <p>There are two variants of the notice <code>.rx-notice</code> element: success <code>.rx-notice--success</code> and error <code>.rx-notice--error</code>.</p>
+          <p>Try using them with icons <code>.rx-icon</code>, to prevent them looking too much like inputs</p>
+        </div>
+        <div class="rx-card">
+          <div class="rx-notice rx-notice--success">
+            <span class='rx-icon rx-icon--tick'></span>
+            This is a success notice
+          </div>
+          <div class="rx-notice rx-notice--error">
+            <span class='rx-icon rx-icon--cross'></span>
+            This is an error notice
+          </div>
+        </div>
+      </div>
+      <!-- tooltip -->
+      <div class="rx-utils--vertical-space" rx-section="toolip">
+        <h2>Tooltip</h2>
+        <div rx-description>
+          <p>All tooltips <code>.rx-tooltip</code> should be used within <code>.rx-field</code> elements.</p>
+          <p>On mobile, they require the icon to be clicked in order to toggle the <code>.rx-tooltip--active</code> selector, which shows/hides the tooltip.</p>
+        </div>
+        <div class="rx-card">
+          <div class="rx-field">
+            <label class="rx-label">Full name</label>
+            <div class="rx-tooltip rx-tooltip--active">
+              <button class="rx-tooltip__icon">?</button>
+              <div class="rx-tooltip__message">This is a tooltip, and it can contain lots of information</div>
+            </div>
+            <input class="rx-input rx-input--blocked" placeholder="e.g. John Smith">
           </div>
         </div>
       </div>

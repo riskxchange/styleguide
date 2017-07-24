@@ -1,4 +1,10 @@
 .rx-label {
   display: block;
   margin: 0.5em 0;
+  font-weight: bold;
+}
+
+.rx-label--radio,
+.rx-label--checkbox {
+  font-weight: normal;
 }

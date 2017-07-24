@@ -14,7 +14,8 @@
   text-decoration: none;
 }
 
-.rx-btn:hover {
+.rx-btn:hover,
+.rx-btn:focus {
   background: #FFF;
 }
 
@@ -29,7 +30,8 @@
   color: white;
 }
 
-.rx-btn--primary:hover {
+.rx-btn--primary:hover,
+.rx-btn--primary:focus {
   background-color: var(--lightGreen);
 }
 
@@ -44,7 +46,8 @@
   color: white;
 }
 
-.rx-btn--info:hover {
+.rx-btn--info:hover,
+.rx-btn--info:focus {
   background-color: var(--lightBlue);
 }
 
@@ -59,7 +62,8 @@
   color: white;
 }
 
-.rx-btn--danger:hover {
+.rx-btn--danger:hover,
+.rx-btn--danger:focus {
   background-color: var(--lightRed);
 }
 

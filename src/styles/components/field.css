@@ -1,3 +1,13 @@
 .rx-field {
-  margin: 10px 0;
+  margin: 20px 0;
+  position: relative;
+}
+
+.rx-field__info {
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  display: block;
+  color: #999;
 }

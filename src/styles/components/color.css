@@ -1,0 +1,31 @@
+.rx-color--blue {
+  color: var(--blue);
+}
+
+.rx-color--green {
+  color: var(--green);
+}
+
+.rx-color--yellow {
+  color: var(--yellow);
+}
+
+.rx-color--orange {
+  color: var(--orange);
+}
+
+.rx-color--red {
+  color: var(--red);
+}
+
+.rx-color--dark-blue {
+  color: var(--veryDarkBlue);
+}
+
+.rx-color--light-blue {
+  color: var(--veryLightBlue);
+}
+
+.rx-color--white {
+  color: white;
+}

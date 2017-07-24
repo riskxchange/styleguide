@@ -8,6 +8,7 @@ function init () {
   if (document.readyState === 'loading') return
   initMenu()
   initModal()
+  initTooltips()
 }
 
 function initMenu () {
@@ -34,6 +35,14 @@ function initModal () {
     container.onclick = () => closeModal(modal)
     modalBody.onclick = (e) => e.stopPropagation()
     modalFooter.onclick = (e) => e.stopPropagation()
+  })
+}
+
+function initTooltips () {
+  document.querySelectorAll('.rx-tooltip').forEach((tooltip) => {
+    tooltip.querySelector('.rx-tooltip__icon').onclick = () => {
+      tooltip.classList.toggle('rx-tooltip--active')
+    }
   })
 }
 
