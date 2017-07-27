@@ -52,7 +52,7 @@
     display: block;
     max-width: 360px;
     position: absolute;
-    right: -100%;
+    right: -10000px;
     top: -17px;
     opacity: 0;
   }

@@ -1,4 +1,4 @@
-@import 'breadcrumbs';
+@import 'breadcrumb';
 @import 'button';
 @import 'card';
 @import 'field';
@@ -15,8 +15,10 @@
 @import 'progress';
 @import 'radio-checkbox';
 @import 'select';
+@import 'sidebar';
 @import 'subnav';
 @import 'table';
+@import 'textarea';
 @import 'tooltip';
 @import 'utils';
 /* these must go at the bottom */

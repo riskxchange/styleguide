@@ -10,7 +10,7 @@
   </head>
   <body class="rx-utils--body-has-subnav">
     <header class="rx-navbar">
-      <div class="rx-container rx-utils--no-pad">
+      <div class="rx-container rx-container--no-pad">
         <div class="rx-navbar__logo">
           <a class="rx-logo rx-logo--inverse" href="#"></a>
         </div>
@@ -23,7 +23,7 @@
       </div>
     </header>
     <nav class="rx-subnav">
-      <div class="rx-container rx-utils--no-pad">
+      <div class="rx-container rx-container--no-pad">
         <div class="rx-subnav__links"></div>
       </div>
     </nav>
@@ -149,8 +149,10 @@
       <!-- navbar -->
       <div class="rx-utils--vertical-space" rx-section="navbar">
         <h2>Navbar</h2>
+        <p>You can make the navbar either full width or contained. The contained version, used for this demo, is acheived by adding <code>.rx-container.rx-container--no-pad</code> to the <code>.rx-navbar</code> element.</p>
+        <p>To see this page with a full-width navbar, <a class='rx-link' rx-toggle-navbar>click here</a>.
         <header class="rx-navbar">
-          <div class="rx-container rx-utils--no-pad">
+          <div class="rx-container rx-container--no-pad">
             <div class="rx-navbar__logo">
               <a class="rx-logo rx-logo--inverse" href="#"></a>
             </div>
@@ -170,37 +172,49 @@
       <!-- subnav -->
       <div class="rx-utils--vertical-space" rx-section="subnav">
         <h2>Subnav</h2>
-        <nav class="rx-subnav">
-          <div class="rx-container rx-utils--no-pad">
-            <div class="rx-subnav__links">
-              <a class="rx-subnav__link rx-subnav__link--active" href="#">Apple</a>
-              <a class="rx-subnav__link" href="#">Banana</a>
-              <a class="rx-subnav__link" href="#">Carrot</a>
+        <div class="rx-utils--vertical-space">
+          <nav class="rx-subnav">
+            <div class="rx-container rx-container--no-pad">
+              <div class="rx-subnav__links">
+                <a class="rx-subnav__link rx-subnav__link--active" href="#">Default #1</a>
+                <a class="rx-subnav__link" href="#">Default #2</a>
+                <a class="rx-subnav__link" href="#">Default #3</a>
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
       <!-- sidebar -->
       <div class="rx-utils--vertical-space" rx-section="sidebar">
         <h2>⚠️ Sidebar</h2>
-        <p>Warning: This component is still in WIP</p>
-        <div class="rx-sidebar">
-          <div class="rx-sidebar__group">
-            <div class="rx-sidebar__title">Fruits</div>
-            <div class="rx-sidebar__links">
-              <a class="rx-sidebar__link" href="#">Apple</a>
-              <a class="rx-sidebar__link" href="#">Banana</a>
-              <a class="rx-sidebar__link" href="#">Carrot</a>
+        <div style="position: relative; height: 300px">
+          <div class="rx-sidebar">
+            <div class="rx-sidebar__group">
+              <div class="rx-sidebar__title">Fruits</div>
+              <div class="rx-sidebar__links">
+                <a class="rx-sidebar__link rx-sidebar__link--active" href="#">Apple</a>
+                <a class="rx-sidebar__link" href="#">Banana</a>
+                <a class="rx-sidebar__link" href="#">Carrot</a>
+              </div>
+            </div>
+            <div class="rx-sidebar__group">
+              <div class="rx-sidebar__title">Colors</div>
+              <div class="rx-sidebar__links">
+                <a class="rx-sidebar__link" href="#">yellow</a>
+                <a class="rx-sidebar__link" href="#">blue</a>
+                <a class="rx-sidebar__link" href="#">green</a>
+              </div>
             </div>
           </div>
-          <div class="rx-sidebar__group">
-            <div class="rx-sidebar__title">Colors</div>
-            <div class="rx-sidebar__links">
-              <a class="rx-sidebar__link" href="#">yellow</a>
-              <a class="rx-sidebar__link" href="#">blue</a>
-              <a class="rx-sidebar__link" href="#">green</a>
-            </div>
-          </div>
+        </div>
+      </div>
+      <!-- breadcrumb -->
+      <div class="rx-utils--vertical-space" rx-section="breadcrumb">
+        <h2>⚠️ Breadcrumb</h2>
+        <div class="rx-breadcrumb">
+          <a href="#" class="rx-breadcrumb__link">England</a>
+          <a href="#" class="rx-breadcrumb__link">London</a>
+          <a href="#" class="rx-breadcrumb__link">Borough Market</a>
         </div>
       </div>
     </div>
@@ -211,7 +225,7 @@
         <h2>Form Basics</h2>
         <div rx-description>
           <p>Forms can be created using <code>.rx-form</code>. They can have a title <code>.rx-form__title</code> and actions <code>.rx-form__actions</code> which can contains submit buttons, etc.</p>
-          <p>Forms contain fields <code>.rx-field</code>, which can contain inputs <code>.rx-input</code>, selects <code>.rx-select</code>, radios <code>.rx-radio</code>, checkboxes <code>.rx-checkboxes</code> and their corresponding labels <code>.rx-label</code>.
+          <p>Forms contain fields <code>.rx-field</code>, which can contain inputs <code>.rx-input</code>, selects <code>.rx-select</code>, radios <code>.rx-radio-group</code>, checkboxes <code>.rx-checkbox-group</code> and their corresponding labels <code>.rx-label</code>.
           <p>Fields can also include info about the field, using <code>.rx-field__info</code>.</p>
         </div>
         <div class="rx-row">
@@ -226,12 +240,14 @@
                 <div class="rx-field">
                   <p class="rx-label">Do you like apples?</p>
                   <div class="rx-field__info">Apples are an amazing fruit, that can be used to make cider.</div>
-                  <label class="rx-label rx-label--radio">
-                    <input class="rx-radio" type="radio" name="yes-no" value="yes"> Yes
-                  </label>
-                  <label class="rx-label rx-label--radio">
-                    <input class="rx-radio" type="radio" name="yes-no" value="no"> No
-                  </label>
+                  <div class="rx-radio-group">
+                    <label>
+                      <input class="rx-radio" type="radio" name="yes-no" value="yes"> Yes
+                    </label>
+                    <label>
+                      <input class="rx-radio" type="radio" name="yes-no" value="no"> No
+                    </label>
+                  </div>
                 </div>
                 <h2 class="rx-form__actions">
                   <button class="rx-btn rx-btn--primary">Save</button>
@@ -339,70 +355,77 @@
       <div class="rx-utils--vertical-space" rx-section="checkbox">
         <h2>Checkbox/Radios</h2>
         <div rx-description>
-          <p>Checkboxes <code>.rx-checkbox</code> and radios <code>.rx-radio</code> are very similar. They both have a modified label associated with them: <code>.rx-label--checkbox</code> for checkboxes, and <code>.rx-label--radio</code> for radios.</p>
+          <p>Checkboxes <code>.rx-checkbox-group</code> and radios <code>.rx-radio-group</code> are very similar.</p>
         </div>
         <div class="rx-row rx-row--no-pad">
-          <div class="rx-field rx-col--xs-6">
-            <label class="rx-label rx-label--checkbox">
-              <input class="rx-checkbox" type="checkbox" />
-              Apple
-            </label>
-            <label class="rx-label rx-label--checkbox">
-              <input class="rx-checkbox" type="checkbox" />
-              Banana
-            </label>
-          </div>
-          <div class="rx-field rx-col--xs-6">
-            <label class="rx-label rx-label--checkbox">
-              <input class="rx-checkbox" type="checkbox" />
-              Carrot
-            </label>
-            <label class="rx-label rx-label--checkbox">
-              <input class="rx-checkbox" type="checkbox" />
-              Dragon Fruit
-            </label>
+          <div class="rx-field rx-col--xs-12">
+            <div class="rx-checkbox-group">
+              <label>
+                <input class="rx-checkbox" type="checkbox" /> Apple
+              </label>
+              <label>
+                <input class="rx-checkbox" type="checkbox" /> Banana
+              </label>
+              <label>
+                <input class="rx-checkbox" type="checkbox" /> Orange
+              </label>
+              <label>
+                <input class="rx-checkbox" type="checkbox" /> Pineapple
+              </label>
+            </div>
           </div>
         </div>
         <div class="rx-row rx-row--no-pad">
+          <h3>What is your favourite country?</h3>
           <div class="rx-field rx-col--xs-6">
-            <label class="rx-label rx-label--radio">
-              <input class="rx-radio" name="radio" type="radio" />
-              Apple
-            </label>
-            <label class="rx-label rx-label--radio">
-              <input class="rx-radio" name="radio" type="radio" />
-              Banana
-            </label>
+            <div class="rx-radio-group">
+              <label>
+                <input class="rx-radio" type="radio" /> England
+              </label>
+              <label>
+                <input class="rx-radio" type="radio" /> Ireland
+              </label>
+              <label>
+                <input class="rx-radio" type="radio" /> Germany
+              </label>
+            </div>
           </div>
           <div class="rx-field rx-col--xs-6">
-            <label class="rx-label rx-label--radio">
-              <input class="rx-radio" name="radio" type="radio" />
-              Carrot
-            </label>
-            <label class="rx-label rx-label--radio">
-              <input class="rx-radio" name="radio" type="radio" />
-              Dragon Fruit
-            </label>
+            <div class="rx-radio-group">
+              <label>
+                <input class="rx-radio" type="radio" /> Scotland
+              </label>
+              <label>
+                <input class="rx-radio" type="radio" /> France
+              </label>
+              <label>
+                <input class="rx-radio" type="radio" /> Spain
+              </label>
+            </div>
           </div>
         </div>
       </div>
-      <!-- notices -->
-      <div class="rx-utils--vertical-space" rx-section="notices">
-        <h2>Notices</h2>
-        <div rx-description>
-          <p>There are two variants of the notice <code>.rx-notice</code> element: success <code>.rx-notice--success</code> and error <code>.rx-notice--error</code>.</p>
-          <p>Try using them with icons <code>.rx-icon</code>, to prevent them looking too much like inputs</p>
-        </div>
-        <div class="rx-card">
-          <div class="rx-notice rx-notice--success">
-            <span class='rx-icon rx-icon--tick'></span>
-            This is a success notice
+      <!-- textarea -->
+      <div class="rx-utils--vertical-space" rx-section="textarea">
+        <h2>Textarea</h2>
+        <form>
+          <div class="rx-field">
+            <label class="rx-label rx-label--blocked">Default</label>
+            <textarea class="rx-textarea" placeholder="Enter me..."></textarea>
           </div>
-          <div class="rx-notice rx-notice--error">
-            <span class='rx-icon rx-icon--cross'></span>
-            This is an error notice
+          <div class="rx-field">
+            <label class="rx-label rx-label--blocked">Blocked</label>
+            <textarea class="rx-textarea rx-textarea--blocked">I AM BLOCKED</textarea>
           </div>
-        </div>
+          <div class="rx-field">
+            <label class="rx-label rx-label--blocked">Success</label>
+            <textarea class="rx-textarea rx-textarea--success" rows="1"></textarea>
+          </div>
+          <div class="rx-field">
+            <label class="rx-label rx-label--blocked">Error</label>
+            <textarea class="rx-textarea rx-textarea--error" rows="1"></textarea>
+          </div>
+        </form>
       </div>
       <!-- tooltip -->
       <div class="rx-utils--vertical-space" rx-section="toolip">
@@ -461,6 +484,17 @@
         <div class="rx-card rx-card--clickable rx-utils--vertical-space">
           rx-card--clickable
         </div>
+        <div class="rx-cards rx-utils--vertical-space">
+          <div class="rx-card rx-card--clickable rx-card--stacked">
+            rx-card--stacked
+          </div>
+          <div class="rx-card rx-card--clickable rx-card--stacked">
+            rx-card--stacked
+          </div>
+          <div class="rx-card rx-card--clickable rx-card--stacked">
+            rx-card--stacked
+          </div>
+        </div>
       </div>
       <!-- modal -->
       <div class="rx-utils--vertical-space" rx-section="modals">
@@ -491,7 +525,7 @@
           </div>
           <div class="rx-col--sm-6">
             <div class="rx-card rx-bg--dark-blue">
-              <a class="rx-link--white" href="#">I am a white link</a>
+              <a class="rx-link--inverse" href="#">I am a white link</a>
             </div>
           </div>
         </div>
@@ -571,6 +605,24 @@
               </div>
               <code>rx-loader--dark-bg</code>
             </div>
+          </div>
+        </div>
+      </div>
+      <!-- notices -->
+      <div class="rx-utils--vertical-space" rx-section="notices">
+        <h2>Notices</h2>
+        <div rx-description>
+          <p>There are two variants of the notice <code>.rx-notice</code> element: success <code>.rx-notice--success</code> and error <code>.rx-notice--error</code>.</p>
+          <p>Try using them with icons <code>.rx-icon</code>, to prevent them looking too much like inputs</p>
+        </div>
+        <div class="rx-card">
+          <div class="rx-notice rx-notice--success">
+            <span class='rx-icon rx-icon--tick'></span>
+            This is a success notice
+          </div>
+          <div class="rx-notice rx-notice--error">
+            <span class='rx-icon rx-icon--cross'></span>
+            This is an error notice
           </div>
         </div>
       </div>

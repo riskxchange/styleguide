@@ -12,3 +12,17 @@
   margin-top: 10px;
   margin-bottom: 0;
 }
+
+.rx-form__actions:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.rx-form__actions .rx-btn {
+  margin-right: 6px;
+  float: left;
+}
+.rx-form__actions .rx-btn:last-child {
+  margin-right: 0;
+}

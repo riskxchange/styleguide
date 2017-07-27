@@ -450,18 +450,6 @@ template {
   display: none;
 }
 
-.rx-breadcrumbs {
-
-}
-
-.rx-breadcrumbs__item {
-
-}
-
-.rx-breadcrumbs__link {
-
-}
-
 .rx-btn {
   border: 1px solid #B9B9B9;
   background-color: #FAFAFA;
@@ -566,11 +554,12 @@ template {
 .rx-card--clickable:hover {
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 20, .2);
           box-shadow: 0 2px 5px rgba(0, 0, 20, .2);
+  background-color: #FCFBFB;
   cursor: pointer;
 }
 
 .rx-card--clickable:active {
-  background: #FCFBFB;
+  background-color: #F6F6F6;
 }
 
 .rx-card__footer {
@@ -585,6 +574,22 @@ template {
 
 .rx-card__footer--large {
   padding: 30px;
+}
+
+.rx-card--stacked:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.rx-card--stacked {
+  border-radius: 0;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.rx-card--stacked:last-child {
+  border-bottom: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .rx-field {
@@ -616,6 +621,21 @@ template {
   margin-bottom: 0;
 }
 
+.rx-form__actions:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.rx-form__actions .rx-btn {
+  margin-right: 6px;
+  float: left;
+}
+
+.rx-form__actions .rx-btn:last-child {
+  margin-right: 0;
+}
+
 .rx-container {
   width: 100%;
   margin: 0 auto;
@@ -645,6 +665,10 @@ template {
   .rx-container {
     width: 1170px;
   }
+}
+
+.rx-container--no-pad {
+  padding: 0;
 }
 
 .rx-container:after,
@@ -1049,7 +1073,7 @@ template {
   border-style: solid;
   text-indent: 10px;
   outline: none;
-  width: 240px;
+  min-width: 200px;
   -webkit-transition: border-color 0.3s, background-color 0.3s;
   -o-transition: border-color 0.3s, background-color 0.3s;
   transition: border-color 0.3s, background-color 0.3s;
@@ -1177,17 +1201,15 @@ template {
   font-weight: bold;
 }
 
-.rx-label--radio,
-.rx-label--checkbox {
-  font-weight: normal;
-}
-
 .rx-link {
   color: #0090FF;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .rx-link:hover,
 .rx-link:focus {
+  text-decoration: none;
   color: #32A6FF;
 }
 
@@ -1195,16 +1217,17 @@ template {
   color: #0072CA;
 }
 
-.rx-link--white {
-  color: white;
+.rx-link--inverse {
+  color: inverse;
 }
 
-.rx-link--white:hover,
-.rx-link--white:focus {
+.rx-link--inverse:hover,
+.rx-link--inverse:focus {
+  text-decoration: none;
   color: #DDD;
 }
 
-.rx-link--white:active {
+.rx-link--inverse:active {
   color: #B9B9B9;
 }
 
@@ -1331,7 +1354,7 @@ template {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url(logo-e079aacd77de20a8aeea8f026ea01fb7.svg);
+  background-image: url(e079aacd77de20a8aeea8f026ea01fb7.svg);
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -1339,7 +1362,7 @@ template {
 }
 
 .rx-logo--inverse {
-  background-image: url(logo-inverse-5ea6044856cde31de216231c29302b9c.svg);
+  background-image: url(5ea6044856cde31de216231c29302b9c.svg);
 }
 
 .rx-modal {
@@ -1454,6 +1477,7 @@ template {
 }
 
 .rx-navbar__logo {
+  display: block;
   padding-left: 10px;
   width: 180px;
   height: 56px;
@@ -1584,6 +1608,33 @@ template {
   min-width: 0;
 }
 
+.rx-radio-group,
+.rx-checkbox-group {
+  margin: .5em 0;
+}
+
+.rx-radio-group:after,
+.rx-checkbox-group:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.rx-radio-group label,
+.rx-checkbox-group label {
+  font-weight: normal;
+  float: left;
+  clear: left;
+  margin: 0;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+
+.rx-radio-group label:last-child,
+.rx-checkbox-group label:last-child {
+  margin-bottom: 0;
+}
+
 .rx-radio,
 .rx-checkbox {
   outline: none !important;
@@ -1700,6 +1751,65 @@ template {
   cursor: not-allowed;
 }
 
+.rx-select--success {
+  border-color: #0BBD77;
+}
+
+.rx-select--error {
+  border-color: #FF6261;
+}
+
+.rx-select:focus {
+  border-color: #0090FF;
+}
+
+.rx-sidebar {
+  width: 280px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: scroll;
+  background: white;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 20, .15);
+          box-shadow: 0 1px 1px rgba(0, 0, 20, .15);
+}
+
+.rx-sidebar__group {
+  padding-top: 20px;
+  border-bottom: 1px solid #DDD;
+}
+
+.rx-sidebar__group:last-child {
+  padding-bottom: 20px;
+}
+
+.rx-sidebar__title {
+  text-transform: uppercase;
+  padding: 0 20px;
+  line-height: 48px;
+  font-weight: bold;
+}
+
+.rx-sidebar__link {
+  line-height: 48px;
+  font-size: 14px;
+  height: 48px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 0 20px;
+}
+
+.rx-sidebar__link:hover {
+  background-color: #f9f9f9;
+}
+
+.rx-sidebar__link--active {
+  border-left: 4px solid #0090FF;
+  padding-left: 16px;
+}
+
 .rx-subnav {
   margin-top: 56px;
   width: 100%;
@@ -1800,6 +1910,68 @@ template {
   background-color: #FCFBFB;
 }
 
+.rx-textarea {
+  line-height: 32px;
+  min-height: 36px;
+  border-radius: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: none;
+  background: #fff;
+  border-color: #B9B9B9;
+  border-width: 1px;
+  border-style: solid;
+  text-indent: 10px;
+  outline: none;
+  -webkit-transition: border-color 0.3s, background-color 0.3s;
+  -o-transition: border-color 0.3s, background-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.rx-textarea:disabled,
+.rx-textarea--disabled {
+  background-color: #EEE;
+  cursor: not-allowed;
+}
+
+.rx-textarea:disabled::-webkit-input-placeholder,
+.rx-textarea--disabled::-webkit-input-placeholder {
+  color: #B9B9B9;
+}
+
+.rx-textarea:disabled:-ms-input-placeholder,
+.rx-textarea--disabled:-ms-input-placeholder {
+  color: #B9B9B9;
+}
+
+.rx-textarea:disabled::placeholder,
+.rx-textarea--disabled::placeholder {
+  color: #B9B9B9;
+}
+
+.rx-textarea:focus {
+  border-color: #0090FF;
+}
+
+.rx-textarea--success {
+  border-color: #0BBD77;
+}
+
+.rx-textarea--error {
+  border-color: #FF6261;
+}
+
+.rx-textarea--blocked  {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .rx-tooltip__message {
   margin-top: 10px;
   display: block;
@@ -1857,7 +2029,7 @@ template {
     display: block;
     max-width: 360px;
     position: absolute;
-    right: -100%;
+    right: -10000px;
     top: -17px;
     opacity: 0;
   }

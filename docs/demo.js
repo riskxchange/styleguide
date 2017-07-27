@@ -2,6 +2,8 @@
 
 var ICON_VERSION = '0.2.4'
 
+console.log('--> init')
+
 document.onreadystatechange = init
 init()
 initIcons()
@@ -28,6 +30,12 @@ function init () {
   var navbarLinks = []
   var subnav = document.querySelector('.rx-subnav')
   var subnavLinks = subnav.querySelector('.rx-subnav__links')
+  var navbar = document.querySelector('.rx-navbar')
+  var navbarContainer = navbar.querySelector('.rx-container')
+
+  document.querySelector('[rx-toggle-navbar]').onclick = function () {
+    navbarContainer.classList.toggle('rx-container')
+  }
 
   pages.forEach(function (page, i) {
     var h1 = page.querySelector('h1').cloneNode()

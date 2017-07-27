@@ -15,6 +15,7 @@
 }
 
 .rx-navbar__logo {
+  display: block;
   padding-left: 10px;
   width: 180px;
   height: var(--navbarHeight);

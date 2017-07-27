@@ -1,3 +1,30 @@
+.rx-radio-group,
+.rx-checkbox-group {
+  margin: .5em 0;
+}
+
+.rx-radio-group:after,
+.rx-checkbox-group:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.rx-radio-group label,
+.rx-checkbox-group label {
+  font-weight: normal;
+  float: left;
+  clear: left;
+  margin: 0;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+
+.rx-radio-group label:last-child,
+.rx-checkbox-group label:last-child {
+  margin-bottom: 0;
+}
+
 .rx-radio,
 .rx-checkbox {
   outline: none !important;

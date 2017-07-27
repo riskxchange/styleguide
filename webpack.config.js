@@ -22,7 +22,7 @@ module.exports = {
       test: /\.(gif|png|jpe?g|svg)$/i,
       use: [
         { loader: 'file-loader',
-          options: { name: '[name]-[hash].[ext]' } },
+          options: { name: '[hash].[ext]' } },
         { loader: 'image-webpack-loader',
           options: {
             gifsicle: {

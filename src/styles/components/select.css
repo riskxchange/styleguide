@@ -28,3 +28,15 @@
   background-color: #EEE;
   cursor: not-allowed;
 }
+
+.rx-select--success {
+  border-color: var(--green);
+}
+
+.rx-select--error {
+  border-color: var(--red);
+}
+
+.rx-select:focus {
+  border-color: var(--blue);
+}

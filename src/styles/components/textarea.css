@@ -1,0 +1,45 @@
+.rx-textarea {
+  line-height: 32px;
+  min-height: var(--inputHeight);
+  border-radius: 4px;
+  appearance: none;
+  background-image: none;
+  background: #fff;
+  border-color: var(--grey);
+  border-width: 1px;
+  border-style: solid;
+  text-indent: 10px;
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.rx-textarea:disabled,
+.rx-textarea--disabled {
+  background-color: #EEE;
+  cursor: not-allowed;
+}
+
+.rx-textarea:disabled::placeholder,
+.rx-textarea--disabled::placeholder {
+  color: var(--grey);
+}
+
+.rx-textarea:focus {
+  border-color: var(--blue);
+}
+
+.rx-textarea--success {
+  border-color: var(--green);
+}
+
+.rx-textarea--error {
+  border-color: var(--red);
+}
+
+.rx-textarea--blocked  {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
