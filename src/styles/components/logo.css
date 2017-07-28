@@ -2,7 +2,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url('../images/logo.svg');
+  background-image: svg-load('../../images/logo.svg');
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -10,5 +10,5 @@
 }
 
 .rx-logo--inverse {
-  background-image: url('../images/logo-inverse.svg');
+  background-image: svg-load('../../images/logo-inverse.svg');
 }

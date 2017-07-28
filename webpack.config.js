@@ -20,6 +20,7 @@ module.exports = {
       })
     }, {
       test: /\.(gif|png|jpe?g|svg)$/i,
+      exclude: ['logo.svg', 'logo-inverse.svg'],
       use: [
         { loader: 'file-loader',
           options: { name: '[hash].[ext]' } },
