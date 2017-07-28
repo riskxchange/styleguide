@@ -5,18 +5,18 @@
   margin: 10px 0;
   color: var(--blue);
   border: 1px solid var(--blue);
-  /*color: white;*/
-  /*background: var(--blue);*/
 }
 
 .rx-notice--error {
   color: var(--red);
   border: 1px solid var(--red);
-  /*background: var(--red);*/
 }
 
 .rx-notice--success {
   color: var(--green);
   border: 1px solid var(--green);
-  /*background: var(--green);*/
+}
+
+.rx-notice > .rx-icon:first-child:after {
+  content: ' '
 }
