@@ -27,32 +27,6 @@ module.exports = {
           'postcss-loader'
         ]
       })
-    }, {
-      test: /\.(gif|png|jpe?g|svg)$/i,
-      exclude: ['logo.svg', 'logo-inverse.svg'],
-      use: [
-        { loader: 'file-loader',
-          options: { name: '[hash].[ext]' } },
-        { loader: 'image-webpack-loader',
-          options: {
-            gifsicle: {
-              interlaced: false,
-              optimizationLevel: 7
-            },
-            optipng: {
-              interlaced: false,
-              optimizationLevel: 7
-            },
-            pngquant: {
-              quality: '65-90',
-              speed: 4
-            },
-            mozjpeg: {
-              quality: 65
-            }
-          }
-        }
-      ]
     }]
   },
   plugins: [
