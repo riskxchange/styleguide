@@ -9,12 +9,13 @@
   box-sizing: border-box;
   min-width: 180px;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2ZXJzaW9uPScxLjEnIGJhc2VQcm9maWxlPSd0aW55JyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHg9JzBweCcgeT0nMHB4JyB3aWR0aD0nNDBweCcgaGVpZ2h0PSc2cHgnIHZpZXdCb3g9JzAgMCA0MCA2Jz48cG9seWdvbiBmaWxsPScjODQ5MDlhJyBwb2ludHM9JzI1LjMsMCAyMC4zLDYgMTUuMywwICcvPjwvc3ZnPg==");
+  background-image: svg-load('../../images/down-arrow.svg');
   background-position: right;
   background-repeat: no-repeat;
   height: var(--inputHeight);
   line-height: var(--inputHeight);
-  padding: 0 10px;
+  background-size: 24px;
+  padding: 0 10px 0 15px;
 }
 
 .rx-select--blocked {
