@@ -1579,20 +1579,20 @@ template {
   margin: 10px 0;
   color: #0090FF;
   border: 1px solid #0090FF;
-  /*color: white;*/
-  /*background: var(--blue);*/
 }
 
 .rx-notice--error {
   color: #FF6261;
   border: 1px solid #FF6261;
-  /*background: var(--red);*/
 }
 
 .rx-notice--success {
   color: #0BBD77;
   border: 1px solid #0BBD77;
-  /*background: var(--green);*/
+}
+
+.rx-notice > .rx-icon:first-child:after {
+  content: ' '
 }
 
 .rx-progress {

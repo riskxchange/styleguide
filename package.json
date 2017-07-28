@@ -1,12 +1,12 @@
 {
   "name": "rx-styleguide",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "pre-push": "if [[ ! $(git diff HEAD) ]]; then webpack && (if [[ $(git diff HEAD dist) ]]; then git add dist && git commit -m \"Auto-build + commit\"; fi); fi"
+    "pre-push": "webpack && (if [[ $(git diff HEAD dist) ]]; then git add dist && git commit -m \"Auto-build + commit\"; fi); fi"
   },
   "pre-push": [
     "pre-push"
