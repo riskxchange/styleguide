@@ -1,0 +1,26 @@
+.rx-breadcrumb:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.rx-breadcrumb__link {
+  background-image: svg-load('../../images/breadcrumb-arrow.svg');
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: right 50%;
+  line-height: 24px;
+  padding-right: 18px;
+  float: left;
+  margin-right: 8px;
+  text-decoration: none;
+  color: var(--veryDarkBlue) !important;
+}
+
+.rx-breadcrumb__link:hover {
+  text-decoration: underline;
+}
+
+.rx-breadcrumb__link:last-child {
+  background: none;
+}

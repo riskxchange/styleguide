@@ -450,6 +450,33 @@ template {
   display: none;
 }
 
+.rx-breadcrumb:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.rx-breadcrumb__link {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='54' height='78' viewBox='0 0 54 78' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3ECombined Shape%3C/title%3E%3Cpath fill='%2384909B' d='M14.305 0L0 14.305l24.667 24.667L0 63.64l14.305 14.305 38.973-38.973z' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: right 50%;
+  line-height: 24px;
+  padding-right: 18px;
+  float: left;
+  margin-right: 8px;
+  text-decoration: none;
+  color: #1C2237 !important;
+}
+
+.rx-breadcrumb__link:hover {
+  text-decoration: underline;
+}
+
+.rx-breadcrumb__link:last-child {
+  background: none;
+}
+
 .rx-btn {
   border: 1px solid #B9B9B9;
   background-color: #FAFAFA;
