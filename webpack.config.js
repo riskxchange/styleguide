@@ -1,29 +1,30 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractCss = new ExtractTextPlugin('main.css')
+const extractCss = new ExtractTextPlugin('dist/main.css')
 const uglifyJs = new webpack.optimize.UglifyJsPlugin({ minimize: true })
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'dist/main.js': './src/index.js',
+    'docs/react/bundle.js': './docs/react/index.js'
+  },
   output: {
-    filename: './main.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name]',
+    path: __dirname
   },
   module: {
     rules: [{
-      rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      }]
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader'
+      }
     }, {
       test: /(.*).css$/,
       use: extractCss.extract({
         use: [
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          { loader: 'css-loader', options: { importLoaders: 1, minimize: true } },
           'postcss-loader'
         ]
       })

@@ -2,11 +2,11 @@
   "name": "rx-styleguide",
   "version": "0.9.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
-    "pre-push": "webpack && (if [[ $(git diff HEAD dist) ]]; then git add dist && git commit -m \"Auto-build + commit\"; fi); fi"
+    "start": "webpack-dev-server & babel-watch --watch src/react/components ./src/react/create-index.js & wait",
+    "build": "rm -rf dist; webpack & (node ./src/react/create-index.js; babel src/react --out-dir dist/react) & wait; cp dist/main.css docs/react/styleguide.css",
+    "pre-push": "npm run build && (if [[ $(git diff HEAD dist) ]]; then git add dist && git commit -m \"Auto-build + commit\"; fi); fi"
   },
   "pre-push": [
     "pre-push"
@@ -14,11 +14,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-watch": "^2.0.7",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "normalize.css": "^7.0.0",
@@ -27,6 +35,8 @@
     "postcss-inline-svg": "^3.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-mixins": "^6.0.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.1"
