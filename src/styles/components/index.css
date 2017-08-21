@@ -9,13 +9,13 @@
 @import 'link';
 @import 'loader';
 @import 'logo';
+@import 'menu';
 @import 'modal';
 @import 'navbar';
 @import 'notice';
 @import 'progress';
 @import 'radio-checkbox';
 @import 'select';
-@import 'sidebar';
 @import 'subnav';
 @import 'table';
 @import 'textarea';
