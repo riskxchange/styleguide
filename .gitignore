@@ -1,4 +1,4 @@
 /node_modules
 .DS_Store
-/dist/react/create-index.js
+/react/create-index.js
 /docs/react/bundle.js

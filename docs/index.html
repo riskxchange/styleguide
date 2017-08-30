@@ -5,8 +5,7 @@
     <title>RiskXchange Styleguide</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <style>body { display: none; }</style>
-    <link rel="stylesheet" rx-href="main.css" rx-dist />
-    <link rel="stylesheet" href="./demo.css" />
+    <link rel="stylesheet" href="./demo.css"></link>
   </head>
   <body class="rx-utils--body-has-subnav">
     <header class="rx-navbar">
@@ -182,14 +181,12 @@
       </div>
       <!-- sidebar -->
       <div class="rx-utils--vertical-space" rx-section="sidebar">
-        <h2>⚠️ Menu</h2>
-        <div style="position: relative; height: 300px">
-          <div class="rx-menu">
-            <div class="rx-menu__links">
-              <a class="rx-menu__link rx-menu__link--active" href="#">Apple</a>
-              <a class="rx-menu__link" href="#">Banana</a>
-              <a class="rx-menu__link" href="#">Carrot</a>
-            </div>
+        <h2>Menu</h2>
+        <div class="rx-menu">
+          <div class="rx-menu__links">
+            <a class="rx-menu__link rx-menu__link--active" href="#">Apple</a>
+            <a class="rx-menu__link" href="#">Banana</a>
+            <a class="rx-menu__link" href="#">Carrot</a>
           </div>
         </div>
       </div>
@@ -619,6 +616,13 @@
       <div class="rx-utils--vertical-space">
       </div>
     </div>
+    <!-- react -->
+    <div class="rx-container" rx-page="react">
+      <h1>React</h1>
+      <p>Below are examples of the RiskXchange React components.</p>
+      <p>To use them in your project, use <code>import {Card} from 'styleguide/react'</code></p>
+      <div id="react"></div>
+    </div>
     <!-- footer -->
     <footer rx-footer>
       <span>©2017 RiskXchange</span> - <a class="rx-link" href="https://github.com/riskxchange/styleguide">View code on Github</a>
@@ -626,7 +630,6 @@
     <!-- javascript -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.6.14/beautify-html.js"></script>
-    <script rx-src="main.js" rx-dist></script>
     <script src="./demo.js"></script>
   </body>
 </html>

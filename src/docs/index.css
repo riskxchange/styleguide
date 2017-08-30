@@ -1,0 +1,107 @@
+.ace_editor {
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #CCC;
+  margin: 20px 0;
+}
+pre {
+  padding: 30px;
+  border-radius: 4px;
+  background: #1c2237;
+  color: #f1f5f8;
+}
+code {
+  padding-left: 4px;
+  padding-right: 4px;
+  background: var(--veryLightGrey);
+}
+[rx-page="icons"] code {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+[rx-section="loader"] code {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+}
+[rx-section] .rx-subnav {
+  top: 0;
+  position: relative;
+  z-index: 0;
+}
+[rx-section] .rx-navbar {
+  top: 0;
+  position: relative;
+  z-index: 0;
+}
+
+[rx-section="colors"] .rx-bg--light-blue {
+  border: 1px solid #dceaf4;
+  box-sizing: border-box;
+  padding: 29px;
+}
+
+[rx-footer] {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #DDD;
+  margin: 30px auto;
+}
+
+[rx-page="icons"] code,
+[rx-page="forms"] code,
+[rx-page="navigation"] code,
+[rx-page="react"] code {
+  margin: 0 !important;
+  font-size: 12px;
+  display: inline-block !important;
+  position: relative;
+  top: -2px;
+  padding: 2px 4px;
+  background: white;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+}
+
+[rx-page="icons"] .rx-icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 32px;
+  width: 100%;
+}
+
+[rx-icon-example] {
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+[rx-section] {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #DDD;
+}
+
+[rx-section]:last-child {
+  border-bottom: 0;
+}
+
+[rx-description] > p {
+  margin-bottom: 10px;
+  line-height: 21px;
+}
+
+[rx-description] code {
+}
+
+[rx-description] > p:last-child {
+  margin-bottom: 30px;
+}
+
+#react {
+  border-top: 1px solid #CCC;
+  padding-top: 20px;
+  margin-top: 20px;
+}

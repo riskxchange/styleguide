@@ -54,17 +54,20 @@ var Button = function (_PureComponent) {
       }, _defineProperty(_cx, 'rx-btn--' + this.props.variant, this.props.variant), _defineProperty(_cx, 'rx-btn--disabled', this.props.disabled), _cx), this.props.className);
     }
   }, {
+    key: 'cleanProps',
+    get: function get() {
+      return (0, _omit2.default)(this.props, 'disabled', 'className', 'blocked', 'variant');
+    }
+  }, {
     key: 'link',
     get: function get() {
-      var props = (0, _omit2.default)(this.props, 'disabled', 'className');
-      return _react2.default.createElement('a', _extends({}, props, { className: this.className }));
+      return _react2.default.createElement('a', _extends({}, this.cleanProps, { className: this.className }));
     }
   }, {
     key: 'button',
     get: function get() {
-      var props = (0, _omit2.default)(this.props, 'disabled', 'className', 'variant');
       var disabled = this.props.disabled;
-      return _react2.default.createElement('button', _extends({}, props, { className: this.className, disabled: disabled }));
+      return _react2.default.createElement('button', _extends({}, this.cleanProps, { className: this.className, disabled: disabled }));
     }
   }]);
 

@@ -77,8 +77,11 @@
   }
 
   .rx-navbar__logo {
-    padding-left: 0;
     float: left;
+  }
+
+  .rx-container .rx-navbar__logo {
+    padding-left: 0;
   }
 
   .rx-navbar__menu {

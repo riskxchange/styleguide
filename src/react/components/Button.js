@@ -10,17 +10,24 @@ export default class Button extends PureComponent {
       'rx-btn--disabled': this.props.disabled
     }, this.props.className)
   }
+  get cleanProps () {
+    return omit(
+      this.props,
+      'disabled',
+      'className',
+      'blocked',
+      'variant'
+    )
+  }
   get link () {
-    const props = omit(this.props, 'disabled', 'className')
     return (
-      <a {...props} className={this.className} />
+      <a {...this.cleanProps} className={this.className} />
     )
   }
   get button () {
-    const props = omit(this.props, 'disabled', 'className', 'variant')
     const disabled = this.props.disabled
     return (
-      <button {...props} className={this.className} disabled={disabled} />
+      <button {...this.cleanProps} className={this.className} disabled={disabled} />
     )
   }
   render () {

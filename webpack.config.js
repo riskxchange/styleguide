@@ -1,17 +1,18 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractCss = new ExtractTextPlugin('dist/main.css')
-const uglifyJs = new webpack.optimize.UglifyJsPlugin({ minimize: true })
+const extractCss = new ExtractTextPlugin('[name].css')
+const IS_PROD = process.env.NODE_ENV === 'production'
+const uglifyJs = new webpack.optimize.UglifyJsPlugin({ minimize: IS_PROD })
 
 module.exports = {
   entry: {
-    'dist/main.js': './src/index.js',
-    'docs/react/bundle.js': './docs/react/index.js'
+    'docs/demo': './src/docs/index.js',
+    'dist/main': './src/index.js'
   },
   output: {
-    filename: '[name]',
-    path: __dirname
+    filename: '[name].js',
+    path: path.resolve(__dirname)
   },
   module: {
     rules: [{
@@ -24,7 +25,7 @@ module.exports = {
       test: /(.*).css$/,
       use: extractCss.extract({
         use: [
-          { loader: 'css-loader', options: { importLoaders: 1, minimize: true } },
+          { loader: 'css-loader', options: { importLoaders: 1, minimize: IS_PROD } },
           'postcss-loader'
         ]
       })
@@ -36,8 +37,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: [
-      path.join(__dirname, 'dist'),
-      path.join(__dirname, 'docs')
+      path.join(__dirname)
     ],
     compress: true,
     port: 9876
