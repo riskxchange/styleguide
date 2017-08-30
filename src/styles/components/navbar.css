@@ -3,9 +3,12 @@
   background: var(--veryDarkBlue);
   width: 100%;
   top: 0;
-  z-index: 100;
+  z-index: 102;
   color: white;
-  box-shadow: var(--shadowLevel2);
+}
+
+.rx-navbar--fixed {
+  position: fixed;
 }
 
 .rx-navbar:after {

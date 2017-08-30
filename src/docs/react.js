@@ -166,4 +166,4 @@ class App extends PureComponent {
   }
 }
 
-render(<App />, document.querySelector('#react'))
+render(<App />, document.querySelector('#react-demo'))

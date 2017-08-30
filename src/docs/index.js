@@ -80,6 +80,7 @@ function init () {
       document.querySelector('.rx-navbar__link--active').classList.remove('rx-navbar__link--active')
       document.querySelector(`[href="#${id}"]`).classList.add('rx-navbar__link--active')
       initSubnav(id)
+      window.scrollTo(document.body, 0, 0)
     }
   })
 

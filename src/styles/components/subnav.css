@@ -10,6 +10,10 @@
   background: white;
 }
 
+.rx-subnav--fixed {
+  position: fixed;
+}
+
 .rx-subnav__links {
   overflow-x: scroll;
   overflow-y: hidden;
