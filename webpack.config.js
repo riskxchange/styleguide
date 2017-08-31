@@ -2,8 +2,12 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const extractCss = new ExtractTextPlugin('[name].css')
-const IS_PROD = process.env.NODE_ENV === 'production'
-const uglifyJs = new webpack.optimize.UglifyJsPlugin({ minimize: IS_PROD })
+
+const plugins = [extractCss]
+
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }))
+}
 
 module.exports = {
   entry: {
@@ -25,16 +29,21 @@ module.exports = {
       test: /(.*).css$/,
       use: extractCss.extract({
         use: [
-          { loader: 'css-loader', options: { importLoaders: 1, minimize: IS_PROD } },
+          { loader: 'css-loader', options: { importLoaders: 1, minimize: true } },
           'postcss-loader'
         ]
       })
+    }, {
+      test: /(.*).html$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'docs/index.html'
+        }
+      }]
     }]
   },
-  plugins: [
-    uglifyJs,
-    extractCss
-  ],
+  plugins,
   devServer: {
     contentBase: [
       path.join(__dirname)

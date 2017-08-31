@@ -4,9 +4,10 @@
   "description": "",
   "main": "dist/react/index.js",
   "scripts": {
-    "start": "npm run server",
+    "start": "mkdir -p docs; cp src/docs/index.html docs; npm run server",
     "server": "webpack-dev-server & babel-watch --watch src/react/components ./src/react/create-index.js & wait",
-    "build": "npm run build:react & NODE_ENV=production webpack & wait",
+    "build": "npm run build:react & npm run build:webpack & wait",
+    "build:webpack": "rm -rf dist; rm -rf docs; NODE_ENV=production webpack",
     "build:react": "rm -rf react; node ./src/react/create-index.js; babel src/react --out-dir react;",
     "pre-push": "npm run build; git add dist; git add react; git commit -m \"auto-build + commit\";"
   },
@@ -31,6 +32,8 @@
     "babel-watch": "^2.0.7",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "icons": "github:riskxchange/icons",
     "normalize.css": "^7.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
@@ -39,7 +42,6 @@
     "postcss-mixins": "^6.0.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "icons": "github:riskxchange/icons",
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.1"

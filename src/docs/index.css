@@ -13,7 +13,7 @@ pre {
 code {
   padding-left: 4px;
   padding-right: 4px;
-  background: var(--veryLightGrey);
+  background: #E6E6E6;
 }
 [rx-page="icons"] code {
   display: block;

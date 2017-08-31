@@ -3,6 +3,7 @@ import './react'
 import './index.css'
 import '../styles/index.css'
 import '../scripts/index.js'
+import './index.html'
 
 const ICON_VERSION = '0.2.4'
 
