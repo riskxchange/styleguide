@@ -12,7 +12,7 @@ export default class Input extends PureComponent {
   }
   render () {
     const type = this.props.type || 'text'
-    const props = omit(this.props, 'type', 'className')
+    const props = omit(this.props, 'type', 'className', 'variant', 'blocked')
     return (
       <input {...props} type={type} className={this.className} />
     )

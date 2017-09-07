@@ -13,7 +13,7 @@ npm start
 Then visit the following link in your browser:
 
 ```
-http://localhost:9876/docs
+http://localhost:9876/docs/
 ```
 
 ## Usage (Vanilla JS)
