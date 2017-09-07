@@ -43,7 +43,7 @@ var Input = function (_PureComponent) {
     key: 'render',
     value: function render() {
       var type = this.props.type || 'text';
-      var props = (0, _omit2.default)(this.props, 'type', 'className');
+      var props = (0, _omit2.default)(this.props, 'type', 'className', 'variant', 'blocked');
       return _react2.default.createElement('input', _extends({}, props, { type: type, className: this.className }));
     }
   }, {
