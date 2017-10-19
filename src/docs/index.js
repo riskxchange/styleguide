@@ -5,7 +5,7 @@ import '../styles/index.css'
 import '../scripts/index.js'
 import './index.html'
 
-const ICON_VERSION = '0.3.0'
+const ICON_VERSION = '0.3.1'
 
 console.log('--> init')
 
