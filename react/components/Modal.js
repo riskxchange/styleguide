@@ -57,7 +57,7 @@ var Modal = function (_PureComponent) {
             { className: 'rx-modal__body' },
             this.closeBtn,
             this.title,
-            this.children
+            this.props.children
           ),
           this.footer
         )

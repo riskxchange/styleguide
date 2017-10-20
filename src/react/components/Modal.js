@@ -37,7 +37,7 @@ export default class Modal extends PureComponent {
           <div className='rx-modal__body'>
             {this.closeBtn}
             {this.title}
-            {this.children}
+            {this.props.children}
           </div>
           {this.footer}
         </div>
