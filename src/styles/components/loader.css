@@ -1,81 +1,84 @@
-.rx-loader {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  position: relative;
-  font-size: 64px;
-}
-
-.rx-loader .rx-icon--logo-inner,
-.rx-loader .rx-icon--logo-letter {
-  color: var(--veryDarkBlue);
-}
-
-.rx-loader .rx-icon--logo-outer {
-  color: var(--blue);
-}
-
-.rx-loader--inverse .rx-icon--logo-inner,
-.rx-loader--inverse .rx-icon--logo-letter {
-  color: white;
-}
-
-/* secondary (light-bg/dark-bg) */
-
-.rx-loader--light-bg .rx-icon {
-  color: var(--veryDarkBlue);
-  opacity: 0.15;
-}
-
-.rx-loader--dark-bg .rx-icon {
-  color: var(--veryLightBlue);
-  opacity: 0.2;
-}
-
-/* animation */
-
-@keyframes spin-cw {
-  from {
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
-  } to {
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes spin-ccw {
-  from {
+@keyframes spin-fast {
+  0% {
     transform: rotate(0deg);
-  } to {
-    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(720deg);
   }
 }
 
-.rx-loader > .rx-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.rx-loader .rx-icon--logo-outer,
-.rx-loader .rx-icon--logo-inner {
-  animation-name: spin-cw;
-  animation-duration: 1200ms;
+.ease {
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
 }
 
-.rx-loader .rx-icon--logo-inner {
-  animation-name: spin-ccw;
+.fast {
+  animation-name: spin-fast;
 }
 
-.rx-loader--light-bg .rx-icon--logo-outer,
-.rx-loader--dark-bg .rx-icon--logo-outer {
-  animation-duration: 1800ms;
-  animation-timing-function: linear;
+.reverse {
+ animation-direction: reverse;
 }
 
-.rx-loader--light-bg .rx-icon--logo-inner,
-.rx-loader--dark-bg .rx-icon--logo-inner {
-  animation-duration: 1500ms;
-  animation-timing-function: linear;
+.rx-loader > * {
+  display: none;
+}
+
+.rx-loader {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background-image: svg-load('../../images/spinner-logo.svg');
+  background-size: 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rx-loader:before,
+.rx-loader:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  border: 3px solid #111;
+  animation: spin 1s infinite ease-in-out;
+}
+
+.rx-loader:before {
+  border-right-color: rgba(1,1,1,0) !important;
+  animation-duration: 1s;
+}
+
+.rx-loader:after {
+  top: 5px;
+  left: 5px;
+  width: 54px;
+  height: 54px;
+  border-color: #028FFF;
+  border-right-color: rgba(1,1,1,0) !important;
+  animation-direction: reverse;
+  animation-name: spin-fast;
+}
+
+.rx-loader--light-bg {
+  opacity: 0.5;
+  background-image: svg-load('../../images/spinner-logo-grey.svg');
+}
+
+.rx-loader--light-bg:before,
+.rx-loader--light-bg:after {
+  border-color: #a9b7c3;
 }

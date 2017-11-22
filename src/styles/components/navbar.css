@@ -22,6 +22,14 @@
   padding-left: 10px;
   width: 180px;
   height: var(--navbarHeight);
+  line-height: var(--navbarHeight);
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.rx-navbar__logo .rx-logo {
+  width: 140px;
 }
 
 .rx-navbar__menu {
