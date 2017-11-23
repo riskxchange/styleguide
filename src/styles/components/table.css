@@ -4,20 +4,24 @@
   border-spacing: 0;
 }
 
-.rx-table th {
-  text-align: left;
-}
-
 .rx-table td,
 .rx-table th {
   padding: 10px;
   border-bottom: 1px solid #DDD;
 }
 
+.rx-table th {
+  text-align: left;
+  font-size: 13px;
+  padding-bottom: 5px;
+  padding-top: 0;
+}
+
 .rx-table tr:last-child td {
   border-bottom: none;
 }
 
-.rx-table tr:nth-child(odd) td {
-  background-color: var(--lightGrey);
+.rx-table--spaced-rows td {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

@@ -102,24 +102,14 @@ class App extends PureComponent {
   get loaders () {
     return (
       <Row>
-        <Column sm={3}>
+        <Column sm={6}>
           <Card>
             <Loader />
           </Card>
         </Column>
-        <Column sm={3}>
-          <Card className='rx-bg--dark-blue'>
-            <Loader inverse />
-          </Card>
-        </Column>
-        <Column sm={3}>
+        <Column sm={6}>
           <Card>
             <Loader bg />
-          </Card>
-        </Column>
-        <Column sm={3}>
-          <Card className='rx-bg--dark-blue'>
-            <Loader inverse bg />
           </Card>
         </Column>
       </Row>

@@ -11,3 +11,11 @@
   display: block;
   color: #999;
 }
+
+/* NOTE: rx-label should be depricated */
+.rx-field__label,
+.rx-label {
+  display: block;
+  margin: 0.5em 0;
+  font-weight: bold;
+}

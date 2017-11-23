@@ -19,7 +19,6 @@ html, body {
 }
 
 body {
-  /* NOTE: .rx-utils--body-has-subnav adds extra padding when there is a subnav */
   padding-top: var(--navbarHeight);
   padding-bottom: 20px;
 }

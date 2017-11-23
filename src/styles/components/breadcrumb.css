@@ -1,3 +1,7 @@
+.rx-breadcrumb {
+  font-size: 14px;
+}
+
 .rx-breadcrumb:after {
   content: '';
   display: table;
@@ -14,7 +18,7 @@
   float: left;
   margin-right: 8px;
   text-decoration: none;
-  color: var(--veryDarkBlue) !important;
+  color: var(--blue) !important;
 }
 
 .rx-breadcrumb__link:hover {
@@ -23,4 +27,6 @@
 
 .rx-breadcrumb__link:last-child {
   background: none;
+  text-decoration: none;
+  color: var(--veryDarkBlue) !important;
 }

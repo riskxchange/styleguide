@@ -36,6 +36,11 @@
   margin: 0 auto;
 }
 
+.rx-modal--wide .rx-modal__body,
+.rx-modal--wide .rx-modal__footer {
+  max-width: 640px;
+}
+
 .rx-modal__body {
   border-radius: 4px 4px 0 0;
   position: relative;
@@ -64,12 +69,13 @@
   line-height: 24px;
   text-align: center;
   vertical-align: middle;
-  right: 7px;
-  top: 7px;
+  right: 17px;
+  top: 17px;
   width: 24px;
   height: 24px;
   color: var(--grey);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .rx-modal__close-btn:hover {
@@ -77,11 +83,40 @@
 }
 
 .rx-modal__title {
+  font-size: 21px;
+  font-weight: bold;
+  font-size: 21px;
+  text-align: left;
+  border-bottom: 1px solid #E2E2E2;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 20px;
+  padding-top: 0;
+  margin-bottom: 20px;
   text-align: center;
-  font-size: 24px;
+  font-weight: normal;
 }
 
+.rx-modal__actions {
+  padding: 20px;
+}
 
-@media (--tablet) {
+.rx-modal__actions:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
+.rx-modal__actions .rx-btn {
+  min-width: 120px;
+  margin-right: 20px;
+}
+
+.rx-modal__actions .rx-btn:first-child {
+  float: left;
+}
+
+.rx-modal__actions .rx-btn:last-child {
+  float: right;
+  margin-right: 0;
 }

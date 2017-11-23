@@ -1,12 +1,12 @@
 .rx-link {
   color: var(--blue);
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .rx-link:hover,
 .rx-link:focus {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--lightBlue);
 }
 
@@ -15,13 +15,14 @@
 }
 
 .rx-link--inverse {
-  color: inverse;
+  color: #fff;
+  text-decoration: none;
 }
 
 .rx-link--inverse:hover,
 .rx-link--inverse:focus {
-  text-decoration: none;
-  color: #DDD;
+  color: #fff;
+  text-decoration: underline;
 }
 
 .rx-link--inverse:active {

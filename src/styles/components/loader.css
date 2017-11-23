@@ -16,24 +16,13 @@
   }
 }
 
-.ease {
-  animation-timing-function: ease-in-out;
-}
-
-.fast {
-  animation-name: spin-fast;
-}
-
-.reverse {
- animation-direction: reverse;
-}
-
 .rx-loader > * {
   display: none;
 }
 
 .rx-loader {
-  display: inline-block;
+  margin: 0 auto;
+  display: block;
   position: relative;
   width: 64px;
   height: 64px;

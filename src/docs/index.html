@@ -21,7 +21,7 @@
         </div>
       </div>
     </header>
-    <nav class="rx-subnav rx-subnav--fixed">
+    <nav class="rx-subnav">
       <div class="rx-container rx-container--no-pad">
         <div class="rx-subnav__links"></div>
       </div>
@@ -207,8 +207,8 @@
         <h2>Form Basics</h2>
         <div rx-description>
           <p>Forms can be created using <code>.rx-form</code>. They can have a title <code>.rx-form__title</code> and actions <code>.rx-form__actions</code> which can contains submit buttons, etc.</p>
-          <p>Forms contain fields <code>.rx-field</code>, which can contain inputs <code>.rx-input</code>, selects <code>.rx-select</code>, radios <code>.rx-radio-group</code>, checkboxes <code>.rx-checkbox-group</code> and their corresponding labels <code>.rx-label</code>.
-          <p>Fields can also include info about the field, using <code>.rx-field__info</code>.</p>
+          <p>Forms contain fields <code>.rx-field</code>, which can contain inputs <code>.rx-input</code>, selects <code>.rx-select</code>, radios <code>.rx-radio-group</code> and checkboxes <code>.rx-checkbox-group</code>.
+          <p>Fields can also include info about the field, using <code>.rx-field__info</code>. Labels are created with <code>.rx-field__label</code>.</p>
         </div>
         <div class="rx-row">
           <div class="rx-col--md-6">
@@ -216,11 +216,11 @@
               <form class="rx-form">
                 <h2 class="rx-form__title">Example form</h2>
                 <div class="rx-field">
-                  <label class="rx-label" for="name">Full name</label>
+                  <label class="rx-field__label" for="name">Full name</label>
                   <input class="rx-input rx-input--blocked" name="name" />
                 </div>
                 <div class="rx-field">
-                  <p class="rx-label">Do you like apples?</p>
+                  <p class="rx-field__label">Do you like apples?</p>
                   <div class="rx-field__info">Apples are an amazing fruit, that can be used to make cider.</div>
                   <div class="rx-radio-group">
                     <label>
@@ -245,28 +245,28 @@
         <h2>Inputs</h2>
         <form>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Default</label>
+            <label class="rx-field__label">Default</label>
             <input class="rx-input rx-input" type="email" placeholder="e.g. me@you.com" />
           </div>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Error</label>
+            <label class="rx-field__label">Error</label>
             <input class="rx-input rx-input rx-input--error" placeholder="error" />
           </div>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Success</label>
+            <label class="rx-field__label">Success</label>
             <input class="rx-input rx-input rx-input--success" placeholder="success" />
           </div>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Disabled</label>
+            <label class="rx-field__label">Disabled</label>
             <input class="rx-input rx-input" disabled placeholder="disabled" />
           </div>
           <div class="rx-row">
             <div class="rx-field rx-col--xs-6">
-              <label class="rx-label">First name</label>
+              <label class="rx-field__label">First name</label>
               <input class="rx-input rx-input--blocked" placeholder="John" />
             </div>
             <div class="rx-field rx-col--xs-6">
-              <label class="rx-label">Last name</label>
+              <label class="rx-field__label">Last name</label>
               <input class="rx-input rx-input--blocked" placeholder="Smith" />
             </div>
           </div>
@@ -392,19 +392,19 @@
         <h2>Textarea</h2>
         <form>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Default</label>
+            <label class="rx-field__label">Default</label>
             <textarea class="rx-textarea" placeholder="Enter me..."></textarea>
           </div>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Blocked</label>
+            <label class="rx-field__label">Blocked</label>
             <textarea class="rx-textarea rx-textarea--blocked">I AM BLOCKED</textarea>
           </div>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Success</label>
+            <label class="rx-field__label">Success</label>
             <textarea class="rx-textarea rx-textarea--success" rows="1"></textarea>
           </div>
           <div class="rx-field">
-            <label class="rx-label rx-label--blocked">Error</label>
+            <label class="rx-field__label">Error</label>
             <textarea class="rx-textarea rx-textarea--error" rows="1"></textarea>
           </div>
         </form>
@@ -418,7 +418,7 @@
         </div>
         <div class="rx-card">
           <div class="rx-field">
-            <label class="rx-label">Full name</label>
+            <label class="rx-field__label">Full name</label>
             <div class="rx-tooltip rx-tooltip--active">
               <button class="rx-tooltip__icon">?</button>
               <div class="rx-tooltip__message">This is a tooltip, and it can contain lots of information</div>
@@ -442,7 +442,14 @@
           <a class="rx-btn rx-btn--info rx-btn--disabled" href="#">Disabled</a>
         </div>
         <div class="rx-field">
-          <button class="rx-btn rx-btn--blocked">Blocked</a>
+          <button class="rx-btn rx-btn--blocked">Blocked</button>
+        </div>
+        <div class="rx-field">
+          <button class="rx-btn rx-btn--small">I am a small button</button>
+        </div>
+        <div class="rx-field">
+          <button class="rx-btn rx-btn--red-hover">Red hover</button>
+          <button class="rx-btn rx-btn--green-hover">Green hover</button>
         </div>
       </div>
       <!-- cards -->
@@ -488,9 +495,17 @@
                 <span class="rx-icon rx-icon--cross"></span>
               </button>
               <div class="rx-modal__title">Modal title goes here</div>
+              <div class="rx-field">
+                <label class="rx-field__label">Test input</label>
+                <div class="rx-field__info">This is the info line...</div>
+                <input class="rx-input rx-input--blocked" />
+              </div>
             </div>
             <div class="rx-modal__footer">
-              Footer goes here
+              <div class="rx-modal__actions">
+                <button class="rx-btn">Cancel</button>
+                <button class="rx-btn rx-btn--primary">Save</button>
+              </div>
             </div>
           </div>
         </div>

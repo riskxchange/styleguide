@@ -1,6 +1,6 @@
 .rx-btn {
   border: 1px solid var(--grey);
-  background-color: #FAFAFA;
+  border-color: #696f7f;
   font-family: var(--fontStack);
   font-size: var(--fontSizeDefault);
   line-height: calc(var(--inputHeight) - 2px);
@@ -12,42 +12,51 @@
   color: var(--veryDarkBlue);
   transition: border-color 0.3s, background-color 0.3s;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .rx-btn:hover,
 .rx-btn:focus {
-  background: #FFF;
+  border-color: #1c2338;
+  background-color: #1c2338;
+  color: #fff;
 }
 
-.rx-btn:active {
-  background: #F6F6F6;;
+.rx-btn--small {
+  height: 32px;
+  line-height: 30px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .rx-btn--primary {
-  border: none;
-  /*border-color: var(--darkGreen);*/
+  border-color: var(--green);
   background-color: var(--green);
   color: white;
 }
 
 .rx-btn--primary:hover,
-.rx-btn--primary:focus {
+.rx-btn--primary:focus,
+.rx-btn--green-hover:hover,
+.rx-btn--green-hover:focus {
+  border-color: var(--darkGreen);
   background-color: var(--lightGreen);
 }
 
-.rx-btn--primary:active {
+.rx-btn--primary:active,
+.rx-btn--green-hover:active {
   background-color: var(--darkGreen);
 }
 
 .rx-btn--info {
-  border: none;
-  /*border-color: var(--darkBlue);*/
+  border-color: var(--blue);
   background-color: var(--blue);
   color: white;
 }
 
 .rx-btn--info:hover,
 .rx-btn--info:focus {
+  border-color: var(--darkBlue);
   background-color: var(--lightBlue);
 }
 
@@ -56,18 +65,21 @@
 }
 
 .rx-btn--danger {
-  border: none;
-  /*border-color: var(--darkRed);*/
+  border-color: var(--red);
   background-color: var(--red);
   color: white;
 }
 
 .rx-btn--danger:hover,
-.rx-btn--danger:focus {
+.rx-btn--danger:focus,
+.rx-btn--red-hover:hover,
+.rx-btn--red-hover:focus {
+  border-color: var(--darkRed);
   background-color: var(--lightRed);
 }
 
-.rx-btn--danger:active {
+.rx-btn--danger:active,
+.rx-btn--red-hover:active {
   background-color: var(--darkRed);
 }
 
@@ -82,4 +94,14 @@
 .rx-btn--blocked {
   display: block;
   width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/*----------------------------------------------------------*/
+
+@media (min-width: 768px) {
+  .rx-btn.rx-btn--small {
+    font-size: 15px;
+  }
 }

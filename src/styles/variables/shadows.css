@@ -1,4 +1,5 @@
 :root {
   --shadowLevel1: 0 1px 1px rgba(0, 0, 20, .15);
   --shadowLevel2: 0 2px 5px rgba(0, 0, 20, 0.2);
+  --shadowLevel1Darker: 0 1px 1px rgba(0, 0, 20, .35);
 }

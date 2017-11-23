@@ -7,7 +7,11 @@ export function init () {
     var modalBody = modal.querySelector('.rx-modal__body')
     var modalFooter = modal.querySelector('.rx-modal__footer')
     openButtons.forEach((btn) => { btn.onclick = () => openModal(modal) })
-    closeBtn.onclick = () => closeModal(modal)
+    if (closeBtn) {
+      closeBtn.onclick = () => closeModal(modal)
+    } else {
+      console.warn('Missing close btn for modal:', modal)
+    }
     // if modal has `do-not-dismiss` attribute, do not allow it to be dismissed
     // by clicking on the background
     if (modal.hasAttribute('do-not-dismiss')) return

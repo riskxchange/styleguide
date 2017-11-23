@@ -7,11 +7,10 @@ import './index.html'
 
 const ICON_VERSION = '0.3.1'
 
-console.log('--> init')
-
-document.onreadystatechange = init
-init()
-initIcons()
+document.addEventListener('DOMContentLoaded', function () {
+  init()
+  initIcons()
+})
 
 function init () {
   console.log('[demo] init:', document.readyState)

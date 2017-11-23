@@ -5,10 +5,10 @@ import {init as initTooltip} from './tooltip.js'
 function init () {
   console.log('[styleguide] init:', document.readyState)
   if (document.readyState === 'loading') return
+  console.log('index.js')
   initNavbar()
   initModal()
   initTooltip()
 }
 
-document.onreadystatechange = init
-init()
+document.addEventListener('DOMContentLoaded', init)

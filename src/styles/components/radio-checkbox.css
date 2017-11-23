@@ -99,3 +99,26 @@
   top: 2px;
   left: 1px;
 }
+
+.rx-checkbox-group--button label,
+.rx-radio-group--button label {
+  display: block;
+  font-size: 18px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.rx-radio-group--button label:hover {
+  border-color: var(--blue);
+  cursor: pointer;
+}
+
+.rx-checkbox-group--button label.active,
+.rx-radio-group--button label.active {
+  background: rgba(2, 143, 255, 0.15);
+  border-color: var(--blue);
+}

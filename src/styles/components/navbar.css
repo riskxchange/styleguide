@@ -19,8 +19,7 @@
 
 .rx-navbar__logo {
   display: block;
-  padding-left: 10px;
-  width: 180px;
+  padding-left: 15px;
   height: var(--navbarHeight);
   line-height: var(--navbarHeight);
   box-sizing: border-box;
@@ -29,7 +28,7 @@
 }
 
 .rx-navbar__logo .rx-logo {
-  width: 140px;
+  width: 124px;
 }
 
 .rx-navbar__menu {
