@@ -93,7 +93,7 @@ var Modal = function (_PureComponent) {
     get: function get() {
       return (0, _classnames2.default)('rx-modal', {
         'rx-modal--active': this.props.open
-      });
+      }, this.props.className);
     }
   }]);
 

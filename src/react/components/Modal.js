@@ -28,7 +28,7 @@ export default class Modal extends PureComponent {
   get className () {
     return cx('rx-modal', {
       'rx-modal--active': this.props.open
-    })
+    }, this.props.className)
   }
   render () {
     return (
