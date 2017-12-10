@@ -20,6 +20,10 @@ var _omit = require('../utils/omit');
 
 var _omit2 = _interopRequireDefault(_omit);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -61,7 +65,7 @@ var Select = function (_PureComponent) {
 
       return (0, _classnames2.default)('rx-select', (_cx = {
         'rx-select--blocked': this.props.blocked
-      }, _defineProperty(_cx, 'rx-select--' + this.props.variant, this.props.variant), _defineProperty(_cx, 'rx-select--disabled', this.props.disabled), _cx));
+      }, _defineProperty(_cx, 'rx-select--' + this.props.variant, this.props.variant), _defineProperty(_cx, 'rx-select--disabled', this.props.disabled), _cx), this.props.className);
     }
   }, {
     key: 'options',
@@ -85,6 +89,12 @@ var Select = function (_PureComponent) {
 
 exports.default = Select;
 
+
+Select.propTypes = {
+  variant: _propTypes2.default.oneOf(['error', 'success']),
+  disabled: _propTypes2.default.bool,
+  blocked: _propTypes2.default.bool
+};
 
 Select.defaultProps = {
   onChange: function onChange(e) {

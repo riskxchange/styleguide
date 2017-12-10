@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import cx from 'classnames'
 import omit from '../utils/omit'
+import PropTypes from 'prop-types'
 
 export default class Select extends PureComponent {
   get className () {
@@ -8,7 +9,7 @@ export default class Select extends PureComponent {
       'rx-select--blocked': this.props.blocked,
       [`rx-select--${this.props.variant}`]: this.props.variant,
       'rx-select--disabled': this.props.disabled
-    })
+    }, this.props.className)
   }
   get options () {
     return this.props.options.map((option) => {
@@ -30,6 +31,12 @@ export default class Select extends PureComponent {
       </select>
     )
   }
+}
+
+Select.propTypes = {
+  variant: PropTypes.oneOf(['error', 'success']),
+  disabled: PropTypes.bool,
+  blocked: PropTypes.bool
 }
 
 Select.defaultProps = {
