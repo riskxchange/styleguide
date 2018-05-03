@@ -3,6 +3,7 @@ import Button from './components/Button'
 import Card from './components/Card'
 import CheckboxGroup from './components/CheckboxGroup'
 import Column from './components/Column'
+import CompanyLogo from './components/CompanyLogo'
 import Container from './components/Container'
 import EmailLink from './components/EmailLink'
 import ErrorPage from './components/ErrorPage'
@@ -33,6 +34,7 @@ export {
   Card,
   CheckboxGroup,
   Column,
+  CompanyLogo,
   Container,
   EmailLink,
   ErrorPage,
