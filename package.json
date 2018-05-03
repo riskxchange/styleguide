@@ -6,9 +6,10 @@
   "scripts": {
     "start": "mkdir -p docs; cp src/docs/index.html docs; npm run server",
     "server": "webpack-dev-server & babel-watch --watch src/react/components ./src/react/create-index.js & wait",
-    "build": "npm run build:react & npm run build:webpack & wait",
+    "build": "npm run build:react & npm run build:webpack & npm run build:utils & wait",
     "build:webpack": "rm -rf dist; rm -rf docs; NODE_ENV=production webpack",
     "build:react": "rm -rf react; node ./src/react/create-index.js; babel src/react --out-dir react;",
+    "build:utils": "rm -rf utils; babel src/utils --out-dir utils;",
     "pre-push": "npm run build; git add dist; git add react; git commit -m \"auto-build + commit\";"
   },
   "pre-push": [
