@@ -18,6 +18,9 @@ import Loader from './components/Loader'
 import Logo from './components/Logo'
 import Menu from './components/Menu'
 import Modal from './components/Modal'
+import ModalBody from './components/ModalBody'
+import ModalFooter from './components/ModalFooter'
+import ModalHeader from './components/ModalHeader'
 import Navbar from './components/Navbar'
 import Notice from './components/Notice'
 import RadioGroup from './components/RadioGroup'
@@ -49,6 +52,9 @@ export {
   Logo,
   Menu,
   Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
   Navbar,
   Notice,
   RadioGroup,

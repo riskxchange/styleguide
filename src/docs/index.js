@@ -26,10 +26,10 @@ function init () {
   var navbar = document.querySelector('.rx-navbar')
   var navbarContainer = navbar.querySelector('.rx-container')
 
-  document.querySelector('[rx-toggle-navbar]').onclick = function () {
+  document.querySelector('[rx-toggle-navbar]').addEventListener('click', function () {
     navbarContainer.classList.toggle('rx-container')
     navbarContainer.classList.toggle('rx-container--no-pad')
-  }
+  })
 
   pages.forEach(function (page, i) {
     var h1 = page.querySelector('h1').cloneNode()

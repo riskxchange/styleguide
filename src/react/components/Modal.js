@@ -1,47 +1,36 @@
 import React, {PureComponent} from 'react'
-import Icon from './Icon'
 import cx from 'classnames'
+import ModalHeader from './ModalHeader'
+import ModalBody from './ModalBody'
+import ModalFooter from './ModalFooter'
 
-export default class Modal extends PureComponent {
-  constructor (props) {
-    super(props)
-    this.onCloseHandler = this.onCloseHandler.bind(this)
-  }
-  onCloseHandler (e) {
-    this.props.onClose(e)
-  }
-  get title () {
-    if (!this.props.title) return null
-    return <div className='rx-modal__title'>{this.props.title}</div>
-  }
-  get closeBtn () {
-    return (
-      <button className='rx-modal__close-btn' onClick={this.onCloseHandler}>
-        <Icon name='cross' />
-      </button>
-    )
-  }
-  get footer () {
-    if (!this.props.footer) return null
-    return <div className='rx-modal__footer' children={this.props.footer} />
-  }
-  get className () {
-    return cx('rx-modal', {
-      'rx-modal--active': this.props.open
-    }, this.props.className)
+class Modal extends PureComponent {
+  renderCloseBtn () {
+    const cross = <span className='rx-icon rx-icon--cross' />
+    if (!this.props.onClose) {
+      console.warn('Missing close button for modal. Should provide `closeLink` or `onClose` prop.')
+    }
+    return <button className='rx-modal__close-btn' onClick={this.props.onClose} children={cross} />
   }
   render () {
+    const className = cx('rx-modal', {
+      'rx-modal--visible': this.props.active,
+      'rx-modal--wide': this.props.wide,
+      'rx-modal--scrollable': !this.props.noScroll
+    }, this.props.className)
     return (
-      <div className={this.className}>
-        <div className='rx-modal__container'>
-          <div className='rx-modal__body'>
-            {this.closeBtn}
-            {this.title}
-            {this.props.children}
-          </div>
-          {this.footer}
+      <div className={className}>
+        <div className='rx-modal__inner'>
+          {this.renderCloseBtn()}
+          {this.props.children}
         </div>
       </div>
     )
   }
 }
+
+Modal.Header = ModalHeader
+Modal.Body = ModalBody
+Modal.Footer = ModalFooter
+
+export default Modal

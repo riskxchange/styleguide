@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.Grade = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.CompanyLogo = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.Breadcrumb = undefined;
+exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.ModalHeader = exports.ModalFooter = exports.ModalBody = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.Grade = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.CompanyLogo = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.Breadcrumb = undefined;
 
 var _Breadcrumb = require('./components/Breadcrumb');
 
@@ -85,6 +85,18 @@ var _Modal = require('./components/Modal');
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
+var _ModalBody = require('./components/ModalBody');
+
+var _ModalBody2 = _interopRequireDefault(_ModalBody);
+
+var _ModalFooter = require('./components/ModalFooter');
+
+var _ModalFooter2 = _interopRequireDefault(_ModalFooter);
+
+var _ModalHeader = require('./components/ModalHeader');
+
+var _ModalHeader2 = _interopRequireDefault(_ModalHeader);
+
 var _Navbar = require('./components/Navbar');
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
@@ -143,6 +155,9 @@ exports.Loader = _Loader2.default;
 exports.Logo = _Logo2.default;
 exports.Menu = _Menu2.default;
 exports.Modal = _Modal2.default;
+exports.ModalBody = _ModalBody2.default;
+exports.ModalFooter = _ModalFooter2.default;
+exports.ModalHeader = _ModalHeader2.default;
 exports.Navbar = _Navbar2.default;
 exports.Notice = _Notice2.default;
 exports.RadioGroup = _RadioGroup2.default;

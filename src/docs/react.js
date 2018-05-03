@@ -90,11 +90,11 @@ class App extends PureComponent {
           Click to open modal
         </Button>
         <Modal
-          open={this.state.modalOpen}
-          onClose={this.toggleModal}
-          title='TITLE'
-          footer='I am the footer'>
-          This is the modal body
+          active={this.state.modalOpen}
+          onClose={this.toggleModal}>
+          <Modal.Header>TITLE</Modal.Header>
+          <Modal.Body>This is the modal body</Modal.Body>
+          <Modal.Footer>I am the footer</Modal.Footer>
         </Modal>
       </div>
     )
