@@ -4,6 +4,8 @@ import Card from './components/Card'
 import CheckboxGroup from './components/CheckboxGroup'
 import Column from './components/Column'
 import Container from './components/Container'
+import EmailLink from './components/EmailLink'
+import ErrorPage from './components/ErrorPage'
 import Field from './components/Field'
 import Form from './components/Form'
 import FormActions from './components/FormActions'
@@ -31,6 +33,8 @@ export {
   CheckboxGroup,
   Column,
   Container,
+  EmailLink,
+  ErrorPage,
   Field,
   Form,
   FormActions,

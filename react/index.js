@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.FormActions = exports.Form = exports.Field = exports.Container = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.Breadcrumb = undefined;
+exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.Breadcrumb = undefined;
 
 var _Breadcrumb = require('./components/Breadcrumb');
 
@@ -28,6 +28,14 @@ var _Column2 = _interopRequireDefault(_Column);
 var _Container = require('./components/Container');
 
 var _Container2 = _interopRequireDefault(_Container);
+
+var _EmailLink = require('./components/EmailLink');
+
+var _EmailLink2 = _interopRequireDefault(_EmailLink);
+
+var _ErrorPage = require('./components/ErrorPage');
+
+var _ErrorPage2 = _interopRequireDefault(_ErrorPage);
 
 var _Field = require('./components/Field');
 
@@ -113,6 +121,8 @@ exports.Card = _Card2.default;
 exports.CheckboxGroup = _CheckboxGroup2.default;
 exports.Column = _Column2.default;
 exports.Container = _Container2.default;
+exports.EmailLink = _EmailLink2.default;
+exports.ErrorPage = _ErrorPage2.default;
 exports.Field = _Field2.default;
 exports.Form = _Form2.default;
 exports.FormActions = _FormActions2.default;

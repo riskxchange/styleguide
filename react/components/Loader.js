@@ -9,10 +9,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Icon = require('./Icon');
-
-var _Icon2 = _interopRequireDefault(_Icon);
-
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -28,11 +24,5 @@ function Loader(_ref) {
     'rx-loader--light-bg': !inverse && bg,
     'rx-loader--dark-bg': inverse && bg
   });
-  return _react2.default.createElement(
-    'div',
-    { className: className },
-    _react2.default.createElement(_Icon2.default, { name: 'logo-outer' }),
-    _react2.default.createElement(_Icon2.default, { name: 'logo-inner' }),
-    _react2.default.createElement(_Icon2.default, { name: 'logo-letter' })
-  );
+  return _react2.default.createElement('div', { className: className });
 }

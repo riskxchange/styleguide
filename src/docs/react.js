@@ -3,7 +3,7 @@ import {render} from 'react-dom'
 import {
   Container, Row, Column, Card, Form, Field, Input, RadioGroup,
   FormActions, Button, Modal, Select, Notice, Loader, InputGroup, Table,
-  Breadcrumb, Menu
+  Breadcrumb, Menu, ErrorPage
 } from '../react'
 
 const LINKS = [
@@ -132,6 +132,13 @@ class App extends PureComponent {
   get data () {
     return JSON.stringify(this.state, null, 2)
   }
+  get error () {
+    return (
+      <div style={{paddingTop: '20px'}}>
+        <ErrorPage message='What the fudge!' sentry='123' />
+      </div>
+    )
+  }
   render () {
     return (
       <div>
@@ -151,6 +158,7 @@ class App extends PureComponent {
         </Row>
         {this.loaders}
         {this.table}
+        {this.error}
       </div>
     )
   }
