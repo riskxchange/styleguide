@@ -20,6 +20,10 @@ var _omit = require('../utils/omit');
 
 var _omit2 = _interopRequireDefault(_omit);
 
+var _BreadcrumbLink = require('./BreadcrumbLink');
+
+var _BreadcrumbLink2 = _interopRequireDefault(_BreadcrumbLink);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38,13 +42,25 @@ var Breadcrumb = function (_PureComponent) {
   }
 
   _createClass(Breadcrumb, [{
+    key: 'renderLinks',
+    value: function renderLinks() {
+      if (!this.props.links) return this.props.children;
+      return this.props.links.map(function (link, i) {
+        return _react2.default.createElement(
+          _BreadcrumbLink2.default,
+          { key: i },
+          link.text
+        );
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var props = (0, _omit2.default)(this.props, 'className', 'children', 'links');
       return _react2.default.createElement(
         'div',
         _extends({}, props, { className: this.className }),
-        this.links
+        this.renderLinks()
       );
     }
   }, {
@@ -52,20 +68,11 @@ var Breadcrumb = function (_PureComponent) {
     get: function get() {
       return (0, _classnames2.default)('rx-breadcrumb', this.props.className);
     }
-  }, {
-    key: 'links',
-    get: function get() {
-      return this.props.links.map(function (link, i) {
-        return _react2.default.createElement(
-          'a',
-          { className: 'rx-breadcrumb__link', href: link.href, key: i },
-          link.text
-        );
-      });
-    }
   }]);
 
   return Breadcrumb;
 }(_react.PureComponent);
+
+Breadcrumb.Link = _BreadcrumbLink2.default;
 
 exports.default = Breadcrumb;

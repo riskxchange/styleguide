@@ -142,7 +142,11 @@ class App extends PureComponent {
   render () {
     return (
       <div>
-        <Breadcrumb links={LINKS} />
+        <Breadcrumb>
+          <Breadcrumb.Link href='#'>Food</Breadcrumb.Link>
+          <Breadcrumb.Link href='#'>Fruit</Breadcrumb.Link>
+          <Breadcrumb.Link href='#'>Banana</Breadcrumb.Link>
+        </Breadcrumb>
         <Row>
           <Column md={3}>
             <Menu links={LINKS} />

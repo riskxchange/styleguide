@@ -1,4 +1,5 @@
 import Breadcrumb from './components/Breadcrumb'
+import BreadcrumbLink from './components/BreadcrumbLink'
 import Button from './components/Button'
 import Card from './components/Card'
 import CheckboxGroup from './components/CheckboxGroup'
@@ -33,6 +34,7 @@ import Tooltip from './components/Tooltip'
 
 export {
   Breadcrumb,
+  BreadcrumbLink,
   Button,
   Card,
   CheckboxGroup,

@@ -3,11 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.ModalHeader = exports.ModalFooter = exports.ModalBody = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.Grade = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.CompanyLogo = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.Breadcrumb = undefined;
+exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.ModalHeader = exports.ModalFooter = exports.ModalBody = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.Grade = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.CompanyLogo = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.BreadcrumbLink = exports.Breadcrumb = undefined;
 
 var _Breadcrumb = require('./components/Breadcrumb');
 
 var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
+
+var _BreadcrumbLink = require('./components/BreadcrumbLink');
+
+var _BreadcrumbLink2 = _interopRequireDefault(_BreadcrumbLink);
 
 var _Button = require('./components/Button');
 
@@ -136,6 +140,7 @@ var _Tooltip2 = _interopRequireDefault(_Tooltip);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Breadcrumb = _Breadcrumb2.default;
+exports.BreadcrumbLink = _BreadcrumbLink2.default;
 exports.Button = _Button2.default;
 exports.Card = _Card2.default;
 exports.CheckboxGroup = _CheckboxGroup2.default;

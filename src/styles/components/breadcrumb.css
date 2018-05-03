@@ -29,4 +29,5 @@
   background: none;
   text-decoration: none;
   color: var(--veryDarkBlue) !important;
+  cursor: default;
 }
