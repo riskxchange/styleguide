@@ -19,7 +19,7 @@ function Grade(_ref) {
   var large = _ref.large,
       children = _ref.children;
 
-  var str = children ? 'wip' : children.toLowerCase().replace(/[^a-z]/g, '');
+  var str = children ? children.toLowerCase().replace(/[^a-z]/g, '') : 'wip';
   var className = (0, _classnames2.default)('rx-grade', 'rx-grade--' + str, { 'rx-grade--large': large });
   return _react2.default.createElement(
     'div',

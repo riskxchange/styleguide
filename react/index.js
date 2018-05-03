@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.ModalHeader = exports.ModalFooter = exports.ModalBody = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.Grade = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.CompanyLogo = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.BreadcrumbLink = exports.Breadcrumb = undefined;
+exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.ModalHeader = exports.ModalFooter = exports.ModalBody = exports.Modal = exports.MenuItem = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.Grade = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.CompanyLogo = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.BreadcrumbLink = exports.Breadcrumb = undefined;
 
 var _Breadcrumb = require('./components/Breadcrumb');
 
@@ -85,6 +85,10 @@ var _Menu = require('./components/Menu');
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
+var _MenuItem = require('./components/MenuItem');
+
+var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
 var _Modal = require('./components/Modal');
 
 var _Modal2 = _interopRequireDefault(_Modal);
@@ -159,6 +163,7 @@ exports.InputGroup = _InputGroup2.default;
 exports.Loader = _Loader2.default;
 exports.Logo = _Logo2.default;
 exports.Menu = _Menu2.default;
+exports.MenuItem = _MenuItem2.default;
 exports.Modal = _Modal2.default;
 exports.ModalBody = _ModalBody2.default;
 exports.ModalFooter = _ModalFooter2.default;

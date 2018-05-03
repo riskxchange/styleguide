@@ -18,6 +18,7 @@ import InputGroup from './components/InputGroup'
 import Loader from './components/Loader'
 import Logo from './components/Logo'
 import Menu from './components/Menu'
+import MenuItem from './components/MenuItem'
 import Modal from './components/Modal'
 import ModalBody from './components/ModalBody'
 import ModalFooter from './components/ModalFooter'
@@ -53,6 +54,7 @@ export {
   Loader,
   Logo,
   Menu,
+  MenuItem,
   Modal,
   ModalBody,
   ModalFooter,

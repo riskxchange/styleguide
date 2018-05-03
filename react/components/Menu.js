@@ -4,15 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var _MenuItem = require('./MenuItem');
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _MenuItem2 = _interopRequireDefault(_MenuItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25,30 +27,20 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Menu = function (_PureComponent) {
   _inherits(Menu, _PureComponent);
 
-  function Menu(props) {
+  function Menu() {
     _classCallCheck(this, Menu);
 
-    var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
-
-    _this.getLink = _this.getLink.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
   }
 
   _createClass(Menu, [{
-    key: 'getLink',
-    value: function getLink(_ref, i) {
-      var href = _ref.href,
-          text = _ref.text,
-          active = _ref.active;
-
-      var className = (0, _classnames2.default)('rx-menu__link', {
-        'rx-menu__link--active': active
+    key: 'renderItems',
+    value: function renderItems() {
+      var items = this.props.items || this.props.links;
+      if (!items) return this.props.children;
+      return items.map(function (link, i) {
+        return _react2.default.createElement(_MenuItem2.default, _extends({}, link, { key: i }));
       });
-      return _react2.default.createElement(
-        'a',
-        { className: className, href: href, key: i },
-        text
-      );
     }
   }, {
     key: 'render',
@@ -56,21 +48,18 @@ var Menu = function (_PureComponent) {
       return _react2.default.createElement(
         'nav',
         { className: 'rx-menu' },
-        this.links
-      );
-    }
-  }, {
-    key: 'links',
-    get: function get() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'rx-menu__links' },
-        this.props.links.map(this.getLink)
+        _react2.default.createElement(
+          'div',
+          { className: 'rx-menu__items' },
+          this.renderItems()
+        )
       );
     }
   }]);
 
   return Menu;
 }(_react.PureComponent);
+
+Menu.Item = _MenuItem2.default;
 
 exports.default = Menu;

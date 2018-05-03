@@ -3,14 +3,9 @@ import {render} from 'react-dom'
 import {
   Container, Row, Column, Card, Form, Field, Input, RadioGroup,
   FormActions, Button, Modal, Select, Notice, Loader, InputGroup, Table,
-  Breadcrumb, Menu, ErrorPage
+  Breadcrumb, Menu, ErrorPage, Grade
 } from '../react'
 
-const LINKS = [
-  { text: 'Apple', href: '#' },
-  { text: 'Banana', href: '#' },
-  { text: 'Carrot', href: '#', active: true }
-]
 const RADIO_ITEMS = [
   { text: 'Yes', value: 'yes', selected: true },
   { text: 'No', value: 'no' }
@@ -22,15 +17,15 @@ const SELECT_ITEMS = [
 ]
 const TABLE_DATA = [{
   fruit: 'apple',
-  color: 'green',
+  grade: <Grade>A</Grade>,
   price: '0.40'
 }, {
   fruit: 'banana',
-  color: 'yellow',
+  grade: <Grade>C</Grade>,
   price: '0.20'
 }, {
   fruit: 'strawberry',
-  color: 'red',
+  grade: <Grade>F</Grade>,
   price: '1.43'
 }]
 
@@ -119,7 +114,7 @@ class App extends PureComponent {
     const header = [
       { key: 'fruit', text: 'Fruit' },
       { key: 'price', text: 'Price (£)' },
-      { key: 'color', text: 'Colour' }
+      { key: 'grade', text: 'Grade' }
     ]
     return (
       <Container>
@@ -149,7 +144,11 @@ class App extends PureComponent {
         </Breadcrumb>
         <Row>
           <Column md={3}>
-            <Menu links={LINKS} />
+            <Menu>
+              <Menu.Item href='#'>Apple</Menu.Item>
+              <Menu.Item href='#'>Banana</Menu.Item>
+              <Menu.Item active>Carrot</Menu.Item>
+            </Menu>
             <br />
             {this.modal}
           </Column>

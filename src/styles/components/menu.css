@@ -3,17 +3,20 @@
   box-sizing: border-box;
 }
 
-.rx-menu__links {
+.rx-menu__links,
+.rx-menu__items {
   background: white;
   box-shadow: var(--shadowLevel1);
   transition: box-shadow 0.3s;
 }
 
-.rx-menu__links:hover {
+.rx-menu__links:hover,
+.rx-menu__items:hover {
   box-shadow: var(--shadowLevel2);
 }
 
-.rx-menu__link {
+.rx-menu__link,
+.rx-menu__item {
   line-height: 48px;
   font-size: 14px;
   height: 48px;
@@ -22,11 +25,13 @@
   color: #333;
   padding: 0 20px;
 }
-.rx-menu__link:hover {
+.rx-menu__link:hover,
+.rx-menu__item:hover {
   background-color: #f9f9f9;
 }
 
-.rx-menu__link--active {
+.rx-menu__link--active,
+.rx-menu__item--active {
   border-left: 4px solid var(--blue);
   padding-left: 16px;
 }
