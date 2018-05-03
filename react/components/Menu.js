@@ -61,5 +61,6 @@ var Menu = function (_PureComponent) {
 }(_react.PureComponent);
 
 Menu.Item = _MenuItem2.default;
+Menu.Link = _MenuItem2.default;
 
 exports.default = Menu;

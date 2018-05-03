@@ -19,5 +19,6 @@ class Menu extends PureComponent {
 }
 
 Menu.Item = MenuItem
+Menu.Link = MenuItem
 
 export default Menu
