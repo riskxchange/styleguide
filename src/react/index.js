@@ -9,6 +9,7 @@ import ErrorPage from './components/ErrorPage'
 import Field from './components/Field'
 import Form from './components/Form'
 import FormActions from './components/FormActions'
+import Grade from './components/Grade'
 import Icon from './components/Icon'
 import Input from './components/Input'
 import InputGroup from './components/InputGroup'
@@ -38,6 +39,7 @@ export {
   Field,
   Form,
   FormActions,
+  Grade,
   Icon,
   Input,
   InputGroup,

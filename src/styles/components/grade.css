@@ -1,0 +1,113 @@
+.rx-grade {
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #CCC;
+  position: relative;
+  color: rgba(0,0,0,0);
+}
+
+.rx-grade:after {
+  color: #FFF;
+  content: '';
+  width: 22px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.rx-grade--a {
+  background-color: #0FBD77;
+}
+
+.rx-grade--a:after {
+  content: 'A';
+}
+
+.rx-grade--b {
+  background-color: #83C84C;
+}
+
+.rx-grade--b:after {
+  content: 'B';
+}
+
+.rx-grade--c {
+  background-color: #C9DB1B;
+}
+
+.rx-grade--c:after {
+  content: 'C';
+}
+
+.rx-grade--d {
+  background-color: #FFD225;
+}
+
+.rx-grade--d:after {
+  content: 'D';
+}
+
+.rx-grade--e {
+  background-color: #FF833A;
+}
+
+.rx-grade--e:after {
+  content: 'E';
+}
+
+.rx-grade--f {
+  background-color: #FF6261;
+}
+
+.rx-grade--f:after {
+  content: 'F';
+}
+
+.rx-grade--na {
+  background-color: #BBB;
+  font-size: 9px;
+}
+
+.rx-grade--na:after {
+  content: 'N/A';
+}
+
+.rx-grade--wip,
+.rx-grade--u {
+  background-color: #CCC;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.rx-grade--wip:after,
+.rx-grade--u:after {
+  content: '...';
+}
+
+.rx-grade--large {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.rx-grade--large.rx-grade--na {
+  font-size: 14px;
+}
+
+.rx-grade--large.rx-grade--u,
+.rx-grade--large.rx-grade--wip {
+  line-height: 24px;
+  font-size: 24px;
+}
+
+.rx-grade--large:after {
+  width: 36px;
+}

@@ -1,11 +1,11 @@
 .rx-btn {
   border: 1px solid var(--grey);
-  border-color: #696f7f;
+  border-color: #a2a6b1;
   font-family: var(--fontStack);
   font-size: var(--fontSizeDefault);
   line-height: calc(var(--inputHeight) - 2px);
   border-radius: 4px;
-  padding: 0 12px;
+  padding: 0 16px;
   cursor: pointer;
   outline: none;
   display: inline-block;
@@ -13,6 +13,7 @@
   transition: border-color 0.3s, background-color 0.3s;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 0px 1px 1px 0 rgba(0,0,0,0.1);
 }
 
 .rx-btn:hover,
@@ -20,6 +21,11 @@
   border-color: #1c2338;
   background-color: #1c2338;
   color: #fff;
+  box-shadow: 0px 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+.rx-btn:active {
+  box-shadow: 0px 0px 0px 0 rgba(0,0,0,0.3);
 }
 
 .rx-btn--small {
@@ -85,6 +91,7 @@
 
 .rx-btn[disabled],
 .rx-btn--disabled {
+  box-shadow: 0px 1px 1px 0 rgba(0,0,0,0.1) !important;
   border: 1px solid var(--grey) !important;
   color: var(--grey) !important;
   background-color: #EEE !important;

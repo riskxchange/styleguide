@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.Breadcrumb = undefined;
+exports.Tooltip = exports.Textarea = exports.Table = exports.Subnav = exports.Select = exports.Row = exports.RadioGroup = exports.Notice = exports.Navbar = exports.Modal = exports.Menu = exports.Logo = exports.Loader = exports.InputGroup = exports.Input = exports.Icon = exports.Grade = exports.FormActions = exports.Form = exports.Field = exports.ErrorPage = exports.EmailLink = exports.Container = exports.Column = exports.CheckboxGroup = exports.Card = exports.Button = exports.Breadcrumb = undefined;
 
 var _Breadcrumb = require('./components/Breadcrumb');
 
@@ -48,6 +48,10 @@ var _Form2 = _interopRequireDefault(_Form);
 var _FormActions = require('./components/FormActions');
 
 var _FormActions2 = _interopRequireDefault(_FormActions);
+
+var _Grade = require('./components/Grade');
+
+var _Grade2 = _interopRequireDefault(_Grade);
 
 var _Icon = require('./components/Icon');
 
@@ -126,6 +130,7 @@ exports.ErrorPage = _ErrorPage2.default;
 exports.Field = _Field2.default;
 exports.Form = _Form2.default;
 exports.FormActions = _FormActions2.default;
+exports.Grade = _Grade2.default;
 exports.Icon = _Icon2.default;
 exports.Input = _Input2.default;
 exports.InputGroup = _InputGroup2.default;
