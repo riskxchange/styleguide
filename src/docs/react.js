@@ -3,7 +3,7 @@ import {render} from 'react-dom'
 import {
   Container, Row, Column, Card, Form, Field, Input, RadioGroup,
   FormActions, Button, Modal, Select, Notice, Loader, InputGroup, Table,
-  Breadcrumb, Menu, ErrorPage, Grade
+  Breadcrumb, Menu, ErrorPage, Grade, Searchbar
 } from '../react'
 
 const RADIO_ITEMS = [
@@ -32,7 +32,7 @@ const TABLE_DATA = [{
 class App extends PureComponent {
   constructor (props) {
     super(props)
-    this.state = { modalOpen: false }
+    this.state = { modalOpen: false, results: [] }
     this.toggleModal = this.toggleModal.bind(this)
     this.showNotice = this.showNotice.bind(this)
     this.hideNotice = this.hideNotice.bind(this)
@@ -134,6 +134,25 @@ class App extends PureComponent {
       </div>
     )
   }
+  get search () {
+    return (
+      <div className='rx-utils--vertical-space'>
+        <Searchbar
+          results={this.state.results}
+          notFoundText='NOTHING FOUND?'
+          updateQueryOnClick
+          onChange={(query) => {
+            this.setState(({results}) => ({
+              results: results.length ? [] : [{
+                title: `Test ${query}`,
+                imageUrl: 'https://riskxchange.imgix.net/logos/default-logo.png'
+              }]
+            }))
+          }}
+        />
+      </div>
+    )
+  }
   render () {
     return (
       <div>
@@ -154,6 +173,10 @@ class App extends PureComponent {
           </Column>
           <Column md={6}>
             {this.form}
+            <Card className='rx-utils--vertical-space'>
+              <h2>Search</h2>
+              {this.search}
+            </Card>
           </Column>
           <Column md={3}>
             <pre>{this.data}</pre>

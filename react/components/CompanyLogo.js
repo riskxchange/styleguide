@@ -16,6 +16,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
+var DEFAULT_LOGO = 'https://riskxchange.imgix.net/logos/default-logo.png';
+
 function CompanyLogo(_ref) {
   var name = _ref.name,
       logoUrl = _ref.logoUrl,
@@ -23,6 +25,6 @@ function CompanyLogo(_ref) {
       w = _ref.w,
       rest = _objectWithoutProperties(_ref, ['name', 'logoUrl', 'width', 'w']);
 
-  var src = (logoUrl || '/assets/images/default-logo.png') + width ? '?w=' + width + '&h=' + width : '';
+  var src = (logoUrl || DEFAULT_LOGO) + (width ? '?w=' + width + '&h=' + width : '');
   return _react2.default.createElement('img', _extends({ src: src, alt: '' }, rest));
 }

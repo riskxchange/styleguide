@@ -27,6 +27,7 @@ import Navbar from './components/Navbar'
 import Notice from './components/Notice'
 import RadioGroup from './components/RadioGroup'
 import Row from './components/Row'
+import Searchbar from './components/Searchbar'
 import Select from './components/Select'
 import Subnav from './components/Subnav'
 import Table from './components/Table'
@@ -63,6 +64,7 @@ export {
   Notice,
   RadioGroup,
   Row,
+  Searchbar,
   Select,
   Subnav,
   Table,
