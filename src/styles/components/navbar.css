@@ -61,9 +61,10 @@
   }
 }
 
-/* == MENU ================================================================== */
+/* == MENU/SEARCH TOGGLE ==================================================== */
 
-.rx-navbar__menu-toggle {
+.rx-navbar__menu-toggle,
+.rx-navbar__searchbar-toggle {
   position: absolute;
   right: 10px;
   top: 0;
@@ -75,23 +76,40 @@
   border: none;
   width: 40px;
   padding: 4px 0;
+  z-index: 1000;
 }
 
-.rx-navbar__menu-toggle:hover {
+.rx-navbar__searchbar-toggle {
+  right: 50px;
+}
+
+.rx-navbar__menu-toggle:hover,
+.rx-navbar__searchbar-toggle:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.rx-navbar--menu-visible .rx-navbar__menu-toggle {
+.rx-navbar--menu-visible .rx-navbar__menu-toggle,
+.rx-navbar--searchbar-visible .rx-navbar__searchbar-toggle {
   border-bottom: 4px solid var(--blue);
   padding-bottom: 0;
 }
 
-.rx-navbar__menu-toggle {
+.rx-navbar__menu-toggle,
+.rx-navbar__searchbar-toggle {
   font-size: 24px;
 }
 
-.rx-navbar__menu {
+@media (--tablet) {
+  .rx-navbar__menu-toggle,
+  .rx-navbar__searchbar-toggle {
+    display: none;
+  }
+}
+
+/* == MENU ================================================================== */
+
+.rx-navbar--menu-visible .rx-navbar__menu {
   padding-top: 56px;
 }
 
@@ -105,10 +123,6 @@
 }
 
 @media (--tablet) {
-  .rx-navbar__menu-toggle {
-    display: none;
-  }
-
   .rx-navbar__menu {
     padding-top: 0;
   }
@@ -342,6 +356,58 @@
 
 /* == SEARCHBAR ============================================================= */
 
-.rx-navbar__searchbar {
+
+.rx-navbar__searchbar .rx-searchbar {
   display: none;
+}
+
+.rx-navbar--searchbar-visible {
+  height: 100%;
+  background: rgba(28, 35, 56, .9);
+}
+
+.rx-navbar--searchbar-visible .rx-searchbar {
+  position: absolute;
+  top: 56px;
+  padding: 10px;
+  display: block;
+  background: var(--veryDarkBlue);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rx-navbar--searchbar-visible .rx-searchbar .rx-icon {
+  top: 19px;
+  left: 19px;
+}
+
+@media (--tablet) {
+  .rx-navbar__searchbar .rx-searchbar {
+    display: block;
+    float: left;
+    padding: 10px 0 10px 20px;
+    width: 210px;
+  }
+  .rx-navbar__searchbar input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    transition: background-color 0.3s, color 0.3s, width 0.3s;
+  }
+
+  .rx-navbar__searchbar input:focus {
+    width: 320px;
+    background: white;
+  }
+
+  .rx-navbar__searchbar .rx-icon {
+    transition: color 0.3s;
+    top: 19px;
+    left: 29px;
+  }
+
+  .rx-navbar__searchbar input::placeholder,
+  .rx-navbar__searchbar .rx-icon,
+  .rx-navbar__searchbar input {
+    color: #9da2b5;
+  }
 }
