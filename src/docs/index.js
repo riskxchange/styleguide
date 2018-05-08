@@ -5,7 +5,7 @@ import '../styles/index.css'
 import '../scripts/index.js'
 import './index.html'
 
-const ICON_VERSION = '0.3.1'
+const ICON_VERSION = '0.3.2'
 
 document.addEventListener('DOMContentLoaded', function () {
   init()
@@ -28,7 +28,6 @@ function init () {
 
   document.querySelector('[rx-toggle-navbar]').addEventListener('click', function () {
     navbarContainer.classList.toggle('rx-container')
-    navbarContainer.classList.toggle('rx-container--no-pad')
   })
 
   pages.forEach(function (page, i) {
@@ -52,7 +51,7 @@ function init () {
       })
     }
     navbarLinks.push(el)
-    document.querySelector('.rx-navbar__links').appendChild(el)
+    document.querySelector('#nav-links').appendChild(el)
 
     var hash = window.location.hash.replace('#', '')
     page.setAttribute('style', 'display: none;')

@@ -76,7 +76,7 @@ export default class Searchbar extends Component {
         <Input
           blocked
           className='rx-searchbar__input'
-          placeholder='Search for a company...'
+          placeholder={this.props.placeholder || 'Search...'}
           value={this.state.query}
           spellCheck={false}
           onFocus={() => this.setState({ showResults: true })}

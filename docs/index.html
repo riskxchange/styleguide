@@ -7,20 +7,69 @@
     <style>body { display: none; }</style>
     <link rel="stylesheet" href="./demo.css"></link>
   </head>
-  <body class="rx-utils--body-has-subnav">
-    <header class="rx-navbar rx-navbar--fixed">
-      <div class="rx-container rx-container--no-pad">
-        <div class="rx-navbar__logo">
-          <a class="rx-logo rx-logo--inverse" href="#"></a>
-        </div>
-        <button class="rx-navbar__menu-toggle">
-          <span class="rx-icon rx-icon--menu-toggle"></span>
-        </button>
-        <div class="rx-navbar__menu">
-          <div class="rx-navbar__links"></div>
+  <body>
+    <nav class="rx-navbar">
+      <div class="rx-utils--no-pad">
+        <div class="rx-navbar__inner">
+          <a class="rx-navbar__logo" href="/">
+            <div class="rx-logo rx-logo--inverse"></div>
+          </a>
+          <div class="rx-navbar__searchbar">
+            <button class="rx-navbar__searchbar-toggle">
+              <span class="rx-icon rx-icon--search"></span>
+            </button>
+            <div class='rx-searchbar'>
+              <span class='rx-icon rx-icon--search rx-searchbar__icon' />
+              <input
+                class='rx-searchbar__input rx-input rx-input--blocked'
+                placeholder='Search for a company...'>
+            </div>
+          </div>
+          <button class="rx-navbar__menu-toggle">
+            <span class="rx-icon rx-icon--menu-toggle"></span>
+          </button>
+          <div class="rx-navbar__menu">
+            <ul class="rx-navbar__links">
+              <li class="rx-navbar__link rx-navbar__link--dropdown">
+                <div class="rx-navbar-dropdown">
+                  <button class="rx-navbar-dropdown__toggle">
+                    <span class="rx-icon rx-icon--app-menu"></span> Apps
+                  </button>
+                  <div class="rx-navbar-dropdown__links">
+                    <a class="rx-navbar-dropdown__link" href="/c/ce6f842b-382b-4d20-80e5-2da00406a840/apps/assessment-manager">
+                      <img src="/assets/images/assessment-manager.png">
+                      <span>Assessment Manager</span>
+                    </a>
+                    <a class="rx-navbar-dropdown__link" href="/c/ce6f842b-382b-4d20-80e5-2da00406a840/apps/invitation-insights">
+                      <img src="/assets/images/invitations.png">
+                      <span>Invitation Insights</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="rx-navbar__link rx-navbar__link--dropdown">
+                <div class="rx-navbar-dropdown">
+                  <button class="rx-navbar-dropdown__toggle">
+                    My Account <span class="rx-icon rx-icon--chevron-down"></span>
+                  </button>
+                  <div class="rx-navbar-dropdown__links">
+                    <a class="rx-navbar-dropdown__link" href="/settings">Account settings</a>
+                    <a class="rx-navbar-dropdown__link" href="/logout">Logout</a>
+                    <div class="rx-navbar-dropdown__link-group">
+                      <div class="rx-navbar-dropdown__link-group-title">My companies</div>
+                      <a class="rx-navbar-dropdown__link" href="/c/riskxchange">
+                        <img src="https://riskxchange.imgix.net/logos/riskxchange-logo.png" alt="">
+                        <span>RiskXchange</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </header>
+    </nav>
     <nav class="rx-subnav">
       <div class="rx-container rx-container--no-pad">
         <div class="rx-subnav__links"></div>
@@ -148,17 +197,17 @@
       <!-- navbar -->
       <div class="rx-utils--vertical-space" rx-section="navbar">
         <h2>Navbar</h2>
-        <p>You can make the navbar either full width or contained. The contained version, used for this demo, is acheived by adding <code>.rx-container.rx-container--no-pad</code> to the <code>.rx-navbar</code> element.</p>
+        <p>You can make the navbar either full width or contained. The contained version, used for this demo, is acheived by removing <code>.rx-container</code> from inside the <code>.rx-navbar</code> element.</p>
         <p>To see this page with a full-width navbar, <a class='rx-link' rx-toggle-navbar>click here</a>.
         <header class="rx-navbar">
           <div class="rx-container rx-container--no-pad">
             <div class="rx-navbar__logo">
               <a class="rx-logo rx-logo--inverse" href="#"></a>
             </div>
-            <button class="rx-navbar__menu-toggle">
-              <span class="rx-icon rx-icon--menu-toggle"></span>
-            </button>
             <div class="rx-navbar__menu">
+              <button class="rx-navbar__menu-toggle">
+                <span class="rx-icon rx-icon--menu-toggle"></span>
+              </button>
               <div class="rx-navbar__links">
                 <a class="rx-navbar__link rx-navbar__link--active" href="#">Apple</a>
                 <a class="rx-navbar__link" href="#">Banana</a>

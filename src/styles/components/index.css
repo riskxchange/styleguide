@@ -11,7 +11,6 @@
 @import 'logo';
 @import 'menu';
 @import 'modal';
-@import 'navbar';
 @import 'notice';
 @import 'progress';
 @import 'radio-checkbox';
@@ -23,5 +22,6 @@
 @import 'tooltip';
 @import 'utils';
 /* these must go at the bottom */
+@import 'navbar';
 @import 'bg';
 @import 'color';

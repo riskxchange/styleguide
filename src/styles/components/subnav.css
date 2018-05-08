@@ -38,7 +38,7 @@
   height: calc(var(--subnavHeight) - 4px);
 }
 
-@media (min-width: 768px) {
+@media (--desktop) {
   .rx-subnav {
     height: 48px;
   }
