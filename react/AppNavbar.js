@@ -14,9 +14,9 @@ var _Navbar = require('./Navbar');
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
 
-var _jsonRequest = require('../../utils/json-request');
+var _jsonRequest = require('../utils/json-request');
 
-var _logError = require('../../utils/log-error');
+var _logError = require('../utils/log-error');
 
 var _logError2 = _interopRequireDefault(_logError);
 

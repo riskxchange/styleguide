@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import Navbar from './Navbar'
-import {getJSON} from '../../utils/json-request'
-import logError from '../../utils/log-error'
+import {getJSON} from '../utils/json-request'
+import logError from '../utils/log-error'
 
 export default class AppNavbar extends PureComponent {
   static defaultProps = {
