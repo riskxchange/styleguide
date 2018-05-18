@@ -1,4 +1,4 @@
-import forEach from './forEach'
+import forEach from '../utils/forEach'
 
 export function init () {
   var navbar = document.querySelector('.rx-navbar[navbar]')

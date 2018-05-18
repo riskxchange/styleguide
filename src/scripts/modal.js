@@ -1,4 +1,4 @@
-import forEach from './forEach'
+import forEach from '../utils/forEach'
 
 export function init () {
   var modals = document.querySelectorAll('.rx-modal')
