@@ -46,7 +46,7 @@ export default class Searchbar extends Component {
     )
   }
   renderResults () {
-    if (!this.props.results.length) return null
+    if (!this.props.results || !this.props.results.length) return null
     return this.props.results.map(this.renderResult)
   }
   renderNotFound () {
