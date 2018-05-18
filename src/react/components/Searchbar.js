@@ -50,6 +50,7 @@ export default class Searchbar extends Component {
     return this.props.results.map(this.renderResult)
   }
   renderNotFound () {
+    if (this.props.disableNotFound) return
     const DEFAULT_MESSAGE = "Can't find what you're looking for?"
     return (
       <div

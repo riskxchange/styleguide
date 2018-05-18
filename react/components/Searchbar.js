@@ -105,6 +105,7 @@ var Searchbar = function (_Component) {
   }, {
     key: 'renderNotFound',
     value: function renderNotFound() {
+      if (this.props.disableNotFound) return;
       var DEFAULT_MESSAGE = "Can't find what you're looking for?";
       return _react2.default.createElement(
         'div',
@@ -138,7 +139,7 @@ var Searchbar = function (_Component) {
         _react2.default.createElement(_Input2.default, {
           blocked: true,
           className: 'rx-searchbar__input',
-          placeholder: 'Search for a company...',
+          placeholder: this.props.placeholder || 'Search...',
           value: this.state.query,
           spellCheck: false,
           onFocus: function onFocus() {

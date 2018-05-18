@@ -3,8 +3,10 @@ import {render} from 'react-dom'
 import {
   Container, Row, Column, Card, Form, Field, Input, RadioGroup,
   FormActions, Button, Modal, Select, Notice, Loader, InputGroup, Table,
-  Breadcrumb, Menu, ErrorPage, Grade, Searchbar
+  Breadcrumb, Menu, ErrorPage, Grade, Searchbar, AppNavbar
 } from '../react'
+
+// global.BaseLink = (props) => <a {...props} href='/fake'>{props.children}</a>
 
 const RADIO_ITEMS = [
   { text: 'Yes', value: 'yes', selected: true },
@@ -170,6 +172,11 @@ class App extends PureComponent {
             </Menu>
             <br />
             {this.modal}
+            <div className='rx-utils--vertical-space'>
+              <Button variant='default' blocked onClick={this.toggleNavbar}>
+                Click to render React navbar
+              </Button>
+            </div>
           </Column>
           <Column md={6}>
             {this.form}
@@ -191,3 +198,4 @@ class App extends PureComponent {
 }
 
 render(<App />, document.querySelector('#react-demo'))
+render(<AppNavbar fetchData searchbar fullWidth fixed />, document.querySelector('#react-navbar'))

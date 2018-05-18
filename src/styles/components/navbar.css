@@ -14,6 +14,7 @@
 }
 
 .rx-navbar__inner {
+  white-space: nowrap;
   background: var(--veryDarkBlue);
 }
 
@@ -131,6 +132,10 @@
     height: 56px;
     background: var(--veryDarkBlue);
   }
+
+  .rx-navbar--menu-visible .rx-navbar__menu {
+    padding-top: 0;
+  }
 }
 
 /* -- MENU > LINKS ---------------------------------------------------------- */
@@ -221,6 +226,7 @@
 
 .rx-navbar__dropdown {
   position: relative;
+  line-height: 24px;
 }
 
 .rx-navbar__dropdown-toggle {
@@ -382,32 +388,77 @@
 }
 
 @media (--tablet) {
+  .rx-navbar--searchbar-visible {
+    height: auto;
+    background: var(--veryDarkBlue);
+  }
+
   .rx-navbar__searchbar .rx-searchbar {
     display: block;
     float: left;
     padding: 10px 0 10px 20px;
-    width: 210px;
+    width: auto;
+    position: relative;
+    top: 0;
   }
+
   .rx-navbar__searchbar input {
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
     transition: background-color 0.3s, color 0.3s, width 0.3s;
+    width: 210px;
   }
 
   .rx-navbar__searchbar input:focus {
     width: 320px;
     background: white;
+    color: var(--veryDarkBlue);
   }
 
   .rx-navbar__searchbar .rx-icon {
     transition: color 0.3s;
     top: 19px;
-    left: 29px;
+    left: 29px !important;
   }
 
   .rx-navbar__searchbar input::placeholder,
   .rx-navbar__searchbar .rx-icon,
   .rx-navbar__searchbar input {
     color: #9da2b5;
+  }
+
+  .rx-navbar__searchbar .rx-searchbar input:focus ~ .rx-searchbar__results,
+  .rx-navbar__searchbar .rx-searchbar input ~ .rx-searchbar__results:hover {
+    min-width: 320px;
+    max-width: 480px;
+  }
+}
+
+/* ========================================================================== */
+
+.rx-navbar__title {
+  height: 56px;
+  float: left;
+  line-height: 56px;
+  padding-left: 10px;
+  margin-left: 10px;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  font-size: 16px;
+  display: none;
+
+}
+
+.rx-navbar__title > a {
+  color: white;
+  text-decoration: none;
+}
+
+.rx-navbar__title > a:hover {
+  text-decoration: underline;
+}
+
+@media (--tablet) {
+  .rx-navbar__title {
+    display: block;
   }
 }

@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import cx from 'classnames'
 import omit from '../utils/omit'
+import BaseLink from './BaseLink'
 
 export default class Button extends PureComponent {
   get className () {
@@ -19,18 +20,20 @@ export default class Button extends PureComponent {
       'variant'
     )
   }
-  get link () {
-    return (
-      <a {...this.cleanProps} className={this.className} />
-    )
+  renderLink () {
+    const props = {
+      ...this.cleanProps,
+      className: this.className
+    }
+    return <BaseLink {...props} />
   }
-  get button () {
+  renderButton () {
     const disabled = this.props.disabled
     return (
       <button {...this.cleanProps} className={this.className} disabled={disabled} />
     )
   }
   render () {
-    return this.props.href ? this.link : this.button
+    return (this.props.href || this.props.to) ? this.renderLink() : this.renderButton()
   }
 }

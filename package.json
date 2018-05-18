@@ -12,6 +12,7 @@
     "build:utils": "rm -rf utils; babel src/utils --out-dir utils;",
     "pre-push": "npm run build; git add dist; git add react; git commit -m \"auto-build + commit\";"
   },
+  "proxy": "http://localhost:4000",
   "pre-push": [
     "pre-push"
   ],

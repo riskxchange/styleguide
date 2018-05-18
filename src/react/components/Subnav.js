@@ -2,17 +2,24 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Container from './Container'
+import BaseLink from './BaseLink'
 
 export default class Subnav extends PureComponent {
   constructor (props) {
     super(props)
     this.getLink = this.getLink.bind(this)
   }
-  getLink ({ href, text, active }, i) {
+  getLink ({ text, active, ...rest }, i) {
     const className = cx('rx-subnav__link', {
       'rx-subnav__link--active': active
     })
-    return <a className={className} href={href} key={i}>{text}</a>
+    const props = {
+      key: i,
+      className,
+      children: text,
+      ...rest
+    }
+    return <BaseLink {...props} />
   }
   get links () {
     return (

@@ -20,6 +20,10 @@ var _omit = require('../utils/omit');
 
 var _omit2 = _interopRequireDefault(_omit);
 
+var _BaseLink = require('./BaseLink');
+
+var _BaseLink2 = _interopRequireDefault(_BaseLink);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -40,9 +44,23 @@ var Button = function (_PureComponent) {
   }
 
   _createClass(Button, [{
+    key: 'renderLink',
+    value: function renderLink() {
+      var props = _extends({}, this.cleanProps, {
+        className: this.className
+      });
+      return _react2.default.createElement(_BaseLink2.default, props);
+    }
+  }, {
+    key: 'renderButton',
+    value: function renderButton() {
+      var disabled = this.props.disabled;
+      return _react2.default.createElement('button', _extends({}, this.cleanProps, { className: this.className, disabled: disabled }));
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return this.props.href ? this.link : this.button;
+      return this.props.href || this.props.to ? this.renderLink() : this.renderButton();
     }
   }, {
     key: 'className',
@@ -57,17 +75,6 @@ var Button = function (_PureComponent) {
     key: 'cleanProps',
     get: function get() {
       return (0, _omit2.default)(this.props, 'disabled', 'className', 'blocked', 'variant');
-    }
-  }, {
-    key: 'link',
-    get: function get() {
-      return _react2.default.createElement('a', _extends({}, this.cleanProps, { className: this.className }));
-    }
-  }, {
-    key: 'button',
-    get: function get() {
-      var disabled = this.props.disabled;
-      return _react2.default.createElement('button', _extends({}, this.cleanProps, { className: this.className, disabled: disabled }));
     }
   }]);
 

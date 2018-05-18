@@ -1,5 +1,11 @@
 import React from 'react'
+import BaseLink from './BaseLink'
 
-export default function BreadcrumbLink ({ children, text, ...props }) {
-  return <a className='rx-breadcrumb__link' {...props}>{children || text}</a>
+export default function BreadcrumbLink ({ children, text, ...rest }) {
+  const props = {
+    className: 'rx-breadcrumb__link',
+    children: children || text,
+    ...rest
+  }
+  return <BaseLink {...props} />
 }

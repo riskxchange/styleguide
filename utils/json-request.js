@@ -56,8 +56,6 @@ function deleteJSON(url) {
 function onResponse(res) {
   return res.json().then(function (json) {
     if (res.ok) return json;
-    // HACK: this is nasty, but it's effective so I'm doing it
-    if (res.status === 401) window.location.href = '/login';
     var err = new Error(json.message);
     err.status = res.status;
     throw err;

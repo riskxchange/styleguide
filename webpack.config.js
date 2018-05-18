@@ -48,6 +48,9 @@ module.exports = {
     contentBase: [
       path.join(__dirname)
     ],
+    proxy: {
+      '/api': 'http://localhost:4000'
+    },
     compress: true,
     port: 9876
   }

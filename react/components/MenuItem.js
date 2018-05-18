@@ -16,6 +16,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _BaseLink = require('./BaseLink');
+
+var _BaseLink2 = _interopRequireDefault(_BaseLink);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -29,9 +33,9 @@ function MenuItem(_ref) {
   var className = (0, _classnames2.default)('rx-menu__item', {
     'rx-menu__item--active': active
   });
-  return _react2.default.createElement(
-    'a',
-    _extends({ className: className }, rest),
-    children || text
-  );
+  var props = _extends({}, rest, {
+    className: className,
+    children: children || text
+  });
+  return _react2.default.createElement(_BaseLink2.default, props);
 }

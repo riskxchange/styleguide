@@ -1,3 +1,5 @@
+import AppNavbar from './components/AppNavbar'
+import BaseLink from './components/BaseLink'
 import Breadcrumb from './components/Breadcrumb'
 import BreadcrumbLink from './components/BreadcrumbLink'
 import Button from './components/Button'
@@ -35,6 +37,8 @@ import Textarea from './components/Textarea'
 import Tooltip from './components/Tooltip'
 
 export {
+  AppNavbar,
+  BaseLink,
   Breadcrumb,
   BreadcrumbLink,
   Button,

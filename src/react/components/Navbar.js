@@ -1,139 +1,171 @@
 import React, {PureComponent} from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Container from './Container'
 import Logo from './Logo'
 import Searchbar from './Searchbar'
 import Icon from './Icon'
+import BaseLink from './BaseLink'
+
+const DEFAULT_PROPS = {
+  fixed: false,
+  fullWidth: false,
+  homepage: '/',
+  searchbar: false,
+  title: null,
+  titleLink: null,
+  searchbarConfig: {
+    onChange: (query) => console.warn(`Searchbar query: ${query}`),
+    results: [],
+    notFoundText: '',
+    onResultClick: {},
+    onNotFoundClick: {}
+  }
+}
 
 class Navbar extends PureComponent {
+  state = {
+    visible: null
+  }
+  static defaultProps = DEFAULT_PROPS;
   renderLogo () {
-    const homepage = this.props.homepage || '/'
     return (
-      <a className='rx-navbar__logo' href={homepage}>
+      <BaseLink className='rx-navbar__logo' href={this.props.homepage}>
         <Logo inverse />
-      </a>
+      </BaseLink>
+    )
+  }
+  get searchbarMobileVisible () {
+    return this.state.visible === 'searchbar'
+  }
+  get menuMobileVisible () {
+    return this.state.visible === 'menu'
+  }
+  onBackgroundClicked = (e) => {
+    if (e.target.classList.contains('rx-navbar')) {
+      this.setState({ visible: null })
+    }
+  }
+  toggleSearchbarMobileVisible = () => {
+    this.setState(({ visible }) => {
+      return { visible: visible === 'searchbar' ? null : 'searchbar' }
+    })
+  }
+  toggleMenuMobileVisible = () => {
+    this.setState(({ visible }) => {
+      return { visible: visible === 'menu' ? null : 'menu' }
+    })
+  }
+  renderTitle () {
+    if (!this.props.title) return null
+    return (
+      <div className='rx-navbar__title'>
+        {this.props.titleLink ? <BaseLink href={this.props.titleLink} children={this.props.title} /> : this.props.title}
+      </div>
+    )
+  }
+  renderSearchbar () {
+    if (!this.props.searchbar) return null
+    if (this.props.title) {
+      console.warn('Cannot have title and searchbar - there\'s not enough space!')
+      return null
+    }
+    return (
+      <div className='rx-navbar__searchbar'>
+        <button className='rx-navbar__searchbar-toggle' onClick={this.toggleSearchbarMobileVisible}>
+          <Icon variant='search' />
+        </button>
+        <Searchbar
+          placeholder='Search for a company...'
+          notFoundText='Company not in search results?'
+          {...this.props.searchbarConfig}
+        />
+      </div>
+    )
+  }
+  renderMenu () {
+    return (
+      <div className='rx-navbar__menu'>
+        <button className='rx-navbar__menu-toggle' onClick={this.toggleMenuMobileVisible}>
+          <span className='rx-icon rx-icon--menu-toggle' />
+        </button>
+        <div className='rx-navbar__links'>
+          {this.props.children}
+        </div>
+      </div>
     )
   }
   renderInner () {
     return (
-      <div>
+      <div className='rx-navbar__inner'>
         {this.renderLogo()}
-        {this.props.children}
+        {this.renderTitle()}
+        {this.renderSearchbar()}
+        {this.renderMenu()}
       </div>
     )
   }
   renderContainer () {
-    return <Container noPad>{this.renderInner()}</Container>
+    return <Container>{this.renderInner()}</Container>
   }
   render () {
+    const className = cx('rx-navbar', {
+      'rx-navbar--fixed': this.props.fixed,
+      [`rx-navbar--${this.state.visible}-visible`]: this.state.visible
+    })
     return (
-      <nav className='rx-navbar'>
-        {this.props.fullWidth ? this.inner : this.container}
+      <nav className={className} onClick={this.onBackgroundClicked}>
+        {this.props.fullWidth ? this.renderInner() : this.renderContainer()}
       </nav>
     )
   }
 }
 
-function NavbarTitle ({ children }) {
-  return <div className='rx-navbar__title'>{children}</div>
-}
-
-function NavbarSeachbar () {
-  return (
-    <div className='rx-navbar__searchbar'>
-      <button className='rx-navbar__searchbar-toggle'>
-        <Icon variant='search' />
-      </button>
-      <Searchbar
-        placeholder='Search for a company...'
-        notFoundText='Company not in search results?'
-      />
-    </div>
-  )
-}
-
-function NavbarLink ({ children, active, dropdown }) {
+function NavbarLink ({ children, imageUrl, active, ...rest }) {
   const className = cx('rx-navbar__link', {
-    'rx-navbar__link--active': active,
-    'rx-navbar__link--dropdown': dropdown
+    'rx-navbar__link--active': active
   })
+  if (imageUrl) {
+    return (
+      <BaseLink className={className} {...rest}>
+        <img src={imageUrl} />
+        <span>{children}</span>
+      </BaseLink>
+    )
+  }
   return (
-    <li className={className}>{children}</li>
+    <BaseLink className={className} {...rest}>{children}</BaseLink>
   )
 }
 
-function NavbarDropdown ({ icon, text, children }) {
+function NavbarDropdown ({ noChevron, icon, title, children }) {
+  const customIcon = icon ? <Icon variant={icon} /> : null
+  const chevron = noChevron ? null : <Icon variant='chevron-down' />
   return (
-    <div className='rx-navbar-dropdown'>
-      <button className='rx-navbar-dropdown__toggle'>
-        <Icon variant={icon} /> {text}
-      </button>
-      <div className='rx-navbar-dropdown__links'>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-function NavbarDropdownLink ({ imageUrl, title, ...props }) {
-  return (
-    <a className='rx-navbar-dropdown__link' {...props}>
-      {imageUrl ? <img src={imageUrl} /> : null}
-      <span>{title}</span>
-    </a>
-  )
-}
-
-function NavbarMenu ({ children }) {
-  return (
-    <div className='rx-navbar__menu-container'>
-      <button className='rx-navbar__menu-toggle'>
-        <Icon variant='menu-toggle' />
-      </button>
-      <div className='rx-navbar__menu'>
-        <ul className='rx-navbar__links'>
+    <div className='rx-navbar__link rx-navbar__link--dropdown'>
+      <div className='rx-navbar__dropdown'>
+        <button className='rx-navbar__dropdown-toggle'>
+          {customIcon} {title} {chevron}
+        </button>
+        <div className='rx-navbar__links'>
           {children}
-        </ul>
+        </div>
       </div>
     </div>
   )
 }
 
-/*
-<Navbar fixed fullWidth homepage='/'>
-  <Navbar.Title>
-  <Navbar.Searchbar />
-  <Navbar.Link>More info</Navbar.Link>
-  <Navbar.Dropdown title={
-    <span><Icon variant="app-menu" /> Apps</span>
-  }>
-    <Navbar.Link>Assessment Manager</Navbar.Link>
-    <Navbar.Link>Assessment Manager</Navbar.Link>
-  </Navbar.Dropdown>
-  <Navbar.Dropdown title='My Account' active chevron>
-    <Navbar.Link>Assessment Manager</Navbar.Link>
-    <Navbar.Link>Assessment Manager</Navbar.Link>
-    <Navbar.Divider>My companies</Navbar.Divider>
-    <Navbar.Link>My companies</Navbar.Link>
-  </Navbar.Dropdown>
-</Navbar>
-*/
+function NavbarLinkGroup ({ title, children }) {
+  return (
+    <div className='rx-navbar__link-group'>
+      <div className='rx-navbar__link-group-title'>{title}</div>
+      {children}
+    </div>
+  )
+}
 
-/*
-<Navbar fullWidth>
-  <Navbar.Logo>
-  <Navbar.Link>Example 1</Navbar.Link>
-  <Navbar.Link>Example 2</Navbar.Link>
-  <Navbar.Link>Example 3</Navbar.Link>
-</Navbar>
-*/
-
-Navbar.Title = NavbarTitle
-Navbar.Seachbar = NavbarSeachbar
-Navbar.Menu = NavbarMenu
 Navbar.Link = NavbarLink
+Navbar.LinkGroup = NavbarLinkGroup
 Navbar.Dropdown = NavbarDropdown
-Navbar.DropdownLink = NavbarDropdownLink
 
 export default Navbar

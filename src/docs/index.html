@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./demo.css"></link>
   </head>
   <body>
-    <nav class="rx-navbar">
+    <div id="react-navbar"  style="display: none"></div>
+    <nav class="rx-navbar rx-navbar--searchbar-visible" id="vanilla-navbar" navbar>
       <div class="rx-container">
         <div class="rx-navbar__inner">
           <!-- renderLogo [start] -->
@@ -21,10 +22,9 @@
             <button class="rx-navbar__searchbar-toggle">
               <span class="rx-icon rx-icon--search"></span>
             </button>
-            <!-- <Searchbar /> -->
             <div class="rx-searchbar">
               <span class="rx-icon rx-icon--search"></span>
-              <input type="text" placeholder="Search for a company..." value="" spellcheck="false" class="rx-input rx-input--blocked">
+              <input type="text" placeholder="Example searchbar..." value="" spellcheck="false" class="rx-input rx-input--blocked">
             </div>
           </div>
           <!-- renderSearchbar [end] -->
