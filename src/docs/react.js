@@ -155,6 +155,27 @@ class App extends PureComponent {
       </div>
     )
   }
+  toggleNavbar = () => {
+    this.setState(state => {
+      const showReactNavbar = !state.showReactNavbar
+      if (showReactNavbar) {
+        document.querySelector('#default-navbar').style = 'display: none;'
+        document.querySelector('#react-navbar').style = 'display: block;'
+      } else {
+        document.querySelector('#react-navbar').style = 'display: none;'
+        document.querySelector('#default-navbar').style = 'display: block;'
+      }
+      return { ...state, showReactNavbar: !state.showReactNavbar }
+    })
+  }
+  renderToggleNavbarButton () {
+    const text = `Click to ${this.state.showReactNavbar ? 'show' : 'hide'} AppNavbar`
+    return (
+      <div className='rx-utils--vertical-space'>
+        <Button variant='default' blocked onClick={this.toggleNavbar}>{text}</Button>
+      </div>
+    )
+  }
   render () {
     return (
       <div>
@@ -172,11 +193,7 @@ class App extends PureComponent {
             </Menu>
             <br />
             {this.modal}
-            <div className='rx-utils--vertical-space'>
-              <Button variant='default' blocked onClick={this.toggleNavbar}>
-                Click to render React navbar
-              </Button>
-            </div>
+            {this.renderToggleNavbarButton()}
           </Column>
           <Column md={6}>
             {this.form}

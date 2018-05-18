@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./demo.css"></link>
   </head>
   <body>
-    <div id="react-navbar"  style="display: none"></div>
-    <nav class="rx-navbar rx-navbar--searchbar-visible" id="vanilla-navbar" navbar>
+    <div id="react-navbar" style="display: none"></div>
+    <nav class="rx-navbar" id="default-navbar" navbar>
       <div class="rx-container">
         <div class="rx-navbar__inner">
           <!-- renderLogo [start] -->
@@ -17,41 +17,13 @@
             <div class="rx-logo rx-logo--inverse"></div>
           </a>
           <!-- renderLogo [end] -->
-          <!-- renderSearchbar [start] -->
-          <div class="rx-navbar__searchbar">
-            <button class="rx-navbar__searchbar-toggle">
-              <span class="rx-icon rx-icon--search"></span>
-            </button>
-            <div class="rx-searchbar">
-              <span class="rx-icon rx-icon--search"></span>
-              <input type="text" placeholder="Example searchbar..." value="" spellcheck="false" class="rx-input rx-input--blocked">
-            </div>
-          </div>
-          <!-- renderSearchbar [end] -->
           <!-- renderMenu [start] -->
           <div class="rx-navbar__menu">
             <button class="rx-navbar__menu-toggle">
               <span class="rx-icon rx-icon--menu-toggle"></span>
             </button>
             <div class="rx-navbar__links">
-              <a class="rx-navbar__link" href="https://github.com/riskxchange/styleguide">Github</a>
-              <div class="rx-navbar__link rx-navbar__link--dropdown">
-                <div class="rx-navbar__dropdown">
-                  <button class="rx-navbar__dropdown-toggle">
-                    Components <span class="rx-icon rx-icon--chevron-down"></span>
-                  </button>
-                  <div class="rx-navbar__links">
-                    <div id="nav-links"></div>
-                    <div class="rx-navbar__link-group">
-                      <div class="rx-navbar__link-group-title">Links</div>
-                      <a class="rx-navbar__link" href="/c/riskxchange">
-                        <img src="https://png.icons8.com/metro/1600/github.png" alt="">
-                        <span>Github</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div id="nav-links"></div>
             </div>
           </div>
         </div>
