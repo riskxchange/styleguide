@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Container from './Container'
 import Logo from './Logo'
@@ -79,6 +78,10 @@ class Navbar extends PureComponent {
           placeholder='Search for a company...'
           notFoundText='Company not in search results?'
           {...this.props.searchbarConfig}
+          onResultClick={(c) => {
+            this.setState({ visible: null })
+            this.props.searchbarConfig.onResultClick(c)
+          }}
         />
       </div>
     )

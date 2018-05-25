@@ -99,7 +99,7 @@ var Searchbar = function (_Component) {
   _createClass(Searchbar, [{
     key: 'renderResults',
     value: function renderResults() {
-      if (!this.props.results.length) return null;
+      if (!this.props.results || !this.props.results.length) return null;
       return this.props.results.map(this.renderResult);
     }
   }, {

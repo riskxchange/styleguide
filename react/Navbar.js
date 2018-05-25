@@ -12,10 +12,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -127,6 +123,8 @@ var Navbar = function (_PureComponent) {
   }, {
     key: 'renderSearchbar',
     value: function renderSearchbar() {
+      var _this2 = this;
+
       if (!this.props.searchbar) return null;
       if (this.props.title) {
         console.warn('Cannot have title and searchbar - there\'s not enough space!');
@@ -143,7 +141,12 @@ var Navbar = function (_PureComponent) {
         _react2.default.createElement(_Searchbar2.default, _extends({
           placeholder: 'Search for a company...',
           notFoundText: 'Company not in search results?'
-        }, this.props.searchbarConfig))
+        }, this.props.searchbarConfig, {
+          onResultClick: function onResultClick(c) {
+            _this2.setState({ visible: null });
+            _this2.props.searchbarConfig.onResultClick(c);
+          }
+        }))
       );
     }
   }, {
