@@ -1,12 +1,12 @@
 {
   "name": "styleguide",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
     "start": "mkdir -p docs; cp src/docs/index.html docs; npm run server",
     "server": "webpack-dev-server & babel-watch --watch src/react/!index* ./create-react-index.js & wait",
-    "build": "npm run build:react & npm run build:webpack & npm run build:utils & wait",
+    "build": "npm install & npm run build:react & npm run build:webpack & npm run build:utils & wait",
     "build:webpack": "rm -rf dist; rm -rf docs; NODE_ENV=production webpack",
     "build:react": "rm -rf react; node ./create-react-index.js; babel src/react --out-dir react;",
     "build:utils": "rm -rf utils; babel src/utils --out-dir utils;",
