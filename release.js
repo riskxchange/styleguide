@@ -51,17 +51,18 @@ async function pushToMaster (tag) {
 async function releaseVersion (tag, message) {
   const commitSha = await getCommitSha()
   await request({
-    uri: `https://api.github.com/repos/riskxchange/styleguide/releases/tags/${tag}`,
-    simple: false,
+    uri: `https://api.github.com/repos/riskxchange/styleguide/releases`,
+    method: 'POST',
     json: true,
     headers: {
-      accept: 'application/vnd.github.v3+json',
-      authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`
+      'Accept': 'application/vnd.github.v3+json',
+      'Authorization': `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+      'User-Agent': 'release.js'
     },
     body: {
       tag_name: tag,
       target_commitish: commitSha,
-      name: `Release v${tag}`,
+      name: `${tag}`,
       body: message,
       draft: false,
       prerelease: false
@@ -88,7 +89,7 @@ async function release () {
     await createTag(tag, message)
     console.log(`Pushing to git (origin/master)`)
     await pushToMaster(tag)
-    await releaseVersion(tag)
+    await releaseVersion(tag, message)
     console.log(`Released v${tag} to Github`)
   } catch (err) {
     throw err
