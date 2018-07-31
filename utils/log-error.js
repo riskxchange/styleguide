@@ -11,8 +11,8 @@ function logError(err) {
   var meta = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
   if (window.Raven) {
-    var sentry = window.Raven.captureException(err, _extends({}, meta));
-    err.sentry = sentry;
+    window.Raven.captureException(err, _extends({}, meta));
+    err.eventId = window.Raven.lastEventId();
   } else {
     console.warn(err, meta);
   }

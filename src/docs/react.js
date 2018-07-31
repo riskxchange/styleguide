@@ -132,7 +132,7 @@ class App extends PureComponent {
   get error () {
     return (
       <div style={{paddingTop: '20px'}}>
-        <ErrorPage message='What the fudge!' sentry='123' />
+        <ErrorPage message='What the fudge!' eventId='123' />
       </div>
     )
   }

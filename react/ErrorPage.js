@@ -19,16 +19,17 @@ var DEFAULT_ERROR_MSG = 'An unknown error occured';
 
 function ErrorPage(_ref) {
   var message = _ref.message,
-      sentry = _ref.sentry;
+      eventId = _ref.eventId;
 
-  var sentryMessage = sentry ? _react2.default.createElement(
+  var ref = typeof eventId === 'string' ? '' + eventId : '';
+  var errorMessage = ref ? _react2.default.createElement(
     'span',
     null,
     'with the error reference ',
     _react2.default.createElement(
       'b',
       null,
-      sentry
+      ref
     )
   ) : null;
   return _react2.default.createElement(
@@ -64,11 +65,11 @@ function ErrorPage(_ref) {
             'For support on this error, please contact ',
             _react2.default.createElement(
               _EmailLink2.default,
-              { subject: 'Error Ref: ' + (sentry || 'N/A') },
+              { subject: 'Error Ref: ' + (ref || 'N/A') },
               'support@riskxchange.co'
             ),
             ' ',
-            sentryMessage
+            errorMessage
           )
         )
       )
