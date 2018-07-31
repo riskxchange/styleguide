@@ -2,6 +2,7 @@ import forEach from '../utils/for-each'
 
 export function init () {
   var navbar = document.querySelector('.rx-navbar[navbar]')
+  if (!navbar) return
   var menuToggle = navbar.querySelector('.rx-navbar__menu-toggle')
   var searchToggle = navbar.querySelector('.rx-navbar__searchbar-toggle')
   if (menuToggle) {
