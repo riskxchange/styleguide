@@ -43,8 +43,8 @@ async function createTag (tag) {
   }
 }
 
-async function pushToMaster () {
-  const {stdout, stderr} = await exec('git push origin master')
+async function pushToMaster (tag) {
+  const {stdout, stderr} = await exec(`git push origin ${tag}`)
   if (stderr) throw new Error(stderr)
   return stdout
 }
@@ -87,7 +87,7 @@ async function release () {
     console.log(`Creating tag "${tag}"`)
     await createTag(tag)
     console.log(`Pushing to git (origin/master)`)
-    await pushToMaster()
+    await pushToMaster(tag)
     await releaseVersion(tag)
     console.log(`Released v${tag} to Github`)
   } catch (err) {
