@@ -29,8 +29,7 @@ async function hasUnstagedChanges () {
   return false
 }
 
-async function createTag (tag) {
-  const message = await getLastCommitMessage()
+async function createTag (tag, message) {
   const cmd = `git tag -a ${tag} -m ${JSON.stringify(message)}`
   console.log(cmd)
   try {
@@ -45,11 +44,11 @@ async function createTag (tag) {
 
 async function pushToMaster (tag) {
   const {stdout, stderr} = await exec(`git push origin ${tag}`)
-  if (stderr) throw new Error(stderr)
-  return stdout
+  if (stderr.match(`error: `)) throw new Error(stderr)
+  return (stderr || '').concat(stdout || '')
 }
 
-async function releaseVersion (tag) {
+async function releaseVersion (tag, message) {
   const commitSha = await getCommitSha()
   await request({
     uri: `https://api.github.com/repos/riskxchange/styleguide/releases/tags/${tag}`,
@@ -63,7 +62,7 @@ async function releaseVersion (tag) {
       tag_name: tag,
       target_commitish: commitSha,
       name: `Release v${tag}`,
-      body: '',
+      body: message,
       draft: false,
       prerelease: false
     }
@@ -76,6 +75,7 @@ async function release () {
       throw new Error('Missing env var: GITHUB_ACCESS_TOKEN')
     }
     const tag = `${pkg.version}`
+    const message = await getLastCommitMessage()
     console.log(`Checking git repo`)
     const branch = await getCurrentBranch()
     if (branch !== 'master') {
@@ -85,7 +85,7 @@ async function release () {
       throw new Error('Please commit all changes before releasing')
     }
     console.log(`Creating tag "${tag}"`)
-    await createTag(tag)
+    await createTag(tag, message)
     console.log(`Pushing to git (origin/master)`)
     await pushToMaster(tag)
     await releaseVersion(tag)
