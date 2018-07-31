@@ -1,43 +1,49 @@
-const pkg = require('package.json')
+const pkg = require('./package.json')
 const request = require('request-promise')
 const promisify = require('util').promisify
 const cp = require('child_process')
 const exec = promisify(cp.exec)
 
 async function getCurrentBranch () {
-  const {stdout, stderr} = await exec('git', ['rev-parse', '--abbrev-ref', 'HEAD'])
+  const {stdout, stderr} = await exec('git rev-parse --abbrev-ref HEAD')
   if (stderr) throw new Error(stderr)
   return stdout.trim()
 }
 
-// async function hasPushedToMaster () {
-//   const {stdout, stderr} = await exec(`git`, ['log', 'origin/master..master'])
-//   if (stderr) throw new Error(stderr)
-//   if (stdout.trim()) return false
-//   return true
-// }
+async function getLastCommitMessage () {
+  const {stdout, stderr} = await exec(`git log -1 --pretty=%B`)
+  if (stderr) throw new Error(stderr)
+  return stdout.trim()
+}
 
 async function getCommitSha () {
-  const {stdout, stderr} = await exec(`git`, ['rev-parse', 'HEAD'])
+  const {stdout, stderr} = await exec('git rev-parse HEAD')
   if (stderr) throw new Error(stderr)
   return (stdout.trim())
 }
 
 async function hasUnstagedChanges () {
-  const {stdout, stderr} = await exec(`git`, ['status', '-s'])
+  const {stdout, stderr} = await exec('git status -s')
   if (stderr) throw new Error(stderr)
-  if (stdout.trim()) return false
-  return true
+  if (stdout.trim()) return true
+  return false
 }
 
 async function createTag (tag) {
-  const {stdout, stderr} = await exec('git', ['tag', '-a', tag])
-  if (stderr) throw new Error(stderr)
-  return stdout
+  const message = await getLastCommitMessage()
+  const cmd = `git tag -a ${tag} -m ${JSON.stringify(message)}`
+  console.log(cmd)
+  try {
+    const {stdout, stderr} = await exec(cmd)
+    if (stderr) throw new Error(stderr)
+    return stdout
+  } catch (err) {
+    err.message = err.message + `\n\nTo remove the tag, run: git tag --delete ${tag}`
+  }
 }
 
 async function pushToMaster () {
-  const {stdout, stderr} = await exec(`git`, ['push', 'origin', 'master'])
+  const {stdout, stderr} = await exec('git push origin master')
   if (stderr) throw new Error(stderr)
   return stdout
 }
@@ -81,7 +87,7 @@ async function release () {
     await createTag(tag)
     console.log(`Pushing to git (origin/master)`)
     await pushToMaster()
-    await releaseVersion()
+    await releaseVersion(tag)
     console.log(`Released v${tag} to Github`)
   } catch (err) {
     throw err
@@ -89,6 +95,6 @@ async function release () {
 }
 
 release().catch(err => {
-  console.log(err)
+  console.log(`\u001b[31m${err.message}\u001b[0m`)
   process.exit(1)
 })
