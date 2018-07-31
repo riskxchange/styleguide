@@ -1,6 +1,6 @@
 {
   "name": "styleguide",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "build:webpack": "rm -rf dist; rm -rf docs; NODE_ENV=production webpack",
     "build:react": "rm -rf react; node ./create-react-index.js; babel src/react --out-dir react;",
     "build:utils": "rm -rf utils; babel src/utils --out-dir utils;",
-    "pre-push": "npm run build; git add dist; git add react; git commit -m \"auto-build + commit\";"
+    "pre-push": "npm run build; git add dist; git add react; git commit -m \"auto-build + commit\";",
+    "release": "source .env.secret; node release.js"
   },
   "proxy": "http://localhost:4000",
   "pre-push": [
@@ -44,9 +45,10 @@
     "postcss-mixins": "^6.0.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "request-promise": "^4.2.2",
     "style-loader": "^0.18.2",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.2"
   },
   "standard": {
     "parser": "babel-eslint"

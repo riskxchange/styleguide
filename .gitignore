@@ -2,3 +2,4 @@
 .DS_Store
 /react/create-index.js
 /docs/react/bundle.js
+.env.secret

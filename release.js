@@ -1,0 +1,94 @@
+const pkg = require('package.json')
+const request = require('request-promise')
+const promisify = require('util').promisify
+const cp = require('child_process')
+const exec = promisify(cp.exec)
+
+async function getCurrentBranch () {
+  const {stdout, stderr} = await exec('git', ['rev-parse', '--abbrev-ref', 'HEAD'])
+  if (stderr) throw new Error(stderr)
+  return stdout.trim()
+}
+
+// async function hasPushedToMaster () {
+//   const {stdout, stderr} = await exec(`git`, ['log', 'origin/master..master'])
+//   if (stderr) throw new Error(stderr)
+//   if (stdout.trim()) return false
+//   return true
+// }
+
+async function getCommitSha () {
+  const {stdout, stderr} = await exec(`git`, ['rev-parse', 'HEAD'])
+  if (stderr) throw new Error(stderr)
+  return (stdout.trim())
+}
+
+async function hasUnstagedChanges () {
+  const {stdout, stderr} = await exec(`git`, ['status', '-s'])
+  if (stderr) throw new Error(stderr)
+  if (stdout.trim()) return false
+  return true
+}
+
+async function createTag (tag) {
+  const {stdout, stderr} = await exec('git', ['tag', '-a', tag])
+  if (stderr) throw new Error(stderr)
+  return stdout
+}
+
+async function pushToMaster () {
+  const {stdout, stderr} = await exec(`git`, ['push', 'origin', 'master'])
+  if (stderr) throw new Error(stderr)
+  return stdout
+}
+
+async function releaseVersion (tag) {
+  const commitSha = await getCommitSha()
+  await request({
+    uri: `https://api.github.com/repos/riskxchange/styleguide/releases/tags/${tag}`,
+    simple: false,
+    json: true,
+    headers: {
+      accept: 'application/vnd.github.v3+json',
+      authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`
+    },
+    body: {
+      tag_name: tag,
+      target_commitish: commitSha,
+      name: `Release v${tag}`,
+      body: '',
+      draft: false,
+      prerelease: false
+    }
+  })
+}
+
+async function release () {
+  try {
+    if (!process.env.GITHUB_ACCESS_TOKEN) {
+      throw new Error('Missing env var: GITHUB_ACCESS_TOKEN')
+    }
+    const tag = `${pkg.version}`
+    console.log(`Checking git repo`)
+    const branch = await getCurrentBranch()
+    if (branch !== 'master') {
+      throw new Error(`Cannot release branch "${branch}", must be on master`)
+    }
+    if (await hasUnstagedChanges()) {
+      throw new Error('Please commit all changes before releasing')
+    }
+    console.log(`Creating tag "${tag}"`)
+    await createTag(tag)
+    console.log(`Pushing to git (origin/master)`)
+    await pushToMaster()
+    await releaseVersion()
+    console.log(`Released v${tag} to Github`)
+  } catch (err) {
+    throw err
+  }
+}
+
+release().catch(err => {
+  console.log(err)
+  process.exit(1)
+})
