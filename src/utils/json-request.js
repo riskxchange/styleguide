@@ -1,4 +1,5 @@
 /* globals fetch */
+
 export function getJSON (url) {
   return fetch(url, {
     credentials: 'include',
@@ -49,6 +50,9 @@ function onResponse (res) {
     if (res.ok) return json
     const err = new Error(json.message)
     err.status = res.status
+    if (res.status === 401) {
+      window.location.href = '/login'
+    }
     throw err
   })
 }
