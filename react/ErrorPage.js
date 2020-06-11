@@ -18,14 +18,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var DEFAULT_ERROR_MSG = 'An unknown error occured';
 
 function ErrorPage(_ref) {
-  var message = _ref.message,
-      eventId = _ref.eventId;
+  var eventId = _ref.eventId;
 
   var ref = typeof eventId === 'string' ? '' + eventId : '';
   var errorMessage = ref ? _react2.default.createElement(
     'span',
     null,
-    'with the error reference ',
+    'Error reference ',
     _react2.default.createElement(
       'b',
       null,
@@ -52,12 +51,7 @@ function ErrorPage(_ref) {
           _react2.default.createElement(
             'p',
             null,
-            'The server came back with the following error:'
-          ),
-          _react2.default.createElement(
-            'pre',
-            { className: 'rx-error-page__pre' },
-            message || DEFAULT_ERROR_MSG
+            'Our development team has been notified.'
           ),
           _react2.default.createElement(
             'p',
